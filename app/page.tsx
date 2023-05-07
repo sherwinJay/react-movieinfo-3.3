@@ -1,91 +1,110 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+import { movieDbURL } from '@/constant'
+import axios from 'axios';
+import { HomeCardData } from '@/types';
+import { HomeSection, Slider } from '@/components';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default async function Home() {
+
+  const { popularMovie, upcomingMovie, nowPlayingMovie, popularTV } = await getMoviesData()
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <>
+      <Slider
+        movieData={popularMovie}
+      />
+      <main className="w-[100%] p-[1.5em] mx-auto flex flex-col gap-3 lg:p-[3em] xl:w-[1200px]">
+        <HomeSection
+          title={'Upcoming Movies'}
+          isMovie={true}
+          template={'1'}
+          imgCount={8}
+          categoryData={upcomingMovie}
         />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <HomeSection 
+          title={'Now Playing'}
+          isMovie={true}
+          template={'2'}
+          imgCount={7}
+          categoryData={nowPlayingMovie}
+        />
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <HomeSection 
+          title={'TV Shows'}
+          isMovie={false}
+          template={'1'}
+          imgCount={8}
+          categoryData={popularTV}
+        />
+      </main>
+    </>
   )
+}
+
+async function getMoviesData(){
+
+  // const movieHostName = `https://api.themoviedb.org/3`;
+
+  // NOTE: by returning directly the results fetch could break if the other api end point is blank/error 
+
+  const [ 
+    popularMovie,
+    upcomingMovie,
+    nowPlayingMovie,
+    popularTV
+  ] = await Promise.all<HomeCardData[]>([
+    axios.get(`${movieDbURL}/3/movie/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`,{
+      headers:{
+        'Cache-Control': 'no-cache'
+      }
+    })
+      .then(res => res.data?.results)
+      .catch(err => {
+        console.log(err)
+        // return err.response.statusText
+        return []
+      }),
+    axios.get(`${movieDbURL}/3/movie/upcoming?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`,{
+      headers:{
+        'Cache-Control': 'no-cache'
+      }
+    })
+      .then(res => res.data?.results)
+      .catch(err => {
+        console.log(err)
+        return []
+      }),
+    axios.get(`${movieDbURL}/3/movie/now_playing?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`,{
+      headers:{
+        'Cache-Control': 'no-cache'
+      }
+    })
+      .then(res => res.data?.results)
+      .catch(err => {
+        console.log(err)
+        return []
+      }),
+    axios.get(`${movieDbURL}/3/tv/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`,{
+      headers:{
+        'Cache-Control': 'no-cache'
+      }
+    })
+      .then(res => res.data?.results)
+      .catch(err => {
+        console.log(err)
+        return []
+      }),
+  ])
+
+  return {
+    popularMovie,
+    upcomingMovie,
+    nowPlayingMovie,
+    popularTV
+  }
+
 }
