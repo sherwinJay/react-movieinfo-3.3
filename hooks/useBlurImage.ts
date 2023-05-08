@@ -20,8 +20,6 @@ const useBlurImage = function<T>(src: string) {
     }
   }
 
-
-
   useEffect(() => {
     const controller =  new AbortController()
     fetchData()
