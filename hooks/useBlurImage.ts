@@ -16,7 +16,7 @@ const useBlurImage = function<T>(src: string) {
       setblurBg(previewImage.metadata.dataURIBase64)
 
     } catch (err) {
-      console.log(err)
+      // console.log(err)
     }
   }
 

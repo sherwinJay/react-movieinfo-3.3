@@ -64,7 +64,7 @@ async function getMoviesData(){
     })
       .then(res => res.data?.results)
       .catch(err => {
-        console.log(err)
+        // console.log(err)
         // return err.response.statusText
         return []
       }),
@@ -75,7 +75,7 @@ async function getMoviesData(){
     })
       .then(res => res.data?.results)
       .catch(err => {
-        console.log(err)
+        // console.log(err)
         return []
       }),
     axios.get(`${movieDbURL}/3/movie/now_playing?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`,{
@@ -85,7 +85,7 @@ async function getMoviesData(){
     })
       .then(res => res.data?.results)
       .catch(err => {
-        console.log(err)
+        // console.log(err)
         return []
       }),
     axios.get(`${movieDbURL}/3/tv/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`,{
@@ -95,7 +95,7 @@ async function getMoviesData(){
     })
       .then(res => res.data?.results)
       .catch(err => {
-        console.log(err)
+        // console.log(err)
         return []
       }),
   ])

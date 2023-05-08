@@ -17,7 +17,7 @@ export function normalizeUnsplashUrl(src: string) {
 export const unsplashLoader: ImageLoader = ({ src, width, quality }) => {
   const url = normalizeUnsplashUrl(src);
 
-  console.log('url: ', src)
+  // console.log('url: ', src)
 
   const params = url.searchParams;
 
