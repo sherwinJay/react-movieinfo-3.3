@@ -2,7 +2,7 @@ import { Banner, LeadCast, RecommendMovies, Sidebar } from '@/components';
 import { movieDbURL } from '@/constant';
 import fetchRecommendMovies from '@/hooks/fetchRecommendMovies';
 import React from 'react'
-import { getMovieData } from '@/hooks/getMovieData';
+// import { getMovieData } from '@/hooks/getMovieData';
 
 const Movies = async ({params}: {params: {id: string}}) => {
 
@@ -52,6 +52,18 @@ export async function generateMetadata({
   return {
     title: `${movieList.title} - Movie Information`,
   };
+  
+}
+
+export async function getMovieData(pageId: string | number, mediaType: string){
+  const res = await fetch(
+    `${movieDbURL}/3/${mediaType}/${pageId}?api_key=${process.env.MOVIE_DATABASE_ID}&append_to_response=credits,videos`,
+      {cache: "no-store"}
+  );
+  
+  const movieList = await res.json()
+
+  return movieList
 }
 
 export default Movies
