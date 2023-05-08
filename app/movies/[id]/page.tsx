@@ -6,7 +6,7 @@ import { getMovieData } from '@/hooks/getMovieData';
 
 const Movies = async ({params}: {params: {id: string}}) => {
 
-  const movieList = await getMovies(params.id, 'movie')
+  const movieList = await getMovieData(params.id, 'movie')
 
   const recommendData = await fetchRecommendMovies(params.id, 'movie')
 
@@ -29,10 +29,10 @@ const Movies = async ({params}: {params: {id: string}}) => {
           />
         </div>
         <div className="lg:row-start-2 lg:row-end-3 lg:col-start-1 lg:col-end-4">
-          {/* <RecommendMovies
+          <RecommendMovies
             contentData={recommendData}
             mediaType="movie"
-          /> */}
+          />
         </div>
       </div>
     </>
@@ -52,17 +52,6 @@ export async function generateMetadata({
   return {
     title: `${movieList.title} - Movie Information`,
   };
-}
-
-export async function getMovies(pageId: string | number, mediaType: string){
-  const res = await fetch(
-    `${movieDbURL}/3/${mediaType}/${pageId}?api_key=${process.env.MOVIE_DATABASE_ID}&append_to_response=credits,videos`,
-      {cache: "no-store"}
-  );
-  
-  const movieList = await res.json()
-
-  return movieList
 }
 
 export default Movies
