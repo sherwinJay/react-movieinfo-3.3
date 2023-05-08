@@ -1,4 +1,4 @@
 [build]
-  command = "npm run build"
-  base = "master"
-  publish = "master/.next" 
+  command = "next build"
+  base = ""
+  publish = ".next" 
