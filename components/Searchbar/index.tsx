@@ -35,9 +35,9 @@ const Searchbar = ({setIsOpen}: Props) => {
   };
 
 
-  const getSearch = useCallback((e: SearchEvent) => {
+  const getSearch = (e: SearchEvent) => {
     setSearchVal(e.target.value);
-  }, [searchVal])
+  }
 
   return (
     <form className='w-[100%]  md:w-[350px]'>
