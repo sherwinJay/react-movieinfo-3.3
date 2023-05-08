@@ -19,17 +19,17 @@ const BannerIcons = ({mediaType, runtime, episodeTime, videos, votes}: Props) =>
   const { circleBorder } = circleRating(votes)
 
   const computeRuntime = () => {
-    const computeHours = Math.floor((mediaType === 'movies' ? runtime : episodeTime.length > 0 ? episodeTime[0] : 0) / 60);
-    const computeMinutes = (mediaType === 'movies' ? runtime : episodeTime.length > 0 ? episodeTime[0] : 0) % 60;
+    const computeHours = Math.floor((mediaType === 'movies' ? runtime : episodeTime?.length > 0 ? episodeTime[0] : 0) / 60);
+    const computeMinutes = (mediaType === 'movies' ? runtime : episodeTime?.length > 0 ? episodeTime[0] : 0) % 60;
 
     return computeHours >= 1 ? `${computeHours}h ${computeMinutes}m` : `${computeMinutes}m`;
   };
 
   const getTrailer = () => {
-    if(videos.results.length > 0 && videos.results[0].hasOwnProperty("key")){
+    if(videos?.results?.length > 0 && videos?.results[0]?.hasOwnProperty("key")){
       return (
         <a  
-          href={`https://www.youtube.com/watch?v=${videos.results[0].key}`}
+          href={`https://www.youtube.com/watch?v=${videos?.results[0]?.key}`}
           className="flex gap-[2px] md:gap-1 items-center"
           target="_blank"
           rel="noreferrer"
@@ -66,5 +66,5 @@ const BannerIcons = ({mediaType, runtime, episodeTime, videos, votes}: Props) =>
     
   )
 }
-
+ 
 export default BannerIcons

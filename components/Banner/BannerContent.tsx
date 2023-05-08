@@ -14,7 +14,7 @@ type Props = {
 
 const BannerContent = ({ title, name, genres, releaseDate, first_air_date, mediaType }: Props) => {
 
-  const showGenres = genres.map((genre: {name: string}) => genre.name).slice(0,3).toString().replace(/,/g,', ');
+  const showGenres = genres?.map((genre: {name: string}) => genre?.name).slice(0,3).toString().replace(/,/g,', ');
   const modifiedReleaseDate = releaseDate !== null ? releaseDate?.replace(/-/g,'/') : '';
   const modifiedAirDate = first_air_date !== null ? first_air_date?.replace(/-/g,'/') : '';
 

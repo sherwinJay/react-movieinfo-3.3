@@ -33,7 +33,7 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
     
   }, [background])
 
-  const slicedRecommendData =  contentData.results?.slice(0,7);
+  const slicedRecommendData =  contentData?.results?.slice(0,7);
 
   const recommendMovieLists = slicedRecommendData?.map((movie) => (
     <RecommendCards

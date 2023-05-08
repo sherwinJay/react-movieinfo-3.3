@@ -19,7 +19,7 @@ const Sidebar = ({isMovie, contentData}: Props) => {
   } = contentData;
 
   const slicedProductionCompany = production_companies?.slice(0,4);
-  const slicedCrew = credits.crew?.slice(0,4);
+  const slicedCrew = credits?.crew?.slice(0,4);
 
   const getCompanies = slicedProductionCompany?.map((company) => (
     <p className="" key={company.id}>

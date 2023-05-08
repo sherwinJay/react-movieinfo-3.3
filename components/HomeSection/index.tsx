@@ -17,7 +17,7 @@ const HomeSection = ({isMovie, categoryData, title, template, imgCount, name}: H
   //   return categoryData.slice(0, imgCount)
   // }, [categoryData]) 
 
-  const movieData = categoryData.slice(0, imgCount)
+  const movieData = categoryData?.slice(0, imgCount)
 
   return (
     <div>

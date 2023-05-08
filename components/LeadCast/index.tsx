@@ -34,7 +34,7 @@ const LeadCast = ({castData}: CastData) => {
     }
   }
 
-  const slicedCast = castData.credits.cast?.slice(0,7)
+  const slicedCast = castData?.credits?.cast?.slice(0,7)
 
   const getCast = slicedCast?.map((cast) => (
     <li key={cast.credit_id} className="min-w-[9.6em] overflow-hidden bg-[#1c1a3e] rounded-md">
