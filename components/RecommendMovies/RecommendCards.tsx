@@ -35,6 +35,7 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
           height={169}
           className=""
           ref={imageRef}
+          referrerPolicy='no-referrer'
         />
       )
     }

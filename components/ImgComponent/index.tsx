@@ -36,6 +36,7 @@ const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter,
       // sizes={sizes}
       placeholder="blur"
       blurDataURL={props.image.blurDataURL}
+      referrerPolicy='no-referrer'
     />
   )
 }
