@@ -1,3 +1,4 @@
 [build]
-  command = "CI= npm run build"
-  publish = ".next"
+  command = "npm run build"
+  base = "master"
+  publish = "master/.next" 
