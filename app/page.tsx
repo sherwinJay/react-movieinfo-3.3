@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import { movieDbURL } from '@/constant'
+import { movieDbURL } from '@/app/constant'
 import axios from 'axios';
 import { HomeCardData } from '@/types';
-import { HomeSection, Slider } from '@/components';
+import { HomeSection, Slider } from './components';
 
 const inter = Inter({ subsets: ['latin'] })
 

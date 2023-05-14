@@ -1,4 +1,4 @@
-import { movieDbImgURL } from '@/constant'
+import { movieDbImgURL } from '@/app/constant'
 import { LeadCastData } from '@/types'
 import React from 'react'
 import ImgComponent from '../ImgComponent'

@@ -1,5 +1,5 @@
 'use client'
-import { movieDbImgURL } from '@/constant'
+import { movieDbImgURL } from '@/app/constant'
 import { RecommendData } from '@/types'
 import React, { useCallback, useEffect, useState } from 'react'
 import useSWR from 'swr'

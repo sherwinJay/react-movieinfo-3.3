@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import loadingImg from '../../public/images/loading2.svg'
+import loadingImg from '@/public/images/loading2.svg'
 
 const Loader = () => {
   return (

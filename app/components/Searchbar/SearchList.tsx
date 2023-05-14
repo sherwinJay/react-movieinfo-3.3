@@ -1,6 +1,6 @@
 'use client'
 
-import { movieDbURL } from '@/constant';
+import { movieDbURL } from '@/app/constant';
 import axios from 'axios';
 import Link from 'next/link';
 import React, { Dispatch, SetStateAction } from 'react'

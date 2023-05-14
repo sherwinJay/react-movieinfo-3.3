@@ -1,5 +1,5 @@
-import { unsplashLoader } from '@/utils'
-import { getBlurImages } from '@/utils/blurImage'
+import { unsplashLoader } from '@/app/utils'
+import { getBlurImages } from '@/app/utils/blurImage'
 import Image from 'next/image'
 import React, { PointerEventHandler, use } from 'react'
 

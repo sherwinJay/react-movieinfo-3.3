@@ -2,7 +2,7 @@ import { HomeCardData, HomeCardProps } from '@/types'
 import Link from 'next/link';
 import React from 'react'
 import ImgComponent from '../ImgComponent';
-import { movieDbImgURL } from '@/constant';
+import { movieDbImgURL } from '@/app/constant';
 
 // type Props = {
 //   isMovie?: boolean,
