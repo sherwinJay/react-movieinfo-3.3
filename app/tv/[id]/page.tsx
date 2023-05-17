@@ -1,5 +1,4 @@
 import { Banner, LeadCast, RecommendMovies, Sidebar } from '@/app/components';
-import { movieDbURL } from '@/app/constant';
 import fetchRecommendMovies from '@/app/hooks/fetchRecommendMovies';
 import React from 'react'
 import { getMovieData } from '@/app/hooks/getMovieData';
