@@ -11,6 +11,7 @@ const Loader = () => {
           alt="loading"
           width={280}
           height={130}
+          unoptimized={true}
         />
         <p className='text-center mt-5'>Loading...</p>
       </div>

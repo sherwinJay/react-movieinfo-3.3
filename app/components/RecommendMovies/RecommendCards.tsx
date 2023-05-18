@@ -43,6 +43,7 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
           referrerPolicy='no-referrer'
           placeholder='blur'
           blurDataURL={`${normalizeUnsplashUrl(`/t/p/w300/${bgImage}`)}`}
+          unoptimized={true}
         />
       )
     }
