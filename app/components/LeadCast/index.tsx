@@ -2,8 +2,6 @@ import { movieDbImgURL } from '@/app/constant'
 import { LeadCastData } from '@/types'
 import React from 'react'
 import ImgComponent from '../ImgComponent'
-// import { castContainer, castImgContainer, castName, castNameContainer, contentContainer, noCast } from './styles'
-
 
 interface CastData {
   castData: LeadCastData

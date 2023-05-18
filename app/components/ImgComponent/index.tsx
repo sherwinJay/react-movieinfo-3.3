@@ -20,8 +20,6 @@ const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter,
 
   const { props } = use(getBlurImages(src))
 
-  // console.log('url: ', unsplashLoader)
-  
   return (
     <Image
       src={props.image.src}
