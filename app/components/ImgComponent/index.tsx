@@ -25,7 +25,7 @@ const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter,
   return (
     <Image
       // loader={unsplashLoader}
-      src={src}
+      src={props.image.src}
       className={className}
       fill={fill}
       alt={alt}

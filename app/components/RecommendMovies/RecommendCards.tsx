@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { use, useRef } from 'react'
 import Image from 'next/image'
 import { getBlurImages } from '@/app/utils/blurImage'
-import { normalizeUnsplashUrl } from '@/app/utils'
+import { normalizeUnsplashUrl, unsplashLoader } from '@/app/utils'
 
 type Props = {
   bgImage: string
@@ -31,6 +31,7 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
     }else{
       return (
         <Image
+          loader={unsplashLoader}
           src={`${normalizeUnsplashUrl(`/t/p/w300/${bgImage}`)}`}
           alt={title} 
           onPointerEnter={() => pointerEvent(imageRef?.current?.id)}
@@ -40,8 +41,8 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
           className=""
           ref={imageRef}
           referrerPolicy='no-referrer'
-          // placeholder='blur'
-          // blurDataURL={props.image.blurDataURL}
+          placeholder='blur'
+          blurDataURL={`${normalizeUnsplashUrl(`/t/p/w300/${bgImage}`)}`}
         />
       )
     }
