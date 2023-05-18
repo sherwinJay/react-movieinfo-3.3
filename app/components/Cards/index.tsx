@@ -23,7 +23,7 @@ const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path
     } else {
       return ( 
         <ImgComponent
-          src={`${movieDbImgURL}/t/p/w780/${customImg}`}
+          src={`${movieDbImgURL}/t/p/w500/${customImg}`}
           className="translate-x-[-50%] translate-y-[-50%] !top-[50%] !left-[50%] object-cover"
           fill
           // placeholder='blur'

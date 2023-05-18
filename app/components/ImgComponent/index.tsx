@@ -24,7 +24,6 @@ const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter,
   
   return (
     <Image
-      // loader={unsplashLoader}
       src={props.image.src}
       className={className}
       fill={fill}
@@ -37,6 +36,7 @@ const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter,
       placeholder="blur"
       blurDataURL={props.image.blurDataURL}
       referrerPolicy='no-referrer'
+      unoptimized={true}
     />
   )
 }
