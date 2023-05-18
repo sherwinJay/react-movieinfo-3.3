@@ -1,7 +1,9 @@
 import { movieDbImgURL } from '@/app/constant'
 import Link from 'next/link'
-import React, { useRef } from 'react'
+import React, { use, useRef } from 'react'
 import Image from 'next/image'
+import { getBlurImages } from '@/app/utils/blurImage'
+import { normalizeUnsplashUrl } from '@/app/utils'
 
 type Props = {
   bgImage: string
@@ -15,6 +17,8 @@ type Props = {
 const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) => {
 
   const imageRef = useRef<HTMLImageElement>(null)
+   
+  // const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w300/${bgImage}`))
 
   // template for image thumbnails 
   const getThumbnailImg = () => { 
@@ -27,7 +31,7 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
     }else{
       return (
         <Image
-          src={`${movieDbImgURL}/t/p/w300/${bgImage}`} 
+          src={`${normalizeUnsplashUrl(`/t/p/w300/${bgImage}`)}`}
           alt={title} 
           onPointerEnter={() => pointerEvent(imageRef?.current?.id)}
           id={bgImage}
@@ -36,6 +40,8 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
           className=""
           ref={imageRef}
           referrerPolicy='no-referrer'
+          // placeholder='blur'
+          // blurDataURL={props.image.blurDataURL}
         />
       )
     }
