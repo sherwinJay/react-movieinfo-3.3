@@ -22,14 +22,14 @@ const Sidebar = ({isMovie, contentData}: Props) => {
   const slicedCrew = credits?.crew?.slice(0,4);
 
   const getCompanies = slicedProductionCompany?.map((company) => (
-    <p className="text-[14px] md:text-[18px]" key={company.id}>
+    <p className="text-[14px] md:text-[16px]" key={company.id}>
       {company.name}
     </p>
   ))
   
   const getCrew = slicedCrew?.map((crew) => (
     <div key={crew.credit_id}>
-      <p className="text-[14px] md:text-[18px] leading-5">{crew.name}</p>
+      <p className="text-[14px] md:text-[16px] leading-5">{crew.name}</p>
       <p className="text-[11px] md:text-[13px] italic">{crew.job}</p>
     </div>
   ))
@@ -42,24 +42,24 @@ const Sidebar = ({isMovie, contentData}: Props) => {
           <>
             <div>
               <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">Budget</h4>
-              <p className="text-[14px] md:text-[18px]">{`$ ${budget !== "" ? budget?.toLocaleString() : '-'}`}</p>
+              <p className="text-[14px] md:text-[16px]">{`$ ${budget !== "" ? budget?.toLocaleString() : '-'}`}</p>
             </div>
             <div>
               <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">Revenue</h4>
-              <p className="text-[14px] md:text-[18px]">{`$ ${revenue !== "" ? revenue?.toLocaleString(): '-'}`}</p>
+              <p className="text-[14px] md:text-[16px]">{`$ ${revenue !== "" ? revenue?.toLocaleString(): '-'}`}</p>
             </div>
           </>
         ) : (
           <div>
             <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">Original Name</h4>
-            <p className="text-[14px] md:text-[18px]">{original_name}</p>
+            <p className="text-[14px] md:text-[16px]">{original_name}</p>
           </div>
         )
       }
 
       <div>
         <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">Status</h4>
-        <p className="text-[14px] md:text-[18px]">{status}</p>
+        <p className="text-[14px] md:text-[16px]">{status}</p>
       </div>
       <div>
         <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">Production Companies</h4>
