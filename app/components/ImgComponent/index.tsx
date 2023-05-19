@@ -21,12 +21,13 @@ type ImageProps2 = {
   height?: number,
   onPointerEnter?: (e: React.PointerEvent<HTMLImageElement>) => PointerEventHandler<HTMLImageElement>
   id?: string
-  sizes?: any
+  sizes?: string
   placeholder?: "blur" | "empty" | undefined
   blurDataURL?: string
+  quality?: number
 }
 
-const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter, id, sizes, placeholder, blurDataURL}: ImageProps2) => {
+const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter, id, sizes, placeholder, blurDataURL, quality}: ImageProps2) => {
   // const { props } = use(getBlurImages(src))
 
   return (
@@ -40,10 +41,11 @@ const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter,
         height={height}
         // onPointerEnter={(e) => {}}
         id={id}
-        // sizes={sizes}
+        sizes={sizes}
         placeholder="blur"
         blurDataURL={blurDataURL}
         referrerPolicy='no-referrer'
+        quality={quality}
         // unoptimized={true}
       />
  

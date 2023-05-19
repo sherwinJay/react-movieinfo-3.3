@@ -25,11 +25,11 @@ const LeadCast = ({castData}: CastData) => {
       return (
         <div className="relative overflow-hidden">
           <ImgComponent
-            className="" 
+            className=""
             src={props.image.src} 
             alt={name}
-            width={154}
-            height={231}
+            width={props.image.width}
+            height={props.image.height}
             blurDataURL={props.image.blurDataURL}
           />
         </div>

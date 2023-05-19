@@ -29,8 +29,8 @@ const getImgPoster = () => {
             className="overflow-hidden rounded-2xl" 
             src={props.image.src} 
             alt={mediaType === 'movies' ? title : name}
-            width={280}
-            height={420}
+            width={props.image.width}
+            height={props.image.height}
             blurDataURL={props.image.blurDataURL}
           />
         </div>

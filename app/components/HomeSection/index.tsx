@@ -1,6 +1,7 @@
 import { HomeCardData, HomeCardSection } from '@/types'
 import React, { useMemo } from 'react'
 import { MainCard, NoContent } from '../index'
+import clsx from 'clsx'
 
 const HomeSection = ({isMovie, categoryData, title, template, imgCount, name}: HomeCardSection): JSX.Element => {
 
@@ -32,12 +33,13 @@ const HomeSection = ({isMovie, categoryData, title, template, imgCount, name}: H
           movieData.map(thumbnail => (
             <li 
               key={thumbnail.id}
-              className={`rounded-lg overflow-hidden 
-                ${template === "2" ? 
-                  `first:col-start-1 first:col-end-4 first:row-start-1 first:row-end-3 md:first:col-end-3` : 
-                  ``
-                } group h-[100%] !relative grid items-center`
-            }>
+              className={
+                clsx(
+                  `rounded-lg overflow-hidden group h-[100%] !relative grid items-center`,
+                  template === "2" && `first:col-start-1 first:col-end-4 first:row-start-1 first:row-end-3 md:first:col-end-3`
+                )
+              }
+            >
               <MainCard
                 title={ isMovie ? thumbnail.title : thumbnail.name }
                 name={ thumbnail.name }
