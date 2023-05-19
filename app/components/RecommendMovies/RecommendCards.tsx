@@ -4,6 +4,7 @@ import React, { use, useRef } from 'react'
 import Image from 'next/image'
 import { getBlurImages } from '@/app/utils/blurImage'
 import { normalizeUnsplashUrl, unsplashLoader } from '@/app/utils'
+import { imgixLoader } from '@/app/utils/imgixLoader'
 
 type Props = {
   bgImage: string
@@ -21,6 +22,9 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
   // const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w300/${bgImage}`))
 
   // template for image thumbnails 
+
+  // console.log('data: ', normalizeUnsplashUrl(`/t/p/w300/${bgImage}`))
+
   const getThumbnailImg = () => { 
     if(bgImage === '' || bgImage === null){
       return (
@@ -31,7 +35,7 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
     }else{
       return (
         <Image
-          loader={unsplashLoader}
+          loader={imgixLoader}
           src={`${normalizeUnsplashUrl(`/t/p/w300/${bgImage}`)}`}
           alt={title} 
           onPointerEnter={() => pointerEvent(imageRef?.current?.id)}
@@ -43,7 +47,7 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
           referrerPolicy='no-referrer'
           placeholder='blur'
           blurDataURL={`${normalizeUnsplashUrl(`/t/p/w300/${bgImage}`)}`}
-          unoptimized={true}
+          // unoptimized={true}
         />
       )
     }

@@ -1,9 +1,18 @@
+'use client'
+
 import { unsplashLoader } from '@/app/utils'
 import { getBlurImages } from '@/app/utils/blurImage'
-import Image from 'next/image'
+import { imgixLoader } from '@/app/utils/imgixLoader'
+import Image, { ImageLoader, ImageProps } from 'next/image'
 import React, { PointerEventHandler, use } from 'react'
+import Imgix from 'react-imgix'
 
-type ImageProps = {
+type LqipExampleProps = {
+  image: Pick<ImageProps, "src" | "width" | "height" | "blurDataURL">;
+};
+
+
+type ImageProps2 = {
   src: string,
   className: string,
   fill?: boolean,
@@ -14,28 +23,30 @@ type ImageProps = {
   id?: string
   sizes?: any
   placeholder?: "blur" | "empty" | undefined
+  blurDataURL?: string
 }
 
-const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter, id, sizes, placeholder}: ImageProps) => {
-
-  const { props } = use(getBlurImages(src))
+const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter, id, sizes, placeholder, blurDataURL}: ImageProps2) => {
+  // const { props } = use(getBlurImages(src))
 
   return (
-    <Image
-      src={props.image.src}
-      className={className}
-      fill={fill}
-      alt={alt}
-      width={width}
-      height={height}
-      // onPointerEnter={(e) => {}}
-      id={id}
-      // sizes={sizes}
-      placeholder="blur"
-      blurDataURL={props.image.blurDataURL}
-      referrerPolicy='no-referrer'
-      unoptimized={true}
-    />
+      <Image
+        loader={imgixLoader}
+        src={src}
+        className={className}
+        fill={fill}
+        alt={alt}
+        width={width}
+        height={height}
+        // onPointerEnter={(e) => {}}
+        id={id}
+        // sizes={sizes}
+        placeholder="blur"
+        blurDataURL={blurDataURL}
+        referrerPolicy='no-referrer'
+        // unoptimized={true}
+      />
+ 
   )
 }
 

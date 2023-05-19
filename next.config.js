@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    serverActions: true,
+  },
   env: {
     MOVIE_DATABASE_ID: process.env.MOVIE_DATABASE_ID,
   },
@@ -9,9 +12,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'image.tmdb.org',
+        hostname: 'imgix-demo-tmdb.imgix.net',
       },
     ],
+    // loader: 'custom',
+    // loaderFile: './app/utils/imgixLoader.ts',
   },
 }
 

@@ -1,7 +1,8 @@
-import { movieDbImgURL } from '@/app/constant'
+import { customImgSource, movieDbImgURL } from '@/app/constant'
 import { LeadCastData } from '@/types'
-import React from 'react'
+import React, { use } from 'react'
 import ImgComponent from '../ImgComponent'
+import { getBlurImages } from '@/app/utils/blurImage'
 
 interface CastData {
   castData: LeadCastData
@@ -17,15 +18,18 @@ const LeadCast = ({castData}: CastData) => {
           </div>
         )
     }else{
+
+      const { props } = use(getBlurImages(`${customImgSource}/t/p/w154/${profilePath}`))
+
       return (
         <div className="relative overflow-hidden">
           <ImgComponent
             className="" 
-            src={`${movieDbImgURL}/t/p/w154/${profilePath}`} 
+            src={props.image.src} 
             alt={name}
             width={154}
             height={231}
-            placeholder="blur"
+            blurDataURL={props.image.blurDataURL}
           />
         </div>
       )

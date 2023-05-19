@@ -1,8 +1,8 @@
-import { movieDbImgURL } from "@/app/constant";
+import { customImgSource, movieDbImgURL } from "@/app/constant";
 import type { ImageLoader } from "next/image";
 
 export function normalizeUnsplashUrl(src: string) {
-  const unsplashBaseUrl = movieDbImgURL;
+  const unsplashBaseUrl = customImgSource;
 
   if (src.slice(0, 4) === "http") {
     return new URL(src);

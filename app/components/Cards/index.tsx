@@ -1,8 +1,9 @@
 import { HomeCardData, HomeCardProps } from '@/types'
 import Link from 'next/link';
-import React from 'react'
+import React, { use } from 'react'
 import ImgComponent from '../ImgComponent';
-import { movieDbImgURL } from '@/app/constant';
+import { customImgSource, movieDbImgURL } from '@/app/constant';
+import { getBlurImages } from '@/app/utils/blurImage';
 
 // type Props = {
 //   isMovie?: boolean,
@@ -21,17 +22,19 @@ const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path
         </>
       );
     } else {
+
+      const { props } = use(getBlurImages(`${customImgSource}/t/p/w500/${customImg}`))
+
       return ( 
         <ImgComponent
-          src={`${movieDbImgURL}/t/p/w500/${customImg}`}
+          src={props.image.src}
           className="translate-x-[-50%] translate-y-[-50%] !top-[50%] !left-[50%] object-cover"
           fill
-          // placeholder='blur'
-          // blurDataURL={`https://image.tmdb.org/t/p/w780/${customImg}`}
           alt={isMovie ? title : name}
           sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
+          blurDataURL={props.image.blurDataURL}
         />
       );
     }

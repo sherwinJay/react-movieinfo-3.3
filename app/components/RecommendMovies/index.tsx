@@ -21,7 +21,7 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
   useEffect(() => {
     // set recommendation background to the first show data on the array
     // checks first if the data has obj property of 'results'
-    contentData?.results && setBackground(`${normalizeUnsplashUrl(`/t/p/original${contentData?.results[0]?.backdrop_path}`)}`)
+    contentData?.results && setBackground(`${normalizeUnsplashUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
    
   }, [contentData])
   
@@ -30,7 +30,7 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
   const pointerEvent = useCallback((imageId: string | null | undefined) => {
     // console.log('render')
     if(background){
-      setBackground(`${normalizeUnsplashUrl(`/t/p/original${imageId}`)}`)
+      setBackground(`${normalizeUnsplashUrl(`/t/p/w1280${imageId}`)}`)
     }
     
   }, [background])
