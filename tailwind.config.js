@@ -12,7 +12,7 @@ module.exports = {
       },
       gridTemplateRows: {
         'customRow1': 'auto 1fr auto',
-        'customRow3a': 'repeat(3, 130px);',
+        'customRow3a': 'repeat(3, 117px);',
         'customRow3b': 'repeat(3, 1fr);'
       },
       zIndex: {
