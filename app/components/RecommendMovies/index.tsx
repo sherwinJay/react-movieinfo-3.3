@@ -6,6 +6,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import useSWR from 'swr'
 import RecommendCards from './RecommendCards'
 import { normalizeUnsplashUrl } from '@/app/utils'
+import clsx from 'clsx'
 
 export type Props = {
   contentData: {
@@ -56,10 +57,15 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
 
   return (
     <div 
-      className="bg-cover bg-center bg-no-repeat p-5 transition-all delay-500 ease-in-out overflow-x-auto scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900" 
+      className={
+        clsx(
+            `bg-cover bg-center bg-no-repeat p-5 transition-all delay-500 ease-in-out overflow-x-auto scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900`,
+            contentData.results.length === 0 && '!bg-slate-900 !bg-none'
+          )
+      } 
       style={recommendationBg}
     >
-      <h2 className="mb-[20px] text-2xl font-bold">
+      <h2 className="mb-[20px] text-[20px] md:text-2xl font-bold">
         Recommendations
       </h2>
       {
@@ -70,7 +76,9 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
             </>
           </div>
         ) : (
-          <p>No Recommendations</p>
+          <div className='h-fit grid place-content-center py-20'>
+             <p>No Recommendations</p>
+          </div>
         )
       }
     </div>

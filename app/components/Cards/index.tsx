@@ -23,7 +23,7 @@ const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path
       );
     } else {
 
-      const { props } = use(getBlurImages(`${customImgSource}/t/p/w500/${customImg}`))
+      const { props } = use(getBlurImages(`${customImgSource}/t/p/w780/${customImg}`))
 
       return ( 
         <ImgComponent
@@ -49,7 +49,7 @@ const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path
         </p>
         <Link 
           href={`/${isMovie ? 'movies' : 'tv'}/${id}`}
-          className="w-full px-2 py-[2px] bg-[#c9173d] md:p-1 md:w-[100px] m-auto m rounded-md hover:bg-[#a31231] text-[10px] sm:text-[12px] md:leading-5 md:text-[16px]"  
+          className="w-full px-2 py-[2px] bg-[#c9173d] md:p-1 md:w-[90px] m-auto m rounded-full hover:bg-[#a31231] text-[10px] sm:text-[12px] md:leading-5 md:text-[16px]"  
         >
           view info
         </Link>

@@ -36,7 +36,7 @@ const Sidebar = ({isMovie, contentData}: Props) => {
 
 
   return (
-    <div className="grid gap-3 py-5 mb-6 border-b-2 border-[#121c31] md:py-0 md:mb-0 md:border-none">
+    <div className="grid gap-3 ">
       {
         isMovie ? (
           <>

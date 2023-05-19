@@ -55,11 +55,11 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
 
   return (
     <Link href={`/${mediaType === "movie" ? "movies" : "tv"}/${id}`}>
-      <div className="rounded-[5px] w-[300px] overflow-hidden bg-[#1c1a3e] shadow-xl shadow-black/60">
+      <div className="rounded-[5px] w-[200px] md:w-[300px] overflow-hidden bg-[#1c1a3e] shadow-xl shadow-black/60">
         <div className="">
           {getThumbnailImg()}
         </div>
-        <p className="px-3 py-2 whitespace-nowrap overflow-hidden text-ellipsis">
+        <p className="px-3 py-2 text-[13px] md:text-[16px] whitespace-nowrap overflow-hidden text-ellipsis ">
           {title}
         </p>
       </div>
