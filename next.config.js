@@ -2,9 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    serverActions: true,
-  },
   env: {
     MOVIE_DATABASE_ID: process.env.MOVIE_DATABASE_ID,
   },
