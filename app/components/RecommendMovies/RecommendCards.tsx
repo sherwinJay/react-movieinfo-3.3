@@ -28,7 +28,7 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
   const getThumbnailImg = () => { 
     if(bgImage === '' || bgImage === null){
       return (
-        <p className="h-[10.5em] grid place-content-center bg-[#f14066]">
+        <p className="h-[112px] md:h-[10.5em] grid place-content-center bg-[#f14066]">
           NO IMAGE
         </p>
       )

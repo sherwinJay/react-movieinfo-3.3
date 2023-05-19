@@ -14,7 +14,7 @@ const LeadCast = ({castData}: CastData) => {
   const castImage = (profilePath: string | null, name: string) => {
     if (profilePath === null){
       return (
-          <div className="h-[14.45em] overflow-hidden grid place-content-center bg-[#f14066]">
+          <div className="h-[192px] md:h-[14.45em] overflow-hidden grid place-content-center bg-[#f14066]">
             <p>No Image</p>
           </div>
         )
@@ -57,12 +57,7 @@ const LeadCast = ({castData}: CastData) => {
       {
         castData.credits.cast.length > 0 ? (
           <ul 
-            className={
-              clsx(
-                `grid grid-cols-07 gap-[1em] overflow-x-auto pb-[1.5em] scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900`,
-                castData.credits.cast.length <= 0 && 'bg-slate-900'
-              )
-            }
+            className='grid grid-cols-07 gap-[1em] overflow-x-auto pb-[1.5em] scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900'
           >
             <>
               { getCast }
