@@ -4,11 +4,11 @@ import { normalizeUnsplashUrl } from "./unsplashLoader";
 export const getBlurImages = async (src: string) => {
   // In reality, this path would come from a database or some external data store, but we are hardcoding it here
   // const url = "https://image.tmdb.org/t/p/w780//f18rGcLlawKjNC5KRh36S0mvRlY.jpg"
-  const url = normalizeUnsplashUrl(src.substring(32))
+  const url = normalizeUnsplashUrl(src.substring(22))
   
   // console.log(url)
 
-  const imgData = await fetch(url);
+  const imgData = await fetch(src);
   // const arrayBufferData = await imgData.arrayBuffer();
   // const lqipData = await lqip(Buffer.from(arrayBufferData));
   const lqipData = Buffer.from(await imgData.arrayBuffer())

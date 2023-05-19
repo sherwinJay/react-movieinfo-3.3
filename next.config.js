@@ -9,7 +9,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'imgix-demo-tmdb.imgix.net',
+        hostname: 'image.tmdb.org',
       },
     ],
     // loader: 'custom',

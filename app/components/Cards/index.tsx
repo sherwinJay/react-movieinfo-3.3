@@ -13,7 +13,7 @@ import { getBlurImages } from '@/app/utils/blurImage';
 const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path, template, isMovie, name }: HomeCardProps) => {
 
   const customImg = template === "1" ? poster_path : backdrop_path;
-  const imgSize = template === "1" ? "342" : "780"
+  const imgSize = template === "1" ? "185" : "780"
 
   const getImgThumbnail = () => {
     if(poster_path === null || poster_path === undefined || poster_path === "" ) {
@@ -24,7 +24,7 @@ const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path
       );
     } else {
 
-      const { props } = use(getBlurImages(`${customImgSource}/t/p/w${imgSize}/${customImg}`))
+      const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w${imgSize}/${customImg}`))
 
       return ( 
         <ImgComponent

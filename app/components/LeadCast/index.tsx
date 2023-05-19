@@ -20,7 +20,7 @@ const LeadCast = ({castData}: CastData) => {
         )
     }else{
 
-      const { props } = use(getBlurImages(`${customImgSource}/t/p/w154/${profilePath}`))
+      const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w154/${profilePath}`))
 
       return (
         <div className="relative overflow-hidden">

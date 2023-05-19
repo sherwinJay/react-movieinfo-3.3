@@ -21,7 +21,7 @@ const getImgPoster = () => {
       );
     } else {
 
-      const { props } = use(getBlurImages(`${customImgSource}/t/p/w342${poster}`))
+      const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w342${poster}`))
 
       return ( 
         <div className="hidden md:grid md:content-center md:min-w-[280px]">

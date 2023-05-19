@@ -35,7 +35,7 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
     }else{
       return (
         <Image
-          loader={imgixLoader}
+          // loader={imgixLoader}
           src={`${normalizeUnsplashUrl(`/t/p/w300/${bgImage}`)}`}
           alt={title} 
           onPointerEnter={() => pointerEvent(imageRef?.current?.id)}
@@ -47,7 +47,7 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
           referrerPolicy='no-referrer'
           placeholder='blur'
           blurDataURL={`${normalizeUnsplashUrl(`/t/p/w300/${bgImage}`)}`}
-          // unoptimized={true}
+          unoptimized={true}
         />
       )
     }

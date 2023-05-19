@@ -32,7 +32,7 @@ const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter,
 
   return (
       <Image
-        loader={imgixLoader}
+        // loader={imgixLoader}
         src={src}
         className={className}
         fill={fill}
@@ -46,7 +46,7 @@ const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter,
         blurDataURL={blurDataURL}
         referrerPolicy='no-referrer'
         quality={quality}
-        // unoptimized={true}
+        unoptimized={true}
       />
  
   )
