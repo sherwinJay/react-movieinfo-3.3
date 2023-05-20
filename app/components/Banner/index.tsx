@@ -69,10 +69,10 @@ const Banner = ({contentData, mediaType}: Props) => {
             votes={vote_average}
           />
           <div>
-            <p className="font-semibold text-[1rem] md:text-[1.4rem]">
+            <p className="font-semibold mb-1 text-[1rem] leading-5 md:leading-7 md:text-[1.4rem]">
               {tagline}
             </p>
-            <p className='text-[0.8rem] md:text-[1rem]'>
+            <p className='text-[0.8rem] md:text-[1rem] leading-5 md:leading-[1.4rem]'>
               {overview}
             </p>
           </div>
