@@ -41,28 +41,46 @@ const Sidebar = ({isMovie, contentData}: Props) => {
         isMovie ? (
           <>
             <div>
-              <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">Budget</h4>
-              <p className="text-[14px] md:text-[16px]">{`$ ${budget !== "" ? budget?.toLocaleString() : '-'}`}</p>
+              <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+                Budget
+              </h4>
+              <p className="text-[14px] md:text-[16px]">
+                {`$ ${budget !== "" ? budget?.toLocaleString() : '-'}`}
+              </p>
             </div>
             <div>
-              <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">Revenue</h4>
-              <p className="text-[14px] md:text-[16px]">{`$ ${revenue !== "" ? revenue?.toLocaleString(): '-'}`}</p>
+              <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+                Revenue
+              </h4>
+              <p className="text-[14px] md:text-[16px]">
+                {`$ ${revenue !== "" ? revenue?.toLocaleString(): '-'}`}
+              </p>
             </div>
           </>
         ) : (
           <div>
-            <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">Original Name</h4>
-            <p className="text-[14px] md:text-[16px]">{original_name}</p>
+            <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+              Original Name
+            </h4>
+            <p className="text-[14px] md:text-[16px]">
+              {original_name}
+            </p>
           </div>
         )
       }
 
       <div>
-        <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">Status</h4>
-        <p className="text-[14px] md:text-[16px]">{status}</p>
+        <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+          Status
+        </h4>
+        <p className="text-[14px] md:text-[16px]">
+          {status}
+        </p>
       </div>
       <div>
-        <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">Production Companies</h4>
+        <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+          Production Companies
+        </h4>
         <>
           {getCompanies}
         </>
@@ -71,7 +89,9 @@ const Sidebar = ({isMovie, contentData}: Props) => {
       {
         isMovie ? (
           <div>
-            <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">Crews</h4>
+            <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+              Crews
+            </h4>
             <div className="grid gap-2">
               <>
                 {getCrew}
@@ -80,8 +100,12 @@ const Sidebar = ({isMovie, contentData}: Props) => {
           </div>
         ) : (
           <div>
-            <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">Total Episodes</h4>
-            {`${number_of_episodes} episodes`}
+            <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+              Total Episodes
+            </h4>
+            <p>
+              {`${number_of_episodes} episodes`}
+            </p>
           </div>
         )
       }

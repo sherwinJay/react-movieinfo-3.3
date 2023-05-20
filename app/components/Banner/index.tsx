@@ -5,6 +5,7 @@ import Poster from '../Poster';
 import BannerContent from './BannerContent';
 import BannerIcons from './BannerIcons';
 import Crews from './Crews';
+import { movieDbImgURL } from '@/app/constant';
 
 type Props = {
   contentData: BannerContentData,
@@ -34,7 +35,7 @@ const Banner = ({contentData, mediaType}: Props) => {
   } = contentData;
 
   const bannerBg = {
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://image.tmdb.org/t/p/original/${contentData.backdrop_path})`,
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${contentData.backdrop_path})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     height: '100%',
@@ -68,8 +69,12 @@ const Banner = ({contentData, mediaType}: Props) => {
             votes={vote_average}
           />
           <div>
-            <p className="font-semibold text-[1rem] md:text-[1.4rem]">{tagline}</p>
-            <p className='text-[0.8rem] md:text-[1rem]'>{overview}</p>
+            <p className="font-semibold text-[1rem] md:text-[1.4rem]">
+              {tagline}
+            </p>
+            <p className='text-[0.8rem] md:text-[1rem]'>
+              {overview}
+            </p>
           </div>
           <ul className="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4 md:gap-2">
             <Crews 

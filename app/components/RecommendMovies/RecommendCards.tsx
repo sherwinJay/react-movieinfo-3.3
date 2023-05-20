@@ -18,12 +18,6 @@ type Props = {
 const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) => {
 
   const imageRef = useRef<HTMLImageElement>(null)
-   
-  // const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w300/${bgImage}`))
-
-  // template for image thumbnails 
-
-  // console.log('data: ', normalizeUnsplashUrl(`/t/p/w300/${bgImage}`))
 
   const getThumbnailImg = () => { 
     if(bgImage === '' || bgImage === null){
@@ -59,7 +53,7 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
         <div className="">
           {getThumbnailImg()}
         </div>
-        <p className="px-3 py-2 text-[13px] md:text-[16px] whitespace-nowrap overflow-hidden text-ellipsis ">
+        <p className="px-3 py-2 md:p-3 text-[12px] md:text-[15px] whitespace-nowrap overflow-hidden text-ellipsis ">
           {title}
         </p>
       </div>

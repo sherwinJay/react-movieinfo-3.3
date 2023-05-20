@@ -44,9 +44,13 @@ const LeadCast = ({castData}: CastData) => {
       <div className="relative overflow-hidden">
         { castImage(cast.profile_path, cast.name) }	
       </div>
-      <div className="px-2 py-[7px]"> 
-        <p className="font-bold text-sm">{cast.name}</p>
-        <p className="text-[13px] mt-[2px] leading-[18px]">{cast.character}</p>
+      <div className="px-3 py-2"> 
+        <p className="font-bold text-[12px] md:text-sm">
+          {cast.name}
+        </p>
+        <p className="text-[10px] md:text-[13px] mt-0 md:mt-[2px] md:leading-[18px]">
+          {cast.character}
+        </p>
       </div>
     </li> 
   ))
