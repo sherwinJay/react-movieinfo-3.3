@@ -51,7 +51,7 @@ const BannerIcons = ({mediaType, runtime, episodeTime, videos, votes}: Props) =>
        <span style={circleBorder}>
         {votes.toFixed(1)}
        </span>
-       <p className="w-[55px] leading-5 md:w-[88px]">User Rating</p>
+       <p className="w-[55px] leading-4  md:leading-5 md:w-[88px] text-[14px] md:text-[16px]">User Rating</p>
       </div>
       <div className="flex gap-[2px] md:gap-1 items-center">
         <svg className='w-[30px]' fill="#c9173d" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
