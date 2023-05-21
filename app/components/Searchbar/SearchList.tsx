@@ -23,8 +23,18 @@ const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
 
   const movieApi = `${movieDbURL}/3/search/multi?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&query=${searchVal}&page=1&include_adult=false`;
   
-  const fetcher = (url: string) => axios.get(url);
+  const fetcher = async (url: string) => {
+    try { 
+      const response = await axios.get(url)
+      const data = response.data.results
+      return data
+    } catch (error) {
+      // return []
+      console.log(error)
+    }
+  };
 
+  // get data using swr
   const { 
     data,
     isLoading,
@@ -35,16 +45,9 @@ const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
     return null
   }
 
-  // if(isLoading){
-  //   return (
-  //     <p>Loading...</p>
-  //   )
-  // }
 
-  // console.log(data)
-
-  const filterdData = data.data.results.filter((data: SearchData) => data.media_type !== "person")
-  const slicedData = filterdData.slice(0,9)
+  const filteredData = data?.filter((data: SearchData) => data.media_type !== "person")
+  const slicedData = filteredData.slice(0,9)
 
   const searchedList = slicedData.map((movie: SearchData) => (
     <li key={movie.id} className="border-b border-solid last:border-0 border-[#eee] md:border-[#eee]">
@@ -78,9 +81,7 @@ const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
 
   return (
     <ul className="absolute top-[38px] w-[100%] overflow-hidden z-50 bg-transparent text-[#fff] md:bg-[#fff] md:text-[#000] md:rounded-[1em]">
-      <>
-        {searchList}
-      </>
+      {searchList}
     </ul>
   )
 }

@@ -59,9 +59,9 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
     <div 
       className={
         clsx(
-            `bg-cover bg-center bg-no-repeat p-5 transition-all delay-500 ease-in-out overflow-x-auto scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900`,
-            contentData.results.length === 0 && '!bg-slate-900 !bg-none'
-          )
+          `bg-cover bg-center bg-no-repeat p-5 transition-all delay-500 ease-in-out overflow-x-auto scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900`,
+          contentData.results.length === 0 && '!bg-slate-900 !bg-none'
+        )
       } 
       style={recommendationBg}
     >
@@ -77,7 +77,7 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
           </div>
         ) : (
           <div className='h-fit grid place-content-center py-20'>
-             <p>No Recommendations</p>
+            <p>No Recommendations</p>
           </div>
         )
       }

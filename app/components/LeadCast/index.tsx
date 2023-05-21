@@ -18,7 +18,7 @@ const LeadCast = ({castData}: CastData) => {
             <p>No Image</p>
           </div>
         )
-    }else{
+    } else{
 
       const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w154/${profilePath}`))
 
@@ -60,9 +60,7 @@ const LeadCast = ({castData}: CastData) => {
       <h2 className="mb-[20px] text-[20px] md:text-2xl font-bold">Lead Casts</h2>
       {
         castData.credits.cast.length > 0 ? (
-          <ul 
-            className='grid grid-cols-07 gap-[1em] overflow-x-auto pb-[1.5em] scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900'
-          >
+          <ul className='grid grid-cols-07 gap-[1em] overflow-x-auto pb-[1.5em] scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900'>
             <>
               { getCast }
             </>
