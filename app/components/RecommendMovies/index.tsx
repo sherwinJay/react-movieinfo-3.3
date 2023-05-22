@@ -24,7 +24,7 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
     // checks first if the data has obj property of 'results'
     contentData?.results && setBackground(`${normalizeUnsplashUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
    
-  }, [contentData])
+  }, [contentData?.results])
   
 
   // change background when hovering to the recommendation thumbnails

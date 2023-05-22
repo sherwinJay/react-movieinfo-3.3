@@ -22,21 +22,20 @@ type KeyDownEvent = {
 const Searchbar = ({setIsOpen}: Props) => {
 
   const [searchVal, setSearchVal] = useState<string>("");
-  // const [movieList, setMovielist] = useState([]);
-  const [focus, setFocus] = useState<boolean>(false);
+  const [isFocus, setIsFocus] = useState<boolean>(false);
 
   const _onBlur = () => {
     setTimeout(() => {
-      if (focus) {
-        setFocus(false);
+      if (isFocus) {
+        setIsFocus(false);
         setSearchVal("");
       }
     }, 500);
   };
 
   const _onFocus = () => {
-    if (!focus) {
-      setFocus(true);
+    if (!isFocus) {
+      setIsFocus(true);
     }
   };
 

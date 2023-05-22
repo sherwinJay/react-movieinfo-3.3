@@ -121,3 +121,10 @@ ul, ol{
 li{
   list-style: none;;
 }
+
+.loaderStyle1{
+  stroke-dasharray: 360 160;
+  stroke-dashoffset: 0;
+  width: calc(100% - 2px);
+  /* height: calc(100% - 2px); */
+}

@@ -20,6 +20,31 @@ module.exports = {
       },
       boxShadow: {
         'customBoxShadow1': '#111 0px 0px 5px 0px'
+      },
+      animation: {
+        'animationLoader1': 'pathRect 2s linear infinite;',
+      },
+      stroke: {
+        'strokeDasharrayLoader1': '360 160',
+      },
+      keyframes: {
+        pathRect: {
+          '25%': {
+            strokeDashoffset: '130'
+          },
+        
+          '50%': {
+            strokeDashoffset: '260'
+          },
+        
+          '75%': {
+            strokeDashoffset: '390'
+          },
+        
+          '100%': {
+            strokeDashoffset: '520'
+          },
+        }
       }
     },
   },

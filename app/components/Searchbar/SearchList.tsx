@@ -9,7 +9,7 @@ import useSWR from 'swr'
 type ISearchVal = {
   searchVal: string
   setSearchVal: Dispatch<SetStateAction<string>>
-  setIsOpen: any
+  setIsOpen: Dispatch<SetStateAction<boolean>>
 }
 
 type SearchData = {
@@ -17,6 +17,12 @@ type SearchData = {
   title: string
   name: string
   id: string
+}
+
+type SWRData = {
+  data: SearchData[]
+  isLoading: boolean
+  error: unknown
 }
 
 const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
@@ -39,17 +45,17 @@ const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
     data,
     isLoading,
     error
-  } = useSWR(movieApi, fetcher)
+  } : SWRData = useSWR(movieApi, fetcher)
 
   if(!data || searchVal.length < 3){
     return null
   }
 
 
-  const filteredData = data?.filter((data: SearchData) => data.media_type !== "person")
+  const filteredData = data?.filter((data) => data.media_type !== "person")
   const slicedData = filteredData.slice(0,9)
 
-  const searchedList = slicedData.map((movie: SearchData) => (
+  const searchedList = slicedData.map((movie) => (
     <li key={movie.id} className="border-b border-solid last:border-0 border-[#eee] md:border-[#eee]">
       <Link 
         href={`/${movie.media_type === 'movie' ? 'movies' : 'tv'}/${movie.id}`}

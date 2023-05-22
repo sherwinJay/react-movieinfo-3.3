@@ -63,7 +63,7 @@ async function getMoviesData(){
     })
       .then(res => res.data?.results)
       .catch(err => {
-        // console.log(err)
+        console.log(err)
         // return err.response.statusText
         return []
       }),

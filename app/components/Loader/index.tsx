@@ -13,7 +13,18 @@ const Loader = () => {
           height={130}
           unoptimized={true}
         />
-        <p className='text-center mt-5'>Loading...</p>
+        <div className='mt-5 flex justify-center items-center relative text-[#fff] border-[none] bg-[transparent] text-[1rem] leading-[1.5rem] px-[2rem] py-[1rem]'>
+          <p className='text-center'>Loading...</p>
+          <svg className='absolute w-full h-full'>
+            <rect
+              x="1" 
+              y="1"
+              className='fill-none stroke-white stroke-1 w-[calc(100%-2px) h-[calc(100%-2px)] animate-animationLoader1 loaderStyle1'
+            >
+            </rect>
+          </svg>
+        </div>
+        
       </div>
     </div>
   )

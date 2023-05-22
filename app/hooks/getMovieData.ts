@@ -8,6 +8,8 @@ export async function getMovieData(pageId: string | number, mediaType: string){
     );
     
     const movieList = await res.json()
+
+    console.log('response status', res.status)
   
     return movieList
   } catch (error) {
