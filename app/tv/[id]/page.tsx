@@ -1,7 +1,7 @@
 import { Banner, LeadCast, RecommendMovies, Sidebar } from '@/app/components';
-import fetchRecommendMovies from '@/app/hooks/fetchRecommendMovies';
+import fetchRecommendMovies from '@/hooks/fetchRecommendMovies';
 import React from 'react'
-import { getMovieData } from '@/app/hooks/getMovieData';
+import { getMovieData } from '@/hooks/getMovieData';
 
 
 const TVShows = async ({params}: {params: {id: string}}) => {

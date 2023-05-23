@@ -1,8 +1,8 @@
 'use client'
 
-import { unsplashLoader } from '@/app/utils'
-import { getBlurImages } from '@/app/utils/blurImage'
-import { imgixLoader } from '@/app/utils/imgixLoader'
+import { unsplashLoader } from '@/utils'
+import { getBlurImages } from '@/utils/blurImage'
+import { imgixLoader } from '@/utils/imgixLoader'
 import Image, { ImageLoader, ImageProps } from 'next/image'
 import React, { PointerEventHandler, use } from 'react'
 import Imgix from 'react-imgix'

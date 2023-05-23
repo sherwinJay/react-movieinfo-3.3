@@ -1,11 +1,11 @@
 'use client'
 
-import { movieDbImgURL } from '@/app/constant'
+import { movieDbImgURL } from '@/constant'
 import { RecommendData } from '@/types'
 import React, { useCallback, useEffect, useState } from 'react'
 import useSWR from 'swr'
 import RecommendCards from './RecommendCards'
-import { normalizeUnsplashUrl } from '@/app/utils'
+import { normalizeUnsplashUrl } from '@/utils'
 import clsx from 'clsx'
 
 export type Props = {

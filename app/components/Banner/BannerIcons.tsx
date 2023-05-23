@@ -1,4 +1,4 @@
-import circleRating from '@/app/constant/circleRating';
+import circleRating from '@/constant/circleRating';
 import { ResultsProps } from '@/types';
 import React from 'react'
 

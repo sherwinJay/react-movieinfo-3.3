@@ -1,10 +1,10 @@
-import { movieDbImgURL } from '@/app/constant'
+import { movieDbImgURL } from '@/constant'
 import Link from 'next/link'
 import React, { use, useRef } from 'react'
 import Image from 'next/image'
-import { getBlurImages } from '@/app/utils/blurImage'
-import { normalizeUnsplashUrl, unsplashLoader } from '@/app/utils'
-import { imgixLoader } from '@/app/utils/imgixLoader'
+import { getBlurImages } from '@/utils/blurImage'
+import { normalizeUnsplashUrl, unsplashLoader } from '@/utils'
+import { imgixLoader } from '@/utils/imgixLoader'
 
 type Props = {
   bgImage: string

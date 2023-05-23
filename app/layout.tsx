@@ -1,5 +1,5 @@
-import { MainFooter, MainHeader } from './components'
-import './globals.css'
+import { MainFooter, MainHeader } from '@/app/components'
+import '@/styles/globals.css'
 import '@/styles/reset.css'
 // import '../styles/globals.css'
 
@@ -13,6 +13,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  
   return (
     <html lang="en">
       {/*
@@ -20,9 +21,9 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       {/* <head /> */}
-      <body className="grid grid-rows-customRow1  h-[100vh]">
+      <body className="grid grid-rows-customRow1 h-[100vh]">
         <MainHeader/>
-         {children}
+          {children}
         <MainFooter />
       </body>
     </html>

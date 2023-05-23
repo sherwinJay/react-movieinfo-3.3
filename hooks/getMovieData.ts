@@ -1,4 +1,4 @@
-import { movieDbURL } from "@/app/constant";
+import { movieDbURL } from "@/constant";
 
 export async function getMovieData(pageId: string | number, mediaType: string){
   try {

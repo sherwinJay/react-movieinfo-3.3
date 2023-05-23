@@ -1,4 +1,5 @@
-import { movieDbURL } from "@/app/constant";
+import { movieDbURL } from "@/constant";
+import { RecommendData } from "@/types";
 
 export async function fetchRecommendMovies(pageId: string | number, mediaType: string){
 

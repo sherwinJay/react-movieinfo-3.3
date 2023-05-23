@@ -1,8 +1,8 @@
-import { customImgSource, movieDbImgURL } from '@/app/constant'
+import { customImgSource, movieDbImgURL } from '@/constant'
 import { LeadCastData } from '@/types'
 import React, { use } from 'react'
 import ImgComponent from '../ImgComponent'
-import { getBlurImages } from '@/app/utils/blurImage'
+import { getBlurImages } from '@/utils/blurImage'
 import clsx from 'clsx'
 
 interface CastData {

@@ -2,8 +2,8 @@ import { HomeCardData, HomeCardProps } from '@/types'
 import Link from 'next/link';
 import React, { use } from 'react'
 import ImgComponent from '../ImgComponent';
-import { customImgSource, movieDbImgURL } from '@/app/constant';
-import { getBlurImages } from '@/app/utils/blurImage';
+import { customImgSource, movieDbImgURL } from '@/constant';
+import { getBlurImages } from '@/utils/blurImage';
 
 // type Props = {
 //   isMovie?: boolean,

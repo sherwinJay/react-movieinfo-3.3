@@ -8,7 +8,7 @@ import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import { HomeCardData } from '@/types';
 import Link from 'next/link';
 import { bannerWrapper } from './styles';
-import { movieDbImgURL } from '@/app/constant';
+import { movieDbImgURL } from '@/constant';
 
 type Props = {
   movieData: HomeCardData[]

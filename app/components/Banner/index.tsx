@@ -5,7 +5,7 @@ import Poster from '../Poster';
 import BannerContent from './BannerContent';
 import BannerIcons from './BannerIcons';
 import Crews from './Crews';
-import { movieDbImgURL } from '@/app/constant';
+import { movieDbImgURL } from '@/constant';
 
 type Props = {
   contentData: BannerContentData,

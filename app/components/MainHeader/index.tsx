@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
 const MainHeader = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 	const toggle = () => setIsOpen(prevIsOpen => !prevIsOpen);
 
   // Mobile Menu will show after clicking the menu icon

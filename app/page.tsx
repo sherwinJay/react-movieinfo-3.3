@@ -1,8 +1,8 @@
 import { Inter } from '@next/font/google'
-import { movieDbURL } from '@/app/constant'
+import { movieDbURL } from '@/constant'
 import axios from 'axios';
 import { HomeCardData } from '@/types';
-import { HomeSection, Slider } from './components';
+import { HomeSection, Slider } from '@/app/components';
 
 const inter = Inter({ subsets: ['latin'] })
 
