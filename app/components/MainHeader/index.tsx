@@ -20,7 +20,7 @@ const MainHeader = () => {
         <h1>
           <Link 
             href="/" 
-            className="text-[1.5rem] pink_gradient font-bold md:text-[2.2rem]"
+            className="text-[1.5rem] pink_gradient font-bold md:text-[2rem]"
           >
             Movies Info
           </Link>
