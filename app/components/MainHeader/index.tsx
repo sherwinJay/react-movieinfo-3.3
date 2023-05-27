@@ -15,12 +15,12 @@ const MainHeader = () => {
   // use css to mobile menu to show or hide
 
   return (
-    <header className="bg-[#1b1f3a] relative">
-      <div className="w-[100%] m-auto px-4 py-4 flex justify-between xl:w-[1200px]">
+    <header className="bg-[#1b1f3a] relative font-satoshi">
+      <div className="w-[100%] m-auto px-4 py-3 md:py-4 flex justify-between items-center xl:w-[1200px]">
         <h1>
           <Link 
             href="/" 
-            className="text-[1.4rem] text-[#c9173d] font-bold md:text-[1.8rem]"
+            className="text-[1.5rem] pink_gradient font-bold md:text-[2.2rem]"
           >
             Movies Info
           </Link>

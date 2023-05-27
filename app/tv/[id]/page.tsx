@@ -50,7 +50,7 @@ export async function generateMetadata({
   const tvList = await getMovieData(params.id, 'tv')
 
   return {
-    title: `${tvList.name} - Movie Information`,
+    title: `${tvList?.name} - Movie Information`,
   };
 }
 

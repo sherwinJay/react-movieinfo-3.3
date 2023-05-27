@@ -46,7 +46,7 @@ const BannerIcons = ({mediaType, runtime, episodeTime, videos, votes}: Props) =>
   }
 
   return (
-    <div className='flex gap-[15px] md:gap-6 items-center'>
+    <div className='flex gap-[15px] md:gap-6 items-center font-satoshi'>
       <div className="flex gap-[2px] md:gap-2 items-center">
        <span style={circleBorder}>
         {votes.toFixed(1)}

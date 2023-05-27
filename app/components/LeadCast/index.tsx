@@ -56,8 +56,10 @@ const LeadCast = ({castData}: CastData) => {
   ))
 
   return (
-    <div className="border-b-2 border-[#121c31]">
-      <h2 className="mb-[20px] text-[20px] md:text-2xl font-bold">Lead Casts</h2>
+    <div className="border-b-2 border-[#121c31] font-satoshi">
+      <h2 className="mb-[20px] text-[20px] md:text-2xl font-bold">
+        Lead Casts
+      </h2>
       {
         castData.credits.cast.length > 0 ? (
           <ul className='grid grid-cols-07 gap-[1em] overflow-x-auto pb-[1.5em] scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900'>

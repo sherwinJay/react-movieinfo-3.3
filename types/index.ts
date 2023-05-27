@@ -30,7 +30,8 @@ export type CrewProps = {
   map(arg0: (crew: CrewProps) => JSX.Element | ""): unknown
   credit_id: string | number,
   name: string,
-  job: string
+  job: string,
+  length: number
 }
 
 export type CastProps = {
@@ -119,7 +120,8 @@ export type ProductionCompanyData = {
   map(arg0: (company: ProductionCompanyData) => JSX.Element): unknown
   slice(arg0: number, arg1: number): ProductionCompanyData
   name: string,
-  id: string
+  id: string,
+  length: number
 }
 
 export type SidebarData = {

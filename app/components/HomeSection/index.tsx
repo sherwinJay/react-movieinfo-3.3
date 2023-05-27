@@ -20,12 +20,16 @@ const HomeSection = ({isMovie, categoryData, title, template, imgCount, name}: H
 
   const movieData = categoryData?.slice(0, imgCount)
 
+  // text-[#c9173d]
+
   return (
     <div>
-      <h2 className="mb-2 font-bold text-[1rem] text-[#c9173d] md:text-[1.25rem]">{title}</h2>
+      <h2 className="mb-2 font-bold text-[1rem] text-[#e11d48] md:text-[1.25rem] font-satoshi inline-block">
+        {title}
+      </h2>
       <ul className={
           clsx(
-            `grid gap-[0.4rem] md:gap-3`,
+            `font-satoshi grid gap-[0.4rem] md:gap-3`,
             template === "1" && `grid-cols-4 min-h-[250px] grid-rows-2  lg:grid-cols-07 lg:min-h-[230px] lg:grid-rows-1`,
             template === "2" && `grid-rows-customRow3a leading-2 grid-cols-4 min-h-[250px]  md:grid-cols-5 md:grid-rows-2 md:min-h-[360px]`
           )

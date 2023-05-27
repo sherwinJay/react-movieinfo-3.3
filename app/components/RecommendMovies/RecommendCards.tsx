@@ -49,7 +49,7 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
 
   return (
     <Link href={`/${mediaType === "movie" ? "movies" : "tv"}/${id}`}>
-      <div className="rounded-[5px] w-[200px] md:w-[300px] overflow-hidden bg-[#1c1a3e] shadow-xl shadow-black/60">
+      <div className="rounded-[5px] w-[200px] md:w-[300px] overflow-hidden bg-[#1c1a3e] shadow-xl shadow-black/60 font-satoshi">
         <div className="">
           {getThumbnailImg()}
         </div>

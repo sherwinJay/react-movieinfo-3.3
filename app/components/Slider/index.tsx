@@ -22,7 +22,7 @@ const Slider = ({movieData}: Props) => {
     return (
       <div key={movie.id} 
         data-src={`${movieDbImgURL}/t/p/original/${movie.backdrop_path}`}
-        className="my-auto w-[800px] px-4"
+        className="my-auto w-[800px] px-4 font-satoshi"
         data-alt={movie.title}
       >
         <h2 className="relative z-10 text-center text-[1.3rem] leading-7 mb-[15px] font-bold md:mb-[30px] md:text-[2.7rem] md:leading-[2.9rem]">

@@ -45,7 +45,7 @@ const Banner = ({contentData, mediaType}: Props) => {
 
   return (
     <div style={bannerBg}>
-      <div className='w-[100%] m-auto px-[1em] py-[2em] md:p-[3em] md:flex md:gap-5 xl:w-[1200px]'>
+      <div className='w-[100%] m-auto px-[1em] py-[2em] md:p-[3em] md:grid md:grid-cols-bannerGrid_2Col md:gap-5 xl:w-[1200px]'>
         <Poster
           poster={poster}
           title={title}
@@ -69,14 +69,14 @@ const Banner = ({contentData, mediaType}: Props) => {
             votes={vote_average}
           />
           <div>
-            <p className="font-semibold mb-1 text-[1rem] leading-5 md:leading-{1.6rem} md:text-[1.2rem]">
+            <p className="font-semibold mb-1 text-[1rem] leading-5 md:leading-{1.6rem} md:text-[1.2rem] font-satoshi">
               {tagline}
             </p>
-            <p className='text-[0.8rem] md:text-[0.95rem] leading-5 md:leading-[1.3rem]'>
+            <p className='text-[0.8rem] md:text-[0.95rem] leading-5 md:leading-[1.3rem] font-satoshi'>
               {overview}
             </p>
           </div>
-          <ul className="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4 md:gap-2">
+          <ul className="grid grid-cols-3 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4 md:gap-3">
             <Crews 
               credits={credits}
               created_by={created_by}

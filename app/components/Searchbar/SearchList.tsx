@@ -67,7 +67,7 @@ const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
           }
         }
       >
-        <p className="leading-5">{movie.media_type === 'movie' ? movie.title : movie.name}</p>
+        <p className="leading-[17px]">{movie.media_type === 'movie' ? movie.title : movie.name}</p>
         <p className="text-[0.7rem] text-[#d7677f] md:text-[#777] italic">
           {movie.media_type}
         </p>

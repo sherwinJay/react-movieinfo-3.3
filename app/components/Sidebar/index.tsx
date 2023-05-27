@@ -36,12 +36,12 @@ const Sidebar = ({isMovie, contentData}: Props) => {
 
 
   return (
-    <div className="grid gap-3 py-5 md:py-0">
+    <div className="grid gap-3 py-5 md:py-0 font-satoshi">
       {
         isMovie ? (
           <>
             <div>
-              <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+              <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
                 Budget
               </h4>
               <p className="text-[14px] md:text-[16px]">
@@ -49,7 +49,7 @@ const Sidebar = ({isMovie, contentData}: Props) => {
               </p>
             </div>
             <div>
-              <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+              <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
                 Revenue
               </h4>
               <p className="text-[14px] md:text-[16px]">
@@ -59,7 +59,7 @@ const Sidebar = ({isMovie, contentData}: Props) => {
           </>
         ) : (
           <div>
-            <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+            <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
               Original Name
             </h4>
             <p className="text-[14px] md:text-[16px]">
@@ -70,7 +70,7 @@ const Sidebar = ({isMovie, contentData}: Props) => {
       }
 
       <div>
-        <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+        <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
           Status
         </h4>
         <p className="text-[14px] md:text-[16px]">
@@ -78,29 +78,31 @@ const Sidebar = ({isMovie, contentData}: Props) => {
         </p>
       </div>
       <div>
-        <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+        <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
           Production Companies
         </h4>
         <>
-          {getCompanies}
+          { slicedProductionCompany.length > 0 && getCompanies }
+          { slicedProductionCompany.length === 0 && (<p> - </p>) }
         </>
       </div>
 
       {
         isMovie ? (
           <div>
-            <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+            <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
               Crews
             </h4>
             <div className="grid gap-2">
               <>
-                {getCrew}
+                { slicedCrew.length > 0 && getCrew }
+                { slicedCrew.length === 0 && (<p> - </p>) }
               </>
             </div>
           </div>
         ) : (
           <div>
-            <h4 className="text-[#c9173d] font-bold text-[16px] md:text-[18px]">
+            <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
               Total Episodes
             </h4>
             <p>

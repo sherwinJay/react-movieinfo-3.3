@@ -23,15 +23,15 @@ const BannerContent = ({ title, name, genres, releaseDate, first_air_date, media
 
 
   return (
-    <div>
-      <h1 className="text-[1.6rem] leading-9 md:mt-[15px] font-bold md:text-[2.4rem] md:leading-10">
+    <div className='font-satoshi'>
+      <h1 className="text-[1.6rem] leading-7 md:mt-[20px] font-bold md:text-[2.4rem] md:leading-8">
         { showTitle }
       </h1>
-      <div className="mt-2">
-        <span className="bg-[#c9173d] text-[12px] leading-9 rounded-xl px-[0.45em] py-[0.2em] md:leading-10"> 
+      <div className=" mt-0 md:mt-1">
+        <span className="bg-[#c9173d] text-[10px] md:text-[12px] leading-9 rounded-xl px-[0.45em] py-[0.2em] md:leading-10"> 
           {`${showDate} (US)`}
         </span>
-        <span>{ ` | ${showGenres}` }</span>
+        <span className='text-[14px] md:text-[16px]'>{ ` | ${showGenres}` }</span>
       </div>
     </div>
   )

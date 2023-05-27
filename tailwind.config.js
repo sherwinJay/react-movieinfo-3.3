@@ -7,8 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        satoshi: ['Satoshi', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+      },
       gridTemplateColumns: {
         '07': 'repeat(7, 1fr)',
+        'bannerGrid_2Col': 'auto 1fr',
       },
       gridTemplateRows: {
         'customRow1': 'auto 1fr auto',
@@ -45,6 +50,36 @@ module.exports = {
             strokeDashoffset: '520'
           },
         }
+      },
+      colors: {
+        'flamingo': {
+          DEFAULT: '#F03D3E',
+          50: '#FDE7E8',
+          100: '#FCD4D5',
+          200: '#F9AFAF',
+          300: '#F68989',
+          400: '#F36364',
+          500: '#F03D3E',
+          600: '#E31213',
+          700: '#AF0E0E',
+          800: '#7B0A0A',
+          900: '#470506',
+          950: '#2D0304'
+        },
+        'french-rose': {
+          DEFAULT: '#EC4899',
+          50: '#FDEEF6',
+          100: '#FBDCEB',
+          200: '#F8B7D7',
+          300: '#F492C2',
+          400: '#F06DAE',
+          500: '#EC4899',
+          600: '#E4187D',
+          700: '#B11261',
+          800: '#7F0D45',
+          900: '#4C0829',
+          950: '#32051B'
+        },
       }
     },
   },

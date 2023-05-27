@@ -4,7 +4,7 @@ import loadingImg from '@/public/images/loading2.svg'
 
 const Loader = () => {
   return (
-    <div className='h-[100%] grid place-content-center'>
+    <div className='h-[100%] grid place-content-center font-satoshi'>
       <div className='w-[200px] mt-[-50px]'>
         <Image
           src={loadingImg}

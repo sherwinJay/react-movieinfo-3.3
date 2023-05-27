@@ -42,7 +42,7 @@ const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path
   return (
     <>
       { getImgThumbnail() }
-      <div className="h-[100%] max-h-[100%] p-1 sm:p-3 overflow-hidden w-full bg-[rgba(0,0,0,0.5)] hidden text-center place-content-center gap-3 group-hover:grid group-hover:z-10">
+      <div className="font-satoshi h-[100%] max-h-[100%] p-1 sm:p-3 overflow-hidden w-full bg-[rgba(0,0,0,0.5)] hidden text-center place-content-center gap-3 group-hover:grid group-hover:z-10">
         <p className="text-[10px] sm:text-[12px] leading-[12px] md:leading-5 md:text-[16px]">
           {title}
         </p>
