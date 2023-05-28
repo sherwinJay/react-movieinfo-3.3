@@ -2,10 +2,10 @@ import { movieDbImgURL } from '@/constant'
 import Link from 'next/link'
 import React, { use, useRef } from 'react'
 import Image from 'next/image'
-import { getBlurImages } from '@/utils/blurImage'
 import { normalizeUnsplashUrl, unsplashLoader } from '@/utils'
-import { imgixLoader } from '@/utils/imgixLoader'
+import { imgixLoader, normalizeImgixUrl } from '@/utils/imgixLoader'
 import NoImage from '../NoImage/NoImage'
+import ImgComponent from '../ImgComponent'
 
 type Props = {
   bgImage: string
@@ -25,26 +25,24 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
       return (
         <NoImage 
           className="h-[112px] md:h-[10.5em] grid place-content-center bg-gray-400"
-          width={50}
-          height={50}
+          width={40}
+          height={40}
         />
       )
     }else{
       return (
-        <Image
+        <ImgComponent
           // loader={imgixLoader}
-          src={`${normalizeUnsplashUrl(`/t/p/w300/${bgImage}`)}`}
+          src={`${normalizeImgixUrl(`/t/p/w300/${bgImage}`)}`}
           alt={title} 
           onPointerEnter={() => pointerEvent(imageRef?.current?.id)}
           id={bgImage}
           width={300}
           height={169}
           className=""
-          ref={imageRef}
-          referrerPolicy='no-referrer'
+          imageRef={imageRef}
           placeholder='blur'
-          blurDataURL={`${normalizeUnsplashUrl(`/t/p/w300/${bgImage}`)}`}
-          unoptimized={true}
+          blurDataURL={`${normalizeImgixUrl(`/t/p/w300/${bgImage}`)}`}
         />
       )
     }
@@ -56,7 +54,7 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
         <div className="">
           {getThumbnailImg()}
         </div>
-        <p className="px-3 py-2 md:p-3 text-[12px] md:text-[15px] whitespace-nowrap overflow-hidden text-ellipsis ">
+        <p className="px-3 py-2 md:p-3 text-[12px] md:text-[15px] whitespace-nowrap overflow-hidden text-ellipsis">
           {title}
         </p>
       </div>

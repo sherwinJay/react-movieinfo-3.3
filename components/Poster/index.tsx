@@ -31,6 +31,7 @@ const getImgPoster = () => {
             alt={mediaType === 'movies' ? title : name}
             width={props.image.width}
             height={props.image.height}
+            placeholder="blur"
             blurDataURL={props.image.blurDataURL}
           />
         </div>

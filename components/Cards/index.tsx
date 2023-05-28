@@ -33,6 +33,7 @@ const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path
           fill
           alt={isMovie ? title : name}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          placeholder="blur"
           blurDataURL={props.image.blurDataURL}
         />
       );

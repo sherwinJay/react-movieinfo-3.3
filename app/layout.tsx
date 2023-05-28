@@ -1,4 +1,4 @@
-import { MainFooter, MainHeader } from '@/app/components'
+import { MainFooter, MainHeader } from '@/components'
 import '@/styles/globals.css'
 import '@/styles/reset.css'
 // import '../styles/globals.css'

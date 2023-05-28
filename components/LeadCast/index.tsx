@@ -1,10 +1,11 @@
 import { customImgSource, movieDbImgURL } from '@/constant'
 import { LeadCastData } from '@/types'
 import React, { use } from 'react'
-import ImgComponent from '../ImgComponent'
+// import ImgComponent from '../ImgComponent'
 import { getBlurImages } from '@/utils/blurImage'
 import clsx from 'clsx'
-import NoImage from '../NoImage/NoImage'
+// import NoImage from '../NoImage/NoImage'
+import { NoImage, ImgComponent } from '@/components'
 
 interface CastData {
   castData: LeadCastData
@@ -17,8 +18,8 @@ const LeadCast = ({castData}: CastData) => {
       return (
         <NoImage
           className="h-[192px] md:h-[14.45em] overflow-hidden grid place-content-center bg-gray-400"
-          width={40}
-          height={40}
+          width={35}
+          height={35}
         />
       )
     } else{
@@ -33,6 +34,7 @@ const LeadCast = ({castData}: CastData) => {
             alt={name}
             width={props.image.width}
             height={props.image.height}
+            placeholder='blur'
             blurDataURL={props.image.blurDataURL}
           />
         </div>

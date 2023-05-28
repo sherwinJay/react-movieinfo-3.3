@@ -4,7 +4,7 @@ import { unsplashLoader } from '@/utils'
 import { getBlurImages } from '@/utils/blurImage'
 import { imgixLoader } from '@/utils/imgixLoader'
 import Image, { ImageLoader, ImageProps, StaticImageData } from 'next/image'
-import React, { PointerEventHandler, use } from 'react'
+import React, { PointerEventHandler, Ref, use } from 'react'
 import Imgix from 'react-imgix'
 
 type LqipExampleProps = {
@@ -19,15 +19,16 @@ type ImageProps2 = {
   alt: string,
   width?: number,
   height?: number,
-  onPointerEnter?: (e: React.PointerEvent<HTMLImageElement>) => PointerEventHandler<HTMLImageElement>
+  onPointerEnter?: React.PointerEventHandler<HTMLImageElement> | undefined
   id?: string
   sizes?: string
   placeholder?: "blur" | "empty" | undefined
   blurDataURL?: string
   quality?: number
+  imageRef?: Ref<HTMLImageElement | null> | undefined
 }
 
-const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter, id, sizes, placeholder, blurDataURL, quality}: ImageProps2) => {
+const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter, id, sizes, placeholder, blurDataURL, quality, imageRef}: ImageProps2) => {
   // const { props } = use(getBlurImages(src))
 
   return (
@@ -39,14 +40,15 @@ const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter,
         alt={alt}
         width={width}
         height={height}
-        // onPointerEnter={(e) => {}}
+        onPointerEnter={onPointerEnter}
         id={id}
         sizes={sizes}
-        placeholder="blur"
+        placeholder={placeholder}
         blurDataURL={blurDataURL}
         referrerPolicy='no-referrer'
         quality={quality}
         unoptimized={true}
+        ref={imageRef}
       />
  
   )

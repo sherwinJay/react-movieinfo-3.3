@@ -1,17 +1,17 @@
-import Image from 'next/image'
 import React from 'react'
 import loadingImg from '@/public/images/loading2.svg'
+import ImgComponent from '../ImgComponent'
 
 const Loader = () => {
   return (
     <div className='h-[100%] grid place-content-center font-satoshi'>
       <div className='w-[200px] mt-[-50px]'>
-        <Image
+        <ImgComponent
           src={loadingImg}
           alt="loading"
           width={280}
           height={130}
-          unoptimized={true}
+          placeholder='empty'
         />
         <div className='mt-5 flex justify-center items-center relative text-[#fff] border-[none] bg-[transparent] text-[1rem] leading-[1.5rem] px-[2rem] py-[1rem]'>
           <p className='text-center'>Loading...</p>
