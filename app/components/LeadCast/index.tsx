@@ -4,6 +4,7 @@ import React, { use } from 'react'
 import ImgComponent from '../ImgComponent'
 import { getBlurImages } from '@/utils/blurImage'
 import clsx from 'clsx'
+import NoImage from '../NoImage/NoImage'
 
 interface CastData {
   castData: LeadCastData
@@ -14,10 +15,12 @@ const LeadCast = ({castData}: CastData) => {
   const castImage = (profilePath: string | null, name: string) => {
     if (profilePath === null){
       return (
-          <div className="h-[192px] md:h-[14.45em] overflow-hidden grid place-content-center bg-[#f14066]">
-            <p>No Image</p>
-          </div>
-        )
+        <NoImage
+          className="h-[192px] md:h-[14.45em] overflow-hidden grid place-content-center bg-gray-400"
+          width={40}
+          height={40}
+        />
+      )
     } else{
 
       const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w154/${profilePath}`))

@@ -11,6 +11,7 @@ import Sidebar from "./Sidebar";
 import RecommendMovies from "./RecommendMovies";
 import Searchbar from "./Searchbar";
 import Loader from "./Loader"
+import NoImage from "./NoImage/NoImage";
 
 export {
   MainHeader,
@@ -26,4 +27,5 @@ export {
   RecommendMovies,
   Searchbar,
   Loader,
+  NoImage,
 }

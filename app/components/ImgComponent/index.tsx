@@ -3,7 +3,7 @@
 import { unsplashLoader } from '@/utils'
 import { getBlurImages } from '@/utils/blurImage'
 import { imgixLoader } from '@/utils/imgixLoader'
-import Image, { ImageLoader, ImageProps } from 'next/image'
+import Image, { ImageLoader, ImageProps, StaticImageData } from 'next/image'
 import React, { PointerEventHandler, use } from 'react'
 import Imgix from 'react-imgix'
 
@@ -13,8 +13,8 @@ type LqipExampleProps = {
 
 
 type ImageProps2 = {
-  src: string,
-  className: string,
+  src: string | StaticImageData,
+  className?: string,
   fill?: boolean,
   alt: string,
   width?: number,

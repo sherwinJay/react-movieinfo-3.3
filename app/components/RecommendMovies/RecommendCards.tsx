@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { getBlurImages } from '@/utils/blurImage'
 import { normalizeUnsplashUrl, unsplashLoader } from '@/utils'
 import { imgixLoader } from '@/utils/imgixLoader'
+import NoImage from '../NoImage/NoImage'
 
 type Props = {
   bgImage: string
@@ -22,9 +23,11 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
   const getThumbnailImg = () => { 
     if(bgImage === '' || bgImage === null){
       return (
-        <p className="h-[112px] md:h-[10.5em] grid place-content-center bg-[#f14066]">
-          NO IMAGE
-        </p>
+        <NoImage 
+          className="h-[112px] md:h-[10.5em] grid place-content-center bg-gray-400"
+          width={50}
+          height={50}
+        />
       )
     }else{
       return (
