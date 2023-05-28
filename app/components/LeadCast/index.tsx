@@ -48,7 +48,7 @@ const LeadCast = ({castData}: CastData) => {
         { castImage(cast.profile_path, cast.name) }	
       </div>
       <div className="px-3 py-2"> 
-        <p className="font-bold text-[12px] md:text-sm">
+        <p className="font-bold text-[12px] md:text-[0.875rem] leading-4">
           {cast.name}
         </p>
         <p className="text-[10px] md:text-[13px] mt-0 md:mt-[2px] md:leading-[18px]">
