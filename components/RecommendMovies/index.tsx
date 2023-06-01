@@ -65,10 +65,10 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
       } 
       style={recommendationBg}
     >
-      <h2 className="mb-[20px] text-[20px] md:text-2xl font-bold pt-5 px-5">
+      <h2 className="mb-[20px] text-[20px] md:text-2xl font-bold pt-4 px-4 md:px-5">
         Recommendations
       </h2>
-      <div className='pb-5 px-5 transition-all delay-500 ease-in-out overflow-x-auto scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900'>
+      <div className='pb-5 px-4 md:px-5 transition-all delay-500 ease-in-out overflow-x-auto scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900'>
         {
           contentData.hasOwnProperty("results") && contentData.results.length > 0 ? (
             <div className="grid grid-cols-07 gap-[1em] w-fit">

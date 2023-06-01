@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useCallback, useState } from 'react'
+import React, { SetStateAction, useCallback, useState } from 'react'
 import SearchList from './SearchList';
 
 type SearchEvent = {
@@ -10,7 +10,7 @@ type SearchEvent = {
 }
 
 type Props = {
-  setIsOpen: any
+  setIsOpen: React.Dispatch<SetStateAction<boolean>>
 }
 
 type KeyDownEvent = {
@@ -54,7 +54,7 @@ const Searchbar = ({setIsOpen}: Props) => {
     <form className='w-[100%]  md:w-[350px]'>
       <input
         type="text" 
-        placeholder="search" 
+        placeholder="search movie" 
         value={searchVal} 
         onChange={getSearch}
         onBlur={_onBlur}

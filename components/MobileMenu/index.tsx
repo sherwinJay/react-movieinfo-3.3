@@ -1,13 +1,13 @@
 'use client'
 
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
-import Searchbar from '../Searchbar';
+import Searchbar from '@/components/Searchbar';
 import clsx from 'clsx';
 
 type Props = {
   isOpen: boolean
-  setIsOpen?: any
+  setIsOpen: React.Dispatch<SetStateAction<boolean>>
 }
 
 const MobileMenu = ({isOpen, setIsOpen}: Props) => {
@@ -25,8 +25,9 @@ const MobileMenu = ({isOpen, setIsOpen}: Props) => {
           )
         }
       >
-        <div className='flex justify-end mb-[20px] cursor-pointer'>
+        <div className='flex justify-end mb-[20px]'>
           <CloseIcon 
+            className='cursor-pointer'
             onClick={ () => setIsOpen(false) }
           />
         </div>
