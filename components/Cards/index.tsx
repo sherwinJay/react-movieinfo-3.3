@@ -4,6 +4,7 @@ import React, { use } from 'react'
 import ImgComponent from '../ImgComponent';
 import { customImgSource, movieDbImgURL } from '@/constant';
 import { getBlurImages } from '@/utils/blurImage';
+import NoImage from '../NoImage/NoImage';
 
 // type Props = {
 //   isMovie?: boolean,
@@ -18,9 +19,11 @@ const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path
   const getImgThumbnail = () => {
     if(poster_path === null || poster_path === undefined || poster_path === "" ) {
       return ( 
-        <>
-          <p>No Image</p>
-        </>
+        <NoImage
+          className="w-full h-full bg-gray-400 grid place-content-center absolute"
+          width={25}
+          height={25}
+        />
       );
     } else {
 

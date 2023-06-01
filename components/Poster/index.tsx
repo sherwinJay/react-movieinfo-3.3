@@ -2,6 +2,7 @@ import { customImgSource, movieDbImgURL } from '@/constant';
 import React, { use } from 'react'
 import ImgComponent from '../ImgComponent';
 import { getBlurImages } from '@/utils/blurImage';
+import NoImage from '../NoImage/NoImage';
 
 interface PosterProps {
   poster: string
@@ -15,9 +16,11 @@ const Poster = ({poster, title, name, mediaType}: PosterProps) => {
 const getImgPoster = () => {
     if(poster === null || poster === undefined || poster === "" ) {
       return ( 
-        <div className="hidden md:grid md:content-center md:min-w-[280px] md:h-[420px] bg-[#f14066] rounded-2xl place-content-center font-satoshi">
-          <p>No Image</p>
-        </div>
+        <NoImage
+          className='hidden md:grid md:content-center md:min-w-[280px] md:h-[420px] bg-gray-400 rounded-2xl place-content-center font-satoshi'
+          width={40}
+          height={40}
+        />
       );
     } else {
 
@@ -35,7 +38,6 @@ const getImgPoster = () => {
             blurDataURL={props.image.blurDataURL}
           />
         </div>
-    
       );
     }
   };
