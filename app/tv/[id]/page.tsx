@@ -51,6 +51,7 @@ export async function generateMetadata({
 
   return {
     title: `${tvList?.name} - Movie Information`,
+    description: `${tvList?.overview}`,
   };
 }
 
