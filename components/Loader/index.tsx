@@ -24,7 +24,6 @@ const Loader = () => {
             </rect>
           </svg>
         </div>
-        
       </div>
     </div>
   )

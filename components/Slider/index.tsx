@@ -25,15 +25,15 @@ const Slider = ({movieData}: Props) => {
         className="my-auto w-[800px] px-4 font-satoshi"
         data-alt={movie.title}
       >
-        <h2 className="relative z-10 text-center text-[1.3rem] leading-7 mb-[15px] font-bold md:mb-[30px] md:text-[2.7rem] md:leading-[2.9rem]">
+        <h2 className="relative z-10 text-center text-[1.3rem] leading-7 mb-[10px] font-bold md:mb-[15px] md:text-[2.7rem] md:leading-[2.9rem]">
           {movie.title}
         </h2>
-        <p className="relative z-10 text-center my-3">
+        <p className="relative z-10 text-center md:my-3">
           {movie.overview}
         </p>
         <Link 
           href={`/movies/${movie.id}`}
-          className="relative mt-5 z-10 text-center block w-[fit-content] m-auto hover:bg-[#c9173d] px-4 py-[6px] border-[1px] border-white border-solid rounded-[25px] hover:border-[#c9173d]"
+          className="relative mt-5 z-10 text-center block w-[fit-content] m-auto hover:bg-[#c9173d] px-4 py-[6px] border-[1px] border-white border-solid rounded-full hover:border-[#c9173d]"
         >
           See Information
         </Link>  
