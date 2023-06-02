@@ -76,7 +76,7 @@ const Banner = ({contentData, mediaType}: Props) => {
               {overview}
             </p>
           </div>
-          <ul className="grid grid-cols-3 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4 md:gap-3">
+          <ul className="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-3">
             <Crews 
               credits={credits}
               created_by={created_by}

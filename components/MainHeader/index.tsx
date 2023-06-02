@@ -1,15 +1,24 @@
 'use client'
 
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Searchbar from '../Searchbar'
 import MobileMenu from '../MobileMenu'
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { usePathname } from 'next/navigation'
 
 const MainHeader = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 	const toggle = () => setIsOpen(prevIsOpen => !prevIsOpen);
+
+  const pathname = usePathname()
+  // if website is on mobile, when user use back button turn setIsOpen to false 
+  useEffect(() => {
+    if(isOpen){
+      setIsOpen(false)
+    }
+  }, [pathname])
 
   // Mobile Menu will show after clicking the menu icon
   // use css to mobile menu to show or hide

@@ -28,10 +28,12 @@ const BannerContent = ({ title, name, genres, releaseDate, first_air_date, media
         { showTitle }
       </h1>
       <div className=" mt-0 md:mt-1">
-        <span className="bg-[#c9173d] text-[10px] md:text-[12px] leading-9 rounded-xl px-[0.45em] py-[0.2em] md:leading-10"> 
+        <span className="bg-[#c9173d] text-[10px] md:text-[12px] leading-3 rounded-xl px-[0.45em] py-[0.2em] md:leading-10"> 
           {`${showDate} (US)`}
         </span>
-        <span className='text-[14px] md:text-[16px]'>{ ` | ${showGenres}` }</span>
+        <span className='text-[14px] md:text-[16px] !leading-1'>
+          {` | ${showGenres}`}
+        </span>
       </div>
     </div>
   )
