@@ -1,9 +1,9 @@
 import { css, cx } from '@emotion/css';
 
 export const bannerWrapper = css`
-  height: 520px;
-  position: relative;
-  background-color: #000;
+  /* height: 520px; */
+  /* position: relative;
+  background-color: #000; */
   & img {
     opacity: 0.6;
   }

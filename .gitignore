@@ -37,3 +37,7 @@ yarn-error.log*
 next-env.d.ts
 # Local Netlify folder
 .netlify
+
+# backup files
+app/page_copy.tsx
+app/page_copy2.tsx

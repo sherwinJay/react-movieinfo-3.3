@@ -59,8 +59,8 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
     <div 
       className={
         clsx(
-          `font-satoshi bg-cover bg-center bg-no-repeat`,
-          contentData.results.length === 0 && '!bg-slate-900 !bg-none'
+          `font-satoshi bg-cover bg-center bg-no-repeat transition-all duration-500`,
+          contentData.results.length === 0 && '!bg-slate-900 !bg-none',
         )
       } 
       style={recommendationBg}

@@ -1,8 +1,9 @@
 import { Banner, LeadCast, RecommendMovies, Sidebar } from '@/components';
 import { movieDbURL } from '@/constant';
-import fetchRecommendMovies from '@/utils/fetchRecommendMovies';
+// import fetchRecommendMovies from '@/utils/fetchRecommendMovies';
 import React from 'react'
 import { getMovieData } from '@/utils/getMovieData';
+import { fetchRecommendMovies } from '@/utils/fetchRecommendMovies';
 
 const Movies = async ({params}: {params: {id: string}}) => {
 

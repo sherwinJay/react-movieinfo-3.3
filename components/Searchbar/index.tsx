@@ -3,21 +3,21 @@
 import React, { SetStateAction, useCallback, useState } from 'react'
 import SearchList from './SearchList';
 
-type SearchEvent = {
-  target: {
-    value: string
-  }
-}
+// type SearchEvent = {
+//   target: {
+//     value: string
+//   }
+// }
 
 type Props = {
   setIsOpen: React.Dispatch<SetStateAction<boolean>>
 }
 
-type KeyDownEvent = {
-  preventDefault(): unknown; 
-  key: string, 
-  shiftKey: boolean
-}
+// type KeyDownEvent = {
+//   preventDefault(): unknown; 
+//   key: string, 
+//   shiftKey: boolean
+// }
 
 const Searchbar = ({setIsOpen}: Props) => {
 
@@ -39,14 +39,14 @@ const Searchbar = ({setIsOpen}: Props) => {
     }
   };
 
-  const _onKeyDown = (e: KeyDownEvent) => {
+  const _onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if(e.key === 'Enter' && !e.shiftKey){
       e.preventDefault()
     }
   }
 
 
-  const getSearch = (e: SearchEvent) => {
+  const getSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchVal(e.target.value);
   }
 

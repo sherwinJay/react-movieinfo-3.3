@@ -4,9 +4,9 @@ import no_image from '@/public/images/image-off.svg'
 import ImgComponent from '../ImgComponent'
 
 interface NoImageProps {
-  className: string
-  width: number
-  height: number
+  className: string | undefined
+  width: number | undefined
+  height: number | undefined
 }
 
 const NoImage: FC<NoImageProps> = ({className, width, height}) => {

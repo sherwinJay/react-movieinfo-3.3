@@ -6,6 +6,7 @@ import BannerContent from './BannerContent';
 import BannerIcons from './BannerIcons';
 import Crews from './Crews';
 import { movieDbImgURL } from '@/constant';
+import clsx from 'clsx';
 
 type Props = {
   contentData: BannerContentData,
@@ -36,15 +37,20 @@ const Banner = ({contentData, mediaType}: Props) => {
 
   const bannerBg = {
     backgroundImage: `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${contentData.backdrop_path})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    height: '100%',
   };
 
   const showCategory = mediaType === 'movies' ? 'movies' : 'tv';
 
   return (
-    <div style={bannerBg}>
+    <div 
+      className={
+        clsx(
+          `h-full bg-cover bg-center bg-no-repeat`,
+          backdrop === null && '!bg-slate-700 !bg-none',
+        )
+      }
+      style={bannerBg}
+    >
       <div className='w-[100%] m-auto px-[1em] py-[2em] md:p-[3em] md:grid md:grid-cols-bannerGrid_2Col md:gap-5 xl:w-[1200px]'>
         <Poster
           poster={poster}
@@ -52,7 +58,7 @@ const Banner = ({contentData, mediaType}: Props) => {
           name={name}
           mediaType={mediaType}
         />
-        <section className="flex flex-col gap-[20px]">
+        <section className="flex flex-col gap-[15px]">
           <BannerContent
             title={title}
             name={name}
@@ -68,15 +74,15 @@ const Banner = ({contentData, mediaType}: Props) => {
             videos={videos}
             votes={vote_average}
           />
-          <div>
-            <p className="font-semibold mb-1 text-[1rem] leading-5 md:leading-{1.6rem} md:text-[1.2rem] font-satoshi">
+          <div className='font-satoshi leading-5'>
+            <p className="font-semibold mb-1 text-[1rem] md:leading-{1.6rem} md:text-[1.2rem]">
               {tagline}
             </p>
-            <p className='text-[0.8rem] md:text-[0.95rem] leading-5 md:leading-[1.3rem] font-satoshi'>
+            <p className='text-[0.8rem] md:text-[0.95rem] md:leading-[1.3rem]'>
               {overview}
             </p>
           </div>
-          <ul className="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-3">
+          <ul className="mt-[10px] grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-3">
             <Crews 
               credits={credits}
               created_by={created_by}

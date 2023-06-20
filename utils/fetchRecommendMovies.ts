@@ -21,4 +21,4 @@ export async function fetchRecommendMovies(pageId: string | number, mediaType: s
 //   return fetch(url).then(res => res.json)
 // }
 
-export default fetchRecommendMovies
+// export default fetchRecommendMovies

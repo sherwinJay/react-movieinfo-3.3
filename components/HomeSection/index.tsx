@@ -13,14 +13,7 @@ const HomeSection = ({isMovie, categoryData, title, template, imgCount, name}: H
     )
   }
 
-  // const movieData = useMemo(() => {
-  // console.log("running")
-  //   return categoryData.slice(0, imgCount)
-  // }, [categoryData]) 
-
   const movieData = categoryData?.slice(0, imgCount)
-
-  // text-[#c9173d]
 
   return (
     <div>

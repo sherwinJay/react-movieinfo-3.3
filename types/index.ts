@@ -65,6 +65,7 @@ export type ResultsProps = {
 }
 
 export type BannerContentData = HomeCardData & {
+  length?: number
   tagline?: string,
   popularity?: string | number,
   episode_run_time?: number[],

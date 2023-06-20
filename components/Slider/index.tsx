@@ -45,7 +45,7 @@ const Slider = ({movieData}: Props) => {
 
   return (
     <AutoplaySlider 
-      className={bannerWrapper}
+      className={`bg-neutral-900 relative h-[auto] lg:h-[520px] ${bannerWrapper}`}
       animation="fallAnimation"
       play={true}
       cancelOnInteraction={false}

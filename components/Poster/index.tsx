@@ -27,9 +27,9 @@ const getImgPoster = () => {
       const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w342${poster}`))
 
       return ( 
-        <div className="hidden md:grid md:content-center md:min-w-[280px]">
+        <div className="hidden md:grid md:content-center md:min-w-[280px] text-4xl overflow-hidden rounded-2xl">
           <ImgComponent
-            className="overflow-hidden rounded-2xl" 
+            className="" 
             src={props.image.src} 
             alt={mediaType === 'movies' ? title : name}
             width={props.image.width}

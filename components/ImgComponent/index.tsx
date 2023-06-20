@@ -4,8 +4,10 @@ import { unsplashLoader } from '@/utils'
 import { getBlurImages } from '@/utils/blurImage'
 import { imgixLoader } from '@/utils/imgixLoader'
 import Image, { ImageLoader, ImageProps, StaticImageData } from 'next/image'
-import React, { PointerEventHandler, Ref, use } from 'react'
+import React, { PointerEventHandler, Ref, use, useState } from 'react'
 import Imgix from 'react-imgix'
+import no_image from '@/public/images/image-off.svg'
+import clsx from 'clsx'
 
 type LqipExampleProps = {
   image: Pick<ImageProps, "src" | "width" | "height" | "blurDataURL">;
@@ -14,7 +16,7 @@ type LqipExampleProps = {
 
 type ImageProps2 = {
   src: string | StaticImageData,
-  className?: string,
+  className?: string | undefined,
   fill?: boolean,
   alt: string,
   width?: number,
@@ -31,11 +33,24 @@ type ImageProps2 = {
 const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter, id, sizes, placeholder, blurDataURL, quality, imageRef}: ImageProps2) => {
   // const { props } = use(getBlurImages(src))
 
+  // const [imgSrc, setImgSrc] = useState<string | StaticImageData>(src)
+  const [isErrorImage, setIsErrorImage] = useState<boolean>(false)
+
+  const errorClassName = {
+    minHeight: `${height}px`,
+    maxHeight: `${height}px`,
+  }
+
   return (
       <Image
         // loader={imgixLoader}
-        src={src}
-        className={className}
+        src={isErrorImage ? no_image : src}
+        className={
+          clsx(
+            !isErrorImage && className,
+            isErrorImage && `bg-gray-400 grid place-content-center p-[3.5em]`
+          )
+        }
         fill={fill}
         alt={alt}
         width={width}
@@ -49,6 +64,8 @@ const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter,
         quality={quality}
         unoptimized={true}
         ref={imageRef}
+        onError={() => setIsErrorImage(true)}
+        style={errorClassName}
       />
  
   )

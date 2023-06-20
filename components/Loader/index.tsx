@@ -9,8 +9,8 @@ const Loader = () => {
         <ImgComponent
           src={loadingImg}
           alt="loading"
-          width={280}
-          height={130}
+          width={200}
+          height={259}
           placeholder='empty'
         />
         <div className='mt-5 flex justify-center items-center relative text-[#fff] border-[none] bg-[transparent] text-[1rem] leading-[1.5rem] px-[2rem] py-[1rem]'>

@@ -14,8 +14,6 @@ interface Props {
 
 const BannerIcons = ({mediaType, runtime, episodeTime, videos, votes}: Props) => {
 
-  console.log(`episodeTime: `, episodeTime)
-
   const { circleBorder } = circleRating(votes)
 
   const computeRuntime = () => {
@@ -35,7 +33,7 @@ const BannerIcons = ({mediaType, runtime, episodeTime, videos, votes}: Props) =>
           rel="noreferrer"
         >
           {/* <PlayCircleFilledWhiteIcon/> */}
-          <svg className='w-[30px]' fill="#c9173d" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg className='w-[31px] bg-[#0C0B1F] rounded-full' fill="#c9173d" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path clipRule="evenodd" fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
           </svg>
           <p className='text-[14px] md:text-[16px] leading-[19px] md:leading-[24px]'>
@@ -56,7 +54,7 @@ const BannerIcons = ({mediaType, runtime, episodeTime, videos, votes}: Props) =>
        <p className="w-[45px] leading-4  md:leading-5 md:w-[88px] text-[14px] md:text-[16px]">User Rating</p>
       </div>
       <div className="flex gap-[2px] md:gap-1 items-center">
-        <svg className='w-[30px]' fill="#c9173d" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg className='w-[31px] bg-[#0C0B1F] rounded-full' fill="#c9173d" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path clipRule="evenodd" fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" />
         </svg>
         <p className='text-[14px] md:text-[16px] leading-[19px] md:leading-[24px]'>
