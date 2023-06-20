@@ -3,6 +3,7 @@ import { movieDbURL } from '@/constant'
 import axios from 'axios';
 import { HomeCardData } from '@/types';
 import { HomeSection, Slider } from '@/components';
+import { fetchHomePageMovies } from '@/utils/fetchHomePageMovies';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -49,54 +50,17 @@ async function getMoviesData(){
   // const movieHostName = `https://api.themoviedb.org/3`;
 
   // NOTE: by returning directly the results fetch could break if the other api end point is blank/error 
-
+ 
   const [ 
     popularMovie,
     upcomingMovie,
     nowPlayingMovie,
     popularTV
   ] = await Promise.all<HomeCardData[]>([
-    axios.get(`${movieDbURL}/3/movie/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`,{
-      headers:{
-        'Cache-Control': 'no-cache'
-      }
-    })
-      .then(res => res.data?.results)
-      .catch(err => {
-        console.log(err)
-        // return err.response.statusText
-        return []
-      }),
-    axios.get(`${movieDbURL}/3/movie/upcoming?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`,{
-      headers:{
-        'Cache-Control': 'no-cache'
-      }
-    })
-      .then(res => res.data?.results)
-      .catch(err => {
-        // console.log(err)
-        return []
-      }),
-    axios.get(`${movieDbURL}/3/movie/now_playing?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`,{
-      headers:{
-        'Cache-Control': 'no-cache'
-      }
-    })
-      .then(res => res.data?.results)
-      .catch(err => {
-        // console.log(err)
-        return []
-      }),
-    axios.get(`${movieDbURL}/3/tv/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`,{
-      headers:{
-        'Cache-Control': 'no-cache'
-      }
-    })
-      .then(res => res.data?.results)
-      .catch(err => {
-        // console.log(err)
-        return []
-      }),
+    fetchHomePageMovies(`${movieDbURL}/3/movie/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`),
+    fetchHomePageMovies(`${movieDbURL}/3/movie/upcoming?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`),
+    fetchHomePageMovies(`${movieDbURL}/3/movie/now_playing?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`),
+    fetchHomePageMovies(`${movieDbURL}/3/tv/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`),
   ])
 
   return {
