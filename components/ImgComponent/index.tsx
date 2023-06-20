@@ -48,7 +48,7 @@ const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter,
         className={
           clsx(
             !isErrorImage && className,
-            isErrorImage && `bg-gray-400 grid place-content-center p-[3.5em]`
+            isErrorImage && `bg-gray-400 grid place-content-center p-[1.5em] md:p-[3.5em]`
           )
         }
         fill={fill}
@@ -64,8 +64,8 @@ const ImgComponent = ({src, className, fill, alt, width, height, onPointerEnter,
         quality={quality}
         unoptimized={true}
         ref={imageRef}
-        onError={() => setIsErrorImage(true)}
-        style={errorClassName}
+        // onError={() => setIsErrorImage(true)}
+        // style={errorClassName}
       />
  
   )

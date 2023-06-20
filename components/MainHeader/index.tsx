@@ -15,9 +15,9 @@ const MainHeader = () => {
   const pathname = usePathname()
   // if website is on mobile, when user use back button turn setIsOpen to false 
   useEffect(() => {
-    if(isOpen){
+    // if(isOpen){
       setIsOpen(false)
-    }
+    // }
   }, [pathname])
 
   // Mobile Menu will show after clicking the menu icon
