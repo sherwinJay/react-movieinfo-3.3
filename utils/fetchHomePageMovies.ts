@@ -1,9 +1,6 @@
 export async function fetchHomePageMovies(url: string){
   try {
-    const res = await fetch(
-      url,
-      {cache: "no-store"}
-    );
+    const res = await fetch(url, {cache: "no-store"});
 
     const homePageMovieData = await res.json()
 
