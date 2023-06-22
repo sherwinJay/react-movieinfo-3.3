@@ -10,7 +10,7 @@ export async function fetchRecommendMovies(pageId: string | number, mediaType: s
     );
     const recommendMovieList = await res.json()
   
-    return recommendMovieList
+    return recommendMovieList.results
   
   } catch (error) {
     
