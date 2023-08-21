@@ -40,6 +40,7 @@ const Sidebar = ({isMovie, contentData}: Props) => {
       {
         isMovie ? (
           <>
+            {/* Budget Container */}
             <div>
               <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
                 Budget
@@ -48,6 +49,7 @@ const Sidebar = ({isMovie, contentData}: Props) => {
                 {`$ ${budget !== "" ? budget?.toLocaleString() : '-'}`}
               </p>
             </div>
+            {/* Revenue Container */}
             <div>
               <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
                 Revenue
@@ -58,6 +60,7 @@ const Sidebar = ({isMovie, contentData}: Props) => {
             </div>
           </>
         ) : (
+          // TV Series Container
           <div>
             <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
               Original Name
@@ -68,7 +71,7 @@ const Sidebar = ({isMovie, contentData}: Props) => {
           </div>
         )
       }
-
+      {/* Status Container */}
       <div>
         <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
           Status
@@ -77,6 +80,7 @@ const Sidebar = ({isMovie, contentData}: Props) => {
           {status}
         </p>
       </div>
+      {/* Production Container */}
       <div>
         <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
           Production Companies
@@ -89,6 +93,7 @@ const Sidebar = ({isMovie, contentData}: Props) => {
 
       {
         isMovie ? (
+          // Crews Container
           <div>
             <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
               Crews
@@ -101,6 +106,7 @@ const Sidebar = ({isMovie, contentData}: Props) => {
             </div>
           </div>
         ) : (
+          // Total Episodes Container
           <div>
             <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
               Total Episodes

@@ -100,17 +100,16 @@ export type ContentData  = {
 }
 
 export type RecommendData = {
-  slice(arg0: number, arg1: number): RecommendData
-  map(arg0: (movie: ContentData) => JSX.Element): unknown
   id: string
   title: string
+  name: string
   backdrop_path: string
   [key: number]: {backdrop_path: string}
   length: number
-}
+}[]
 
 export type LeadCastData = HomeCardData & {
-  map(arg0: (cast: any) => JSX.Element | undefined): unknown
+  map(arg0: (cast: CastProps) => JSX.Element | undefined): unknown
   credits: {
     cast: CastProps
     length: number
@@ -118,8 +117,8 @@ export type LeadCastData = HomeCardData & {
 }
 
 export type ProductionCompanyData = {
-  map(arg0: (company: ProductionCompanyData) => JSX.Element): unknown
-  slice(arg0: number, arg1: number): ProductionCompanyData
+  // map(arg0: (company: ProductionCompanyData) => JSX.Element): unknown
+  // slice(arg0: number, arg1: number): ProductionCompanyData
   name: string,
   id: string,
   length: number
@@ -132,7 +131,7 @@ export type SidebarData = {
   status: string,
   original_name: string,
   number_of_episodes: number,
-  production_companies: ProductionCompanyData
+  production_companies: ProductionCompanyData[]
   credits: {
     crew: CrewProps
   }
