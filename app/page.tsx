@@ -3,6 +3,7 @@ import { movieDbURL } from '@/constant'
 import { HomeCardData } from '@/types';
 import { HomeSection, Slider } from '@/components';
 import { fetchHomePageMovies } from '@/utils/fetchHomePageMovies';
+export const dynamic = 'force-dynamic'
 
 const inter = Inter({ subsets: ['latin'] })
 
