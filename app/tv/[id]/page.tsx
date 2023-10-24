@@ -1,6 +1,4 @@
 import { Banner, LeadCast, RecommendMovies, Sidebar } from '@/components';
-// import fetchRecommendMovies from '@/utils/fetchRecommendMovies';
-import React from 'react'
 import { getMovieData } from '@/utils/getMovieData';
 import { fetchRecommendMovies } from '@/utils/fetchRecommendMovies';
 

@@ -6,11 +6,6 @@ import { customImgSource, movieDbImgURL } from '@/constant';
 import { getBlurImages } from '@/utils/blurImage';
 import NoImage from '../NoImage/NoImage';
 
-// type Props = {
-//   isMovie?: boolean,
-//   template?: string,
-// } & HomeCardData
-
 const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path, template, isMovie, name }: HomeCardProps) => {
 
   const customImg = template === "1" ? poster_path : backdrop_path;

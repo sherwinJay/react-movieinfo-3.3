@@ -1,8 +1,5 @@
-import { movieDbImgURL } from '@/constant'
 import Link from 'next/link'
 import React, { use, useRef } from 'react'
-import Image from 'next/image'
-import { normalizeUnsplashUrl, unsplashLoader } from '@/utils'
 import { imgixLoader, normalizeImgixUrl } from '@/utils/imgixLoader'
 import NoImage from '../NoImage/NoImage'
 import ImgComponent from '../ImgComponent'

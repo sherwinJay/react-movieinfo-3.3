@@ -3,21 +3,9 @@
 import React, { SetStateAction, useCallback, useState } from 'react'
 import SearchList from './SearchList';
 
-// type SearchEvent = {
-//   target: {
-//     value: string
-//   }
-// }
-
 type Props = {
   setIsOpen: React.Dispatch<SetStateAction<boolean>>
 }
-
-// type KeyDownEvent = {
-//   preventDefault(): unknown; 
-//   key: string, 
-//   shiftKey: boolean
-// }
 
 const Searchbar = ({setIsOpen}: Props) => {
 

@@ -68,7 +68,7 @@ const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
         }
       >
         <p className="leading-[17px]">{movie.media_type === 'movie' ? movie.title : movie.name}</p>
-        <p className="text-[0.7rem] text-[#d7677f] md:text-[#777] italic">
+        <p className="text-[0.7rem] text-[#d68899] md:text-[#d68899] italic">
           {movie.media_type}
         </p>
       </Link>
@@ -83,11 +83,9 @@ const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
     )
   };
 
-  const searchList = searchedList.length > 0 ? searchedList : noMovie();
-
   return (
     <ul className="absolute top-[38px] w-[100%] overflow-hidden z-50 bg-transparent text-[#fff] md:bg-[#fff] md:text-[#000] md:rounded-[1em]">
-      {searchList}
+      { searchedList.length > 0 ? searchedList : noMovie() }
     </ul>
   )
 }

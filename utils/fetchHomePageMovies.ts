@@ -12,9 +12,3 @@ export async function fetchHomePageMovies(url: string){
     console.log(error)
   }
 }
-
-// const useFetch = function<T>(url: string) {
-//   return fetch(url).then(res => res.json)
-// }
-
-// export default fetchHomePageMovies

@@ -41,3 +41,4 @@ next-env.d.ts
 # backup files
 app/page_copy.tsx
 app/page_copy2.tsx
+app/page-copy.tsx

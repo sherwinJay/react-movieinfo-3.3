@@ -1,11 +1,9 @@
 'use client'
 
-import { unsplashLoader } from '@/utils'
 import { getBlurImages } from '@/utils/blurImage'
 import { imgixLoader } from '@/utils/imgixLoader'
 import Image, { ImageLoader, ImageProps, StaticImageData } from 'next/image'
 import React, { PointerEventHandler, Ref, use, useState } from 'react'
-import Imgix from 'react-imgix'
 import no_image from '@/public/images/image-off.svg'
 import clsx from 'clsx'
 

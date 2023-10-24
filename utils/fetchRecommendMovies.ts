@@ -1,5 +1,4 @@
 import { movieDbURL } from "@/constant";
-import { RecommendData } from "@/types";
 
 export async function fetchRecommendMovies(pageId: string | number, mediaType: string){
 
@@ -16,9 +15,5 @@ export async function fetchRecommendMovies(pageId: string | number, mediaType: s
     
   }
 }
-
-// const useFetch = function<T>(url: string) {
-//   return fetch(url).then(res => res.json)
-// }
 
 export default fetchRecommendMovies

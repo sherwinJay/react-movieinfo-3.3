@@ -1,10 +1,7 @@
 import { customImgSource, movieDbImgURL } from '@/constant'
 import { LeadCastData } from '@/types'
 import React, { use } from 'react'
-// import ImgComponent from '../ImgComponent'
 import { getBlurImages } from '@/utils/blurImage'
-import clsx from 'clsx'
-// import NoImage from '../NoImage/NoImage'
 import { NoImage, ImgComponent } from '@/components'
 
 interface CastData {

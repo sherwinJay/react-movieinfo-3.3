@@ -1,5 +1,9 @@
 import { SidebarData } from '@/types'
 import React from 'react'
+import ProductionCompany from './ProductionCompany';
+import SidebarCrews from './SidebarCrews';
+import MovieInfo from './MovieInfo';
+import TVSeriesInfo from './TVSeriesInfo';
 
 interface Props {
   isMovie: boolean,
@@ -18,57 +22,20 @@ const Sidebar = ({isMovie, contentData}: Props) => {
     number_of_episodes
   } = contentData;
 
-  const slicedProductionCompany = production_companies?.slice(0,4);
-  const slicedCrew = credits?.crew?.slice(0,4);
-
-  const getCompanies = slicedProductionCompany?.map((company) => (
-    <p className="text-[14px] md:text-[16px]" key={company.id}>
-      {company.name}
-    </p>
-  ))
-  
-  const getCrew = slicedCrew?.map((crew) => (
-    <div key={crew.credit_id}>
-      <p className="text-[14px] md:text-[16px] leading-5">{crew.name}</p>
-      <p className="text-[11px] md:text-[13px] italic">{crew.job}</p>
-    </div>
-  ))
-
-
   return (
     <div className="grid gap-3 py-5 md:py-0 font-satoshi">
       {
         isMovie ? (
-          <>
-            {/* Budget Container */}
-            <div>
-              <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
-                Budget
-              </h4>
-              <p className="text-[14px] md:text-[16px]">
-                {`$ ${budget !== "" ? budget?.toLocaleString() : '-'}`}
-              </p>
-            </div>
-            {/* Revenue Container */}
-            <div>
-              <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
-                Revenue
-              </h4>
-              <p className="text-[14px] md:text-[16px]">
-                {`$ ${revenue !== "" ? revenue?.toLocaleString(): '-'}`}
-              </p>
-            </div>
-          </>
+          // Movie Container
+          <MovieInfo 
+            budget={budget}
+            revenue={revenue}
+          />
         ) : (
           // TV Series Container
-          <div>
-            <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
-              Original Name
-            </h4>
-            <p className="text-[14px] md:text-[16px]">
-              {original_name}
-            </p>
-          </div>
+          <TVSeriesInfo 
+            title={original_name}
+          />
         )
       }
       {/* Status Container */}
@@ -81,30 +48,13 @@ const Sidebar = ({isMovie, contentData}: Props) => {
         </p>
       </div>
       {/* Production Container */}
-      <div>
-        <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
-          Production Companies
-        </h4>
-        <>
-          { slicedProductionCompany.length > 0 && getCompanies }
-          { slicedProductionCompany.length === 0 && (<p> - </p>) }
-        </>
-      </div>
-
+      <ProductionCompany 
+        productionCompanies={production_companies} 
+      />
       {
         isMovie ? (
           // Crews Container
-          <div>
-            <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
-              Crews
-            </h4>
-            <div className="grid gap-2">
-              <>
-                { slicedCrew.length > 0 && getCrew }
-                { slicedCrew.length === 0 && (<p> - </p>) }
-              </>
-            </div>
-          </div>
+          <SidebarCrews crews={credits.crew} />
         ) : (
           // Total Episodes Container
           <div>

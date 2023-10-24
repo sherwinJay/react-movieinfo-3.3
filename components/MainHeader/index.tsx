@@ -10,14 +10,12 @@ import { usePathname } from 'next/navigation'
 
 const MainHeader = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-	const toggle = () => setIsOpen(prevIsOpen => !prevIsOpen);
+	// const toggle = () => setIsOpen(prevIsOpen => !prevIsOpen);
 
   const pathname = usePathname()
   // if website is on mobile, when user use back button turn setIsOpen to false 
   useEffect(() => {
-    // if(isOpen){
-      setIsOpen(false)
-    // }
+    setIsOpen(false)
   }, [pathname])
 
   // Mobile Menu will show after clicking the menu icon
@@ -40,7 +38,7 @@ const MainHeader = () => {
         <div className="block md:hidden">
           <SearchIcon 
             className="cursor-pointer" 
-            onClick={() => toggle()}
+            onClick={() => setIsOpen(prevIsOpen => !prevIsOpen)}
           />
           <MobileMenu 
             isOpen={isOpen} 

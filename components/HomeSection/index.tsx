@@ -1,5 +1,4 @@
 import { HomeCardData, HomeCardSection } from '@/types'
-import React, { useMemo } from 'react'
 import { MainCard, NoContent } from '../index'
 import clsx from 'clsx'
 

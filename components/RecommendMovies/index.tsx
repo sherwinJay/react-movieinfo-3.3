@@ -5,8 +5,8 @@ import { RecommendData } from '@/types'
 import React, { useCallback, useEffect, useState } from 'react'
 import useSWR from 'swr'
 import RecommendCards from './RecommendCards'
-import { normalizeUnsplashUrl } from '@/utils'
 import clsx from 'clsx'
+import { normalizeImgixUrl } from '@/utils/imgixLoader'
 
 export type Props = {
   contentData: {
@@ -22,7 +22,7 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
   useEffect(() => {
     // set recommendation background to the first show data on the array
     // checks first if the data has obj property of 'results'
-    contentData?.results && setBackground(`${normalizeUnsplashUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
+    contentData?.results && setBackground(`${normalizeImgixUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
    
   }, [contentData?.results])
   
@@ -31,7 +31,7 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
   const pointerEvent = useCallback((imageId: string | null | undefined) => {
     // console.log('render')
     if(background){
-      setBackground(`${normalizeUnsplashUrl(`/t/p/w1280${imageId}`)}`)
+      setBackground(`${normalizeImgixUrl(`/t/p/w1280${imageId}`)}`)
     }
     
   }, [background])
