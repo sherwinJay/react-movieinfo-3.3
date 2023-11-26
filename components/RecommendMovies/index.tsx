@@ -10,7 +10,7 @@ import { normalizeImgixUrl } from '@/utils/imgixLoader'
 
 export type Props = {
   contentData: {
-    results: RecommendData
+    results: RecommendData[]
   }
   mediaType: string
 }

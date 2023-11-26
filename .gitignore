@@ -42,3 +42,5 @@ next-env.d.ts
 app/page_copy.tsx
 app/page_copy2.tsx
 app/page-copy.tsx
+app/layout_copy.tsx
+components/Searchbar/SearchList_copy.tsx

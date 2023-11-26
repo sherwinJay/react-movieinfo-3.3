@@ -7,10 +7,6 @@ export const dynamic = 'force-dynamic'
 
 const inter = Inter({ subsets: ['latin'] })
 
-// type MovieDataType = {
-//   results: HomeCardData[]
-// }
-
 export default async function Home() {
 
   const { popularMovie, upcomingMovie, nowPlayingMovie, popularTV } = await getMoviesData()
@@ -50,10 +46,6 @@ export default async function Home() {
 }
 
 async function getMoviesData(){
-
-  // const movieHostName = `https://api.themoviedb.org/3`;
-
-  console.log('TEST Start')
    
   const [ 
     popularMovie,

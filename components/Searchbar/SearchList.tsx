@@ -1,10 +1,10 @@
 'use client'
 
-import { movieDbURL } from '@/constant';
-import axios from 'axios';
+import { fetchSearchGames } from '@/utils/fetchSearchGames';
+import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 import React, { Dispatch, SetStateAction } from 'react'
-import useSWR from 'swr'
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 type ISearchVal = {
   searchVal: string
@@ -12,50 +12,32 @@ type ISearchVal = {
   setIsOpen: Dispatch<SetStateAction<boolean>>
 }
 
-type SearchData = {
-  media_type: string
-  title: string
-  name: string
-  id: string
-}
-
-type SWRData = {
-  data: SearchData[]
-  isLoading: boolean
-  error: unknown
-}
-
 const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
 
-  const movieApi = `${movieDbURL}/3/search/multi?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&query=${searchVal}&page=1&include_adult=false`;
-  
-  const fetcher = async (url: string) => {
-    try { 
-      const response = await axios.get(url)
-      const data = response.data.results
-      return data
-    } catch (error) {
-      // return []
-      console.log(error)
-    }
-  };
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ['shows', { searchVal }],
+    queryFn: ({signal}) => fetchSearchGames({searchVal, signal}),
+    staleTime: 10000,
+  })
 
-  // get data using swr
-  const { 
-    data,
-    isLoading,
-    error
-  } : SWRData = useSWR(movieApi, fetcher)
+  const filteredData = data?.filter((data) => data.media_type !== "person")
+  const slicedData = filteredData?.slice(0,9)
 
-  if(!data || searchVal.length < 3){
+  if(searchVal.length < 3){
     return null
   }
 
+  if(isLoading){
+    return (
+      <div
+        className="absolute right-[10px] top-[6px] fill-[#e11d48] z-20 text-[#e11d48] inline-block h-[1.35rem] w-[1.35rem] animate-spin rounded-full border-4 border-solid border-current border-r-[#f0aebd] align-[-0.125em] text-success motion-reduce:animate-[spin_1.5s_linear_infinite]"
+        role="status">
+      </div>
+    )
+  }
 
-  const filteredData = data?.filter((data) => data.media_type !== "person")
-  const slicedData = filteredData.slice(0,9)
-
-  const searchedList = slicedData.map((movie) => (
+  // template for search movies
+  const searchedList = slicedData?.map((movie) => (
     <li key={movie.id} className="border-b border-solid last:border-0 border-[#eee] md:border-[#eee]">
       <Link 
         href={`/${movie.media_type === 'movie' ? 'movies' : 'tv'}/${movie.id}`}
@@ -75,6 +57,7 @@ const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
     </li>
   ))
 
+  // template for no movies
   const noMovie = () => {
     return (
       <li className="p-[0.8em] block">
@@ -84,9 +67,11 @@ const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
   };
 
   return (
-    <ul className="absolute top-[38px] w-[100%] overflow-hidden z-50 bg-transparent text-[#fff] md:bg-[#fff] md:text-[#000] md:rounded-[1em]">
-      { searchedList.length > 0 ? searchedList : noMovie() }
-    </ul>
+    <>
+      <ul className="absolute top-[38px] w-[100%] overflow-hidden z-50 bg-transparent text-[#fff] md:bg-[#fff] md:text-[#000] md:rounded-[1em]">
+        { searchedList?.length ? searchedList : noMovie() }
+      </ul>  
+    </>
   )
 }
 

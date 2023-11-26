@@ -106,7 +106,7 @@ export type RecommendData = {
   backdrop_path: string
   [key: number]: {backdrop_path: string}
   length: number
-}[]
+}
 
 export type LeadCastData = HomeCardData & {
   map(arg0: (cast: CastProps) => JSX.Element | undefined): unknown
@@ -136,3 +136,17 @@ export type SidebarData = {
     crew: CrewProps
   }
 }
+
+export type SearchData = {
+  media_type: string
+  title: string
+  name: string
+  id: string
+}
+
+// export type QueryData = {
+//   data: SearchData[]
+//   isLoading: boolean
+//   isError: boolean
+//   error: unknown
+// }

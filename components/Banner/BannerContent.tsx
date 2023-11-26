@@ -39,4 +39,5 @@ const BannerContent = ({ title, name, genres, releaseDate, first_air_date, media
   )
 }
 
+
 export default BannerContent

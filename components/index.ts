@@ -12,6 +12,8 @@ import RecommendMovies from "./RecommendMovies";
 import Searchbar from "./Searchbar";
 import Loader from "./Loader"
 import NoImage from "./NoImage/NoImage";
+import TanstackProvider from "./TanstackProvider/TanstackProvider";
+import ErrorMessage from "./ErrorMessage/ErrorMessage";
 
 export {
   MainHeader,
@@ -28,4 +30,6 @@ export {
   Searchbar,
   Loader,
   NoImage,
+  TanstackProvider,
+  ErrorMessage,
 }

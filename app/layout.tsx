@@ -1,4 +1,4 @@
-import { MainFooter, MainHeader } from '@/components'
+import { MainFooter, MainHeader, TanstackProvider } from '@/components'
 import '@/styles/globals.css'
 import '@/styles/reset.css'
 // import '../styles/globals.css'
@@ -22,9 +22,11 @@ export default function RootLayout({
       */}
       {/* <head /> */}
       <body className="grid grid-rows-customRow1 h-[100vh]">
-        <MainHeader/>
-          {children}
-        <MainFooter />
+        <TanstackProvider>
+          <MainHeader/>
+            {children}
+          <MainFooter />
+        </TanstackProvider>
       </body>
     </html>
   )

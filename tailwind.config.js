@@ -28,6 +28,7 @@ module.exports = {
       },
       animation: {
         'animationLoader1': 'pathRect 2s linear infinite;',
+        'animate-spin':	'animation: spin 1s linear infinite',
       },
       stroke: {
         'strokeDasharrayLoader1': '360 160',
@@ -49,6 +50,16 @@ module.exports = {
           '100%': {
             strokeDashoffset: '520'
           },
+        },
+        spin: {
+          '0%, 100%': {
+            from: {
+              transform: 'rotate(0deg)'
+            },
+            to: {
+              transform: 'rotate(360deg)'
+            }
+          }
         }
       },
       colors: {
