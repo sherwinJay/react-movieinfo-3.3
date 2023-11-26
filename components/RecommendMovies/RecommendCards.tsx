@@ -12,7 +12,6 @@ type Props = {
   mediaType: string
 }
 
-
 const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) => {
 
   const imageRef = useRef<HTMLImageElement>(null)

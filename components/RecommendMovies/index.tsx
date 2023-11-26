@@ -74,7 +74,6 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
           )
         }
       </div>
-      
     </div>
   )
 }

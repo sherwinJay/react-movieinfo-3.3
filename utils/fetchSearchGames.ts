@@ -23,6 +23,6 @@ export const fetchSearchGames = async ({searchVal, signal}: FetchSearchType) => 
     return data as SearchData[]
   } catch (error) {
     // return []
-    console.log(error)
+    // console.log(error)
   }
 };
