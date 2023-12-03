@@ -1,10 +1,11 @@
 'use client'
 
 import { RecommendData } from '@/types'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import RecommendCards from './RecommendCards'
 import clsx from 'clsx'
 import { normalizeImgixUrl } from '@/utils/imgixLoader'
+import { useFetchBG } from '@/utils/useFetchBG'
 
 export type Props = {
   contentData: {
@@ -15,22 +16,13 @@ export type Props = {
 
 const RecommendMovies = ({contentData, mediaType}: Props) => {
   
-  const [background, setBackground] = useState<string>('')
+  const { background, setBackground, pointerEvent } = useFetchBG()
 
   useEffect(() => {
     // set recommendation background to the first show data on the array
     // checks first if the data has obj property of 'results'
     contentData?.results && setBackground(`${normalizeImgixUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
-   
   }, [contentData?.results])
-
-  // change background when hovering to the recommendation thumbnails
-  const pointerEvent = useCallback((imageId: string | null | undefined) => {
-    if(background){
-      setBackground(`${normalizeImgixUrl(`/t/p/w1280${imageId}`)}`)
-    }
-    
-  }, [background])
 
   const slicedRecommendData =  contentData?.results?.slice(0,7);
   const recommendMovieLists = slicedRecommendData?.map((movie) => (
@@ -42,7 +34,7 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
       mediaType={mediaType}
       pointerEvent={pointerEvent}
     />
-  )) 
+  ))
 
   // inline style for the recommendation container
   const recommendationBg = {
@@ -50,10 +42,11 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
   }
 
   return (
-    <div className={clsx(
-        `font-satoshi bg-cover bg-center bg-no-repeat transition-all duration-500`,
+    <div 
+      className={clsx(
+        `font-satoshi bg-cover bg-center bg-no-repeat !transition-all !duration-500`,
         contentData.results.length === 0 && '!bg-slate-900 !bg-none',
-      )} 
+      )}
       style={recommendationBg}
     >
       <h2 className="mb-[20px] text-[20px] md:text-2xl font-bold pt-4 px-4 md:px-5">
