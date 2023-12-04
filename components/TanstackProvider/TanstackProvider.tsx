@@ -1,12 +1,13 @@
 'use client'
 
 import { FC } from 'react'
-import { queryClient } from '@/utils/fetchSearchGames'
-import { QueryClientProvider } from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 interface TanstackProviderProps {
   children: React.ReactNode
 }
+
+export const queryClient = new QueryClient()
 
 const TanstackProvider: FC<TanstackProviderProps> = ({children}) => {
   return (

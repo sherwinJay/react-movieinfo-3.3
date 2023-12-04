@@ -16,13 +16,7 @@ export type Props = {
 
 const RecommendMovies = ({contentData, mediaType}: Props) => {
   
-  const { background, setBackground, pointerEvent } = useFetchBG()
-
-  useEffect(() => {
-    // set recommendation background to the first show data on the array
-    // checks first if the data has obj property of 'results'
-    contentData?.results && setBackground(`${normalizeImgixUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
-  }, [contentData?.results])
+  const { background, setBackground, pointerEvent } = useFetchBG(`${normalizeImgixUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
 
   const slicedRecommendData =  contentData?.results?.slice(0,7);
   const recommendMovieLists = slicedRecommendData?.map((movie) => (

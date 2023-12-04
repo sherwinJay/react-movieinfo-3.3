@@ -1,14 +1,11 @@
 import { movieDbURL } from "@/constant";
 import { SearchData } from "@/types";
-import { QueryClient } from "@tanstack/react-query";
 import axios, { GenericAbortSignal } from "axios";
 
 type FetchSearchType = {
   searchVal : string
   signal?: AbortSignal | undefined
 }
-
-export const queryClient = new QueryClient()
 
 export const fetchSearchGames = async ({searchVal, signal}: FetchSearchType) => {
 
@@ -17,10 +14,9 @@ export const fetchSearchGames = async ({searchVal, signal}: FetchSearchType) => 
   try { 
     const response = await axios.get(movieApi, {signal})
 
-    // console.log('response: ', response)
-
     const data = response.data.results
     return data as SearchData[]
+
   } catch (error) {
     // return []
     // console.log(error)

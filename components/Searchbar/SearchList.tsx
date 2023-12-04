@@ -42,12 +42,10 @@ const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
       <Link 
         href={`/${movie.media_type === 'movie' ? 'movies' : 'tv'}/${movie.id}`}
         className="block px-[0.5em] py-[0.4em] hover:bg-[#424a85] hover:md:bg-[#dedede] md:px-[0.8em]"
-        onClick={
-          () => {
-            setSearchVal('')
-            setIsOpen(false)
-          }
-        }
+        onClick={() => {
+          setSearchVal('')
+          setIsOpen(false)
+        }}
       >
         <p className="leading-[17px]">{movie.media_type === 'movie' ? movie.title : movie.name}</p>
         <p className="text-[0.7rem] text-[#d68899] md:text-[#d68899] italic">
