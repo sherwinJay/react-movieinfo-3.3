@@ -1,6 +1,6 @@
 import MainHeader from "./MainHeader";
 import MainFooter from "./MainFooter";
-import MainCard from "./Cards";
+import Cards from "./Cards";
 import HomeSection from "./HomeSection";
 import NoContent from "./NoContent";
 import ImgComponent from "./ImgComponent";
@@ -19,7 +19,7 @@ export {
   MainHeader,
   MainFooter,
   HomeSection,
-  MainCard,
+  Cards,
   NoContent,
   ImgComponent,
   LeadCast,

@@ -6,7 +6,7 @@ import { customImgSource, movieDbImgURL } from '@/constant';
 import { getBlurImages } from '@/utils/blurImage';
 import NoImage from '../NoImage/NoImage';
 
-const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path, template, isMovie, name }: HomeCardProps) => {
+const Cards = ({title, id, overview, vote_average, backdrop_path, poster_path, template, isMovie, name }: HomeCardProps) => {
 
   const customImg = template === "1" ? poster_path : backdrop_path;
   const imgSize = template === "1" ? "185" : "780"
@@ -22,8 +22,6 @@ const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path
   }
 
   const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w${imgSize}/${customImg}`))
-
- 
 
   return (
     <>
@@ -51,4 +49,4 @@ const MainCard = ({title, id, overview, vote_average, backdrop_path, poster_path
   )
 }
 
-export default MainCard
+export default Cards

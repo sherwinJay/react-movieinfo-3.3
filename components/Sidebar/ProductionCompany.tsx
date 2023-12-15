@@ -1,5 +1,5 @@
 import { ProductionCompanyData } from '@/types';
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 interface ProductionCompanyProps {
   productionCompanies: ProductionCompanyData[]
@@ -12,7 +12,7 @@ const ProductionCompany: FC<ProductionCompanyProps> = ({productionCompanies}) =>
     <p className="text-[14px] md:text-[16px]" key={company.id}>
       {company.name}
     </p>
-  ))
+  )) as ReactNode
   
   return (
     <div>
@@ -20,8 +20,7 @@ const ProductionCompany: FC<ProductionCompanyProps> = ({productionCompanies}) =>
         Production Companies
       </h4>
       <>
-        { slicedProductionCompany.length > 0 && getCompanies }
-        { slicedProductionCompany.length === 0 && (<p> - </p>) }
+        { slicedProductionCompany.length > 0 ? getCompanies : <p> - </p>  }
       </>
     </div>
   )

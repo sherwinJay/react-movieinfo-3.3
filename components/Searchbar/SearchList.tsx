@@ -30,7 +30,7 @@ const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
   if(isLoading){
     return (
       <div
-        className="absolute right-[10px] top-[6px] fill-[#e11d48] z-20 text-[#e11d48] inline-block h-[1.35rem] w-[1.35rem] animate-spin rounded-full border-4 border-solid border-current border-r-[#f0aebd] align-[-0.125em] text-success motion-reduce:animate-[spin_1.5s_linear_infinite]"
+        className="absolute right-[10px] top-[4px] md:top-[6px] fill-[#e11d48] z-20 text-[#e11d48] inline-block h-[1.35rem] w-[1.35rem] animate-spin rounded-full border-4 border-solid border-current border-r-[#f0aebd] align-[-0.125em] text-success motion-reduce:animate-[spin_1.5s_linear_infinite]"
         role="status">
       </div>
     )
@@ -65,11 +65,9 @@ const SearchList = ({searchVal, setSearchVal, setIsOpen}: ISearchVal) => {
   };
 
   return (
-    <>
-      <ul className="absolute top-[38px] w-[100%] overflow-hidden z-50 bg-transparent text-[#fff] md:bg-[#fff] md:text-[#000] md:rounded-[1em]">
-        { searchedList?.length ? searchedList : noMovie() }
-      </ul>  
-    </>
+    <ul className="absolute top-[38px] w-[100%] overflow-hidden z-50 bg-transparent text-[#fff] md:bg-[#fff] md:text-[#000] md:rounded-[1em]">
+      { searchedList?.length ? searchedList : noMovie() }
+    </ul>
   )
 }
 

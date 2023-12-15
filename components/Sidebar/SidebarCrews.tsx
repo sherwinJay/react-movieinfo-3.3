@@ -1,5 +1,5 @@
 import { CrewProps } from '@/types';
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 interface CrewsProps {
   crews: CrewProps
@@ -14,7 +14,7 @@ const SidebarCrews: FC<CrewsProps> = ({crews}) => {
       <p className="text-[14px] md:text-[16px] leading-5">{crew.name}</p>
       <p className="text-[11px] md:text-[13px] italic">{crew.job}</p>
     </div>
-  ))
+  )) as ReactNode
 
   return (
     <div>
@@ -23,8 +23,7 @@ const SidebarCrews: FC<CrewsProps> = ({crews}) => {
       </h4>
       <div className="grid gap-2">
         <>
-          { slicedCrew.length > 0 && getCrew }
-          { slicedCrew.length === 0 && (<p> - </p>) }
+          { slicedCrew.length > 0 ? getCrew : <p> - </p> }
         </>
       </div>
     </div>

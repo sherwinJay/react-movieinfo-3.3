@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { BannerContentData, HomeCardData } from '@/types'
 import Poster from '../Poster';
 import BannerContent from './BannerContent';
@@ -89,7 +88,6 @@ const Banner = ({contentData, mediaType}: Props) => {
               mediaType={mediaType}
             />
           </ul>
-         
         </section>
       </div>
     </div>

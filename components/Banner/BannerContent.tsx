@@ -1,10 +1,10 @@
 import React from 'react'
 
 type Props = {
-  title: string,
-  name: string,
+  title: string
+  name: string
   genres: {
-    map(arg0: (genre: { name: string; }) => string): string;
+    map(arg0: (genre: { name: string; }) => string): string
     name: string
   }
   releaseDate: string | undefined
@@ -14,13 +14,13 @@ type Props = {
 
 const BannerContent = ({ title, name, genres, releaseDate, first_air_date, mediaType }: Props) => {
 
-  const showGenres = genres?.map((genre: {name: string}) => genre?.name).slice(0,3).toString().replace(/,/g,', ');
-  const modifiedReleaseDate = releaseDate !== null ? releaseDate?.replace(/-/g,'/') : '';
-  const modifiedAirDate = first_air_date !== null ? first_air_date?.replace(/-/g,'/') : '';
-
+  const getGenres = genres?.map((genre: {name: string}) => genre?.name)
+  const sliceGenres = getGenres.slice(0,3);
+  const showGenres = sliceGenres.toString().replace(/,/g,', ')
+  const modifiedReleaseDate = releaseDate !== null ? releaseDate?.replace(/-/g,'/') : ''
+  const modifiedAirDate = first_air_date !== null ? first_air_date?.replace(/-/g,'/') : ''
   const showDate = mediaType === 'movies' ? modifiedReleaseDate : modifiedAirDate
   const showTitle = mediaType === 'movies' ? title : name
-
 
   return (
     <div className='font-satoshi'>
@@ -38,6 +38,5 @@ const BannerContent = ({ title, name, genres, releaseDate, first_air_date, media
     </div>
   )
 }
-
 
 export default BannerContent

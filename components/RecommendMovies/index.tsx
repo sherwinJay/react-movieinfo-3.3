@@ -1,7 +1,7 @@
 'use client'
 
 import { RecommendData } from '@/types'
-import React, { useEffect } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 import RecommendCards from './RecommendCards'
 import clsx from 'clsx'
 import { normalizeImgixUrl } from '@/utils/imgixLoader'
@@ -28,7 +28,7 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
       mediaType={mediaType}
       pointerEvent={pointerEvent}
     />
-  ))
+  )) as ReactNode
 
   // inline style for the recommendation container
   const recommendationBg = {
@@ -50,9 +50,7 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
         {
           contentData.hasOwnProperty("results") && contentData.results.length > 0 ? (
             <div className="grid grid-cols-07 gap-[1em] w-fit">
-              <>
-                {recommendMovieLists}
-              </>
+              { recommendMovieLists }
             </div>
           ) : (
             <div className='h-fit grid place-content-center py-20'>

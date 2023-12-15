@@ -1,5 +1,5 @@
 import { HomeCardData, HomeCardSection } from '@/types'
-import { MainCard, NoContent } from '../index'
+import { Cards, NoContent } from '../index'
 import clsx from 'clsx'
 
 const HomeSection = ({isMovie, categoryData, title, template, imgCount, name}: HomeCardSection): JSX.Element => {
@@ -27,8 +27,7 @@ const HomeSection = ({isMovie, categoryData, title, template, imgCount, name}: H
           )
         }
       >
-        {
-          movieData.map(thumbnail => (
+        {movieData.map(thumbnail => (
             <li 
               key={thumbnail.id}
               className={
@@ -38,7 +37,7 @@ const HomeSection = ({isMovie, categoryData, title, template, imgCount, name}: H
                 )
               }
             >
-              <MainCard
+              <Cards
                 title={ isMovie ? thumbnail.title : thumbnail.name }
                 name={ thumbnail.name }
                 id={thumbnail.id}

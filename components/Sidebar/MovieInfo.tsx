@@ -14,7 +14,7 @@ const MovieInfo: FC<MovieInfoProps> = ({budget, revenue}) => {
           Budget
         </h4>
         <p className="text-[14px] md:text-[16px]">
-          {`$ ${budget !== "" ? budget?.toLocaleString() : '-'}`}
+          {`${budget !== 0 ? (`$ ${budget?.toLocaleString()}`) : '-'}`}
         </p>
       </div>
       {/* Revenue Container */}
@@ -23,7 +23,7 @@ const MovieInfo: FC<MovieInfoProps> = ({budget, revenue}) => {
           Revenue
         </h4>
         <p className="text-[14px] md:text-[16px]">
-          {`$ ${revenue !== "" ? revenue?.toLocaleString(): '-'}`}
+          {`${revenue !== 0 ? (`$ ${revenue?.toLocaleString()}`): '-'}`}
         </p>
       </div>
     </>
