@@ -5,7 +5,7 @@ interface MovieInfoProps {
   revenue: string | number
 }
 
-const MovieInfo: FC<MovieInfoProps> = ({budget, revenue}) => {
+const MovieInfo: FC<MovieInfoProps> = ({ budget, revenue }) => {
   return (
     <>
       {/* Budget Container */}
@@ -23,7 +23,7 @@ const MovieInfo: FC<MovieInfoProps> = ({budget, revenue}) => {
           Revenue
         </h4>
         <p className="text-[14px] md:text-[16px]">
-          {`${revenue !== 0 ? (`$ ${revenue?.toLocaleString()}`): '-'}`}
+          {`${revenue !== 0 ? (`$ ${revenue?.toLocaleString()}`) : '-'}`}
         </p>
       </div>
     </>

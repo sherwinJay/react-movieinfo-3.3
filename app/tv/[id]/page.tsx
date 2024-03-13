@@ -1,12 +1,9 @@
 import { Banner, LeadCast, RecommendMovies, Sidebar } from '@/components';
-import { getMovieData } from '@/utils/getMovieData';
-import { fetchRecommendMovies } from '@/utils/fetchRecommendMovies';
+import { fetchRecommendMovies, getMovieData } from '@/services/api';
 
-
-const TVShows = async ({params}: {params: {id: string}}) => {
+const TVShows = async ({ params }: { params: { id: string } }) => {
 
   const tvList = await getMovieData(params.id, 'tv')
-
   const recommendData = await fetchRecommendMovies(params.id, 'tv')
 
   return (
@@ -35,7 +32,7 @@ const TVShows = async ({params}: {params: {id: string}}) => {
         </div>
       </div>
     </>
-   
+
   )
 }
 

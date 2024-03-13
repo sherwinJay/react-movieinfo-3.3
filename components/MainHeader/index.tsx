@@ -20,9 +20,9 @@ const MainHeader = () => {
     <header className="bg-[#1b1f3a] relative font-satoshi">
       <div className="w-[100%] m-auto px-4 py-3 md:py-4 flex justify-between items-center xl:w-[1200px]">
         <h1>
-          <Link 
-            href="/" 
-            className="text-[1.5rem] pink_gradient font-bold md:text-[2rem]"
+          <Link
+            href="/"
+            className="text-[1.5rem] pink_gradient font-bold md:text-[2rem] tracking-wider"
           >
             Movies Info
           </Link>
@@ -31,13 +31,13 @@ const MainHeader = () => {
           <Searchbar setIsOpen={setIsOpen} />
         </div>
         <div className="block md:hidden">
-          <SearchIcon 
-            className="cursor-pointer" 
+          <SearchIcon
+            className="cursor-pointer"
             onClick={() => setIsOpen(prevIsOpen => !prevIsOpen)}
           />
-          <MobileMenu 
-            isOpen={isOpen} 
-            setIsOpen={setIsOpen} 
+          <MobileMenu
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
           />
         </div>
       </div>

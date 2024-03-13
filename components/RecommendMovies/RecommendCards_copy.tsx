@@ -6,7 +6,7 @@ import ImgComponent from '../ImgComponent'
 
 type Props = {
   bgImage: string
-  pointerEvent(data: string | null | undefined): void
+  pointerEvent(data: any): void
   title: string
   id: string
   mediaType: string

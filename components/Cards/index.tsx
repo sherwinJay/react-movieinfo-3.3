@@ -6,13 +6,13 @@ import { customImgSource, movieDbImgURL } from '@/constant';
 import { getBlurImages } from '@/utils/blurImage';
 import NoImage from '../NoImage/NoImage';
 
-const Cards = ({title, id, overview, vote_average, backdrop_path, poster_path, template, isMovie, name }: HomeCardProps) => {
+const Cards = ({ title, id, overview, vote_average, backdrop_path, poster_path, template, isMovie, name }: HomeCardProps) => {
 
   const customImg = template === "1" ? poster_path : backdrop_path;
   const imgSize = template === "1" ? "185" : "780"
 
-  if(poster_path === null || poster_path === undefined || poster_path === "" ) {
-    return ( 
+  if (poster_path === null || poster_path === undefined || poster_path === "") {
+    return (
       <NoImage
         className="w-full h-full bg-gray-400 grid place-content-center absolute"
         width={25}
@@ -38,9 +38,9 @@ const Cards = ({title, id, overview, vote_average, backdrop_path, poster_path, t
         <p className="text-[10px] sm:text-[12px] leading-[12px] md:leading-5 md:text-[16px]">
           {title}
         </p>
-        <Link 
+        <Link
           href={`/${isMovie ? 'movies' : 'tv'}/${id}`}
-          className="w-full px-2 py-[2px] bg-[#c9173d] md:p-1 md:w-[80px] m-auto m rounded-full hover:bg-[#a31231] text-[10px] sm:text-[12px] md:text-[13px]"  
+          className="w-full px-2 py-[2px] bg-[#c9173d] md:p-1 md:w-[80px] m-auto m rounded-full hover:bg-[#a31231] text-[10px] sm:text-[12px] md:text-[13px]"
         >
           view info
         </Link>

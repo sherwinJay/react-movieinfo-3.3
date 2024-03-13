@@ -17,7 +17,7 @@ const Loader = () => {
           <p className='text-center'>Loading...</p>
           <svg className='absolute w-full h-full'>
             <rect
-              x="1" 
+              x="1"
               y="1"
               className='fill-none stroke-white stroke-1 w-[calc(100%-2px) h-[calc(100%-2px)] animate-animationLoader1 loaderStyle1'
             >

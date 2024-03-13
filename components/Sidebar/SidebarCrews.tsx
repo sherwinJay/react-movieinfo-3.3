@@ -5,9 +5,9 @@ interface CrewsProps {
   crews: CrewProps
 }
 
-const SidebarCrews: FC<CrewsProps> = ({crews}) => {
+const SidebarCrews: FC<CrewsProps> = ({ crews }) => {
 
-  const slicedCrew = crews?.slice(0,4);
+  const slicedCrew = crews?.slice(0, 4);
 
   const getCrew = slicedCrew?.map((crew) => (
     <div key={crew.credit_id}>
@@ -23,7 +23,7 @@ const SidebarCrews: FC<CrewsProps> = ({crews}) => {
       </h4>
       <div className="grid gap-2">
         <>
-          { slicedCrew.length > 0 ? getCrew : <p> - </p> }
+          {slicedCrew.length > 0 ? getCrew : <p> - </p>}
         </>
       </div>
     </div>

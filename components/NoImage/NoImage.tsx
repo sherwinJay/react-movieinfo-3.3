@@ -9,7 +9,7 @@ interface NoImageProps {
   height: number | undefined
 }
 
-const NoImage: FC<NoImageProps> = ({className, width, height}) => {
+const NoImage: FC<NoImageProps> = ({ className, width, height }) => {
   return (
     <div className={className}>
       <ImgComponent

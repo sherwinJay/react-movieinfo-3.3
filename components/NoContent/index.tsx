@@ -4,11 +4,11 @@ type Props = {
   content: string
 }
 
-const NoContent = ({content}: Props) => {
+const NoContent = ({ content }: Props) => {
   return (
     <div>
       <p className='font-satoshi'>
-        { content }
+        {content}
       </p>
     </div>
   )

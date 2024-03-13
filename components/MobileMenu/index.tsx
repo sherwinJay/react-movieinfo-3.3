@@ -10,7 +10,7 @@ type Props = {
   setIsOpen: React.Dispatch<SetStateAction<boolean>>
 }
 
-const MobileMenu = ({isOpen, setIsOpen}: Props) => {
+const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
 
   return (
     <div className={
@@ -28,9 +28,9 @@ const MobileMenu = ({isOpen, setIsOpen}: Props) => {
         )}
       >
         <div className='flex justify-end mb-[20px]'>
-          <CloseIcon 
+          <CloseIcon
             className='cursor-pointer'
-            onClick={ () => setIsOpen(false) }
+            onClick={() => setIsOpen(false)}
           />
         </div>
         <div className='relative'>

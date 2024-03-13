@@ -1,5 +1,5 @@
 import React from 'react'
-import { BannerContentData, HomeCardData } from '@/types'
+import { BannerContentData, BannerProps, HomeCardData } from '@/types'
 import Poster from '../Poster';
 import BannerContent from './BannerContent';
 import BannerIcons from './BannerIcons';
@@ -7,12 +7,7 @@ import Crews from './Crews';
 import { movieDbImgURL } from '@/constant';
 import clsx from 'clsx';
 
-type Props = {
-  contentData: BannerContentData,
-  mediaType: string
-}
-
-const Banner = ({contentData, mediaType}: Props) => {
+const Banner = ({ contentData, mediaType }: BannerProps) => {
 
   const {
     id,
@@ -41,7 +36,7 @@ const Banner = ({contentData, mediaType}: Props) => {
   const showCategory = mediaType === 'movies' ? 'movies' : 'tv';
 
   return (
-    <div 
+    <div
       className={
         clsx(
           `h-full bg-cover bg-center bg-no-repeat`,
@@ -66,7 +61,7 @@ const Banner = ({contentData, mediaType}: Props) => {
             first_air_date={first_air_date}
             mediaType={mediaType}
           />
-          <BannerIcons 
+          <BannerIcons
             runtime={runtime}
             episodeTime={episode_run_time}
             mediaType={showCategory}
@@ -82,7 +77,7 @@ const Banner = ({contentData, mediaType}: Props) => {
             </p>
           </div>
           <ul className="mt-[10px] grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-3">
-            <Crews 
+            <Crews
               credits={credits}
               created_by={created_by}
               mediaType={mediaType}

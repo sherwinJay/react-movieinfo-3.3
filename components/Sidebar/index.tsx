@@ -10,13 +10,13 @@ interface Props {
   contentData: SidebarData
 }
 
-const Sidebar = ({isMovie, contentData}: Props) => {
+const Sidebar = ({ isMovie, contentData }: Props) => {
 
-  const { 
-    budget, 
+  const {
+    budget,
     credits,
-    production_companies, 
-    revenue, 
+    production_companies,
+    revenue,
     status,
     original_name,
     number_of_episodes
@@ -27,13 +27,13 @@ const Sidebar = ({isMovie, contentData}: Props) => {
       {
         isMovie ? (
           // Movie Container
-          <MovieInfo 
+          <MovieInfo
             budget={budget}
             revenue={revenue}
           />
         ) : (
           // TV Series Container
-          <TVSeriesInfo 
+          <TVSeriesInfo
             title={original_name}
           />
         )
@@ -48,8 +48,8 @@ const Sidebar = ({isMovie, contentData}: Props) => {
         </p>
       </div>
       {/* Production Container */}
-      <ProductionCompany 
-        productionCompanies={production_companies} 
+      <ProductionCompany
+        productionCompanies={production_companies}
       />
       {
         isMovie ? (

@@ -9,7 +9,7 @@ interface TanstackProviderProps {
 
 export const queryClient = new QueryClient()
 
-const TanstackProvider: FC<TanstackProviderProps> = ({children}) => {
+const TanstackProvider: FC<TanstackProviderProps> = ({ children }) => {
   return (
     <QueryClientProvider client={queryClient}>
       {children}

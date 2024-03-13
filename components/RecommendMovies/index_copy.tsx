@@ -6,6 +6,7 @@ import RecommendCards from './RecommendCards'
 import clsx from 'clsx'
 import { normalizeImgixUrl } from '@/utils/imgixLoader'
 import { useFetchBG } from '@/utils/useFetchBG'
+import { useFetchBG2 } from '@/utils/useFetchBG2'
 
 export type Props = {
   contentData: {
@@ -16,7 +17,8 @@ export type Props = {
 
 const RecommendMovies = ({contentData, mediaType}: Props) => {
   
-  const { background, pointerEvent } = useFetchBG(`${normalizeImgixUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
+  // const { background, setBackground, pointerEvent } = useFetchBG(`${normalizeImgixUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
+  const {data, mutate} = useFetchBG2(`${normalizeImgixUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
 
   const slicedRecommendData =  contentData?.results?.slice(0,7);
   const recommendMovieLists = slicedRecommendData?.map((movie) => (
@@ -26,13 +28,13 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
       title={mediaType === "movie" ? movie.title : movie.name}
       id={movie.id}
       mediaType={mediaType}
-      pointerEvent={pointerEvent}
+      pointerEvent={mutate}
     />
   )) as ReactNode
 
   // inline style for the recommendation container
   const recommendationBg = {
-    backgroundImage: `linear-gradient(rgba(11,11,11,0.6),rgba(11,11,11,0.2)), url(${background})`,
+    backgroundImage: `linear-gradient(rgba(11,11,11,0.6),rgba(11,11,11,0.2)), url(${data})`,
   }
 
   return (
