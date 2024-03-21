@@ -1,6 +1,7 @@
 import { HomeCardData, HomeCardSection } from '@/types'
 import { Cards, NoContent } from '../index'
 import clsx from 'clsx'
+import { categoryIcon } from '@/utils/svgIcons'
 
 const HomeSection = ({ isMovie, categoryData, title, template, imgCount, name }: HomeCardSection): JSX.Element => {
 
@@ -16,9 +17,12 @@ const HomeSection = ({ isMovie, categoryData, title, template, imgCount, name }:
 
   return (
     <div>
-      <h2 className="mb-2 font-bold text-[1rem] text-[#e11d48] md:text-[1.25rem] font-satoshi inline-block">
-        {title}
-      </h2>
+      <div className='flex gap-1 items-center mb-2'>
+        {categoryIcon(title)}
+        <h2 className="font-bold text-[1rem] text-[#e11d48] md:text-[1.25rem] inline-block">
+          {title}
+        </h2>
+      </div>
       <ul className={
         clsx(
           `font-satoshi grid gap-[0.4rem] md:gap-3`,

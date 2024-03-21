@@ -10,19 +10,19 @@ const MovieInfo: FC<MovieInfoProps> = ({ budget, revenue }) => {
     <>
       {/* Budget Container */}
       <div>
-        <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
+        <h4 className="sidebar_title">
           Budget
         </h4>
-        <p className="text-[14px] md:text-[16px]">
+        <p className="sidebar_text">
           {`${budget !== 0 ? (`$ ${budget?.toLocaleString()}`) : '-'}`}
         </p>
       </div>
       {/* Revenue Container */}
       <div>
-        <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
+        <h4 className="sidebar_title">
           Revenue
         </h4>
-        <p className="text-[14px] md:text-[16px]">
+        <p className="sidebar_text">
           {`${revenue !== 0 ? (`$ ${revenue?.toLocaleString()}`) : '-'}`}
         </p>
       </div>

@@ -2,23 +2,11 @@
 
 import { fetchSearchGames } from '@/services/queries';
 import { ISearchVal } from '@/types';
-import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
-import React, { Dispatch, SetStateAction } from 'react'
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
-
-
 
 const SearchList = ({ searchVal, setSearchVal, setIsOpen }: ISearchVal) => {
 
   const searchQuery = fetchSearchGames(searchVal)
-
-  // const { data, isLoading, isError, error } = useQuery({
-  //   queryKey: ['shows', { searchVal }],
-  //   queryFn: ({ signal }) => fetchSearchGames({ searchVal, signal }),
-  //   staleTime: 10000,
-  // })
-
   const filteredData = searchQuery?.data?.filter((data) => data.media_type !== "person")
   const slicedData = filteredData?.slice(0, 9)
 

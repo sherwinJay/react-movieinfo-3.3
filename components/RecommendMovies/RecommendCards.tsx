@@ -12,25 +12,25 @@ type Props = {
   mediaType: string
 }
 
-const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) => {
+const RecommendCards = ({ id, bgImage, mediaType, title, pointerEvent }: Props) => {
 
   const imageRef = useRef<HTMLImageElement>(null)
 
-  const getThumbnailImg = () => { 
-    if(bgImage === '' || bgImage === null){
+  const getThumbnailImg = () => {
+    if (bgImage === '' || bgImage === null) {
       return (
-        <NoImage 
+        <NoImage
           className="h-[112px] md:h-[10.5em] grid place-content-center bg-gray-400"
           width={40}
           height={40}
         />
       )
-    }else{
+    } else {
       return (
         <ImgComponent
           // loader={imgixLoader}
           src={`${normalizeImgixUrl(`/t/p/w300/${bgImage}`)}`}
-          alt={title} 
+          alt={title}
           onPointerEnter={() => pointerEvent(imageRef?.current?.id)}
           id={bgImage}
           width={300}
@@ -46,10 +46,10 @@ const RecommendCards = ({id, bgImage, mediaType, title, pointerEvent}: Props) =>
 
   return (
     <Link href={`/${mediaType === "movie" ? "movies" : "tv"}/${id}`}>
-      <div className="rounded-md w-[200px] md:w-[300px] overflow-hidden bg-[#1c1a3e] shadow-xl shadow-black/60 font-satoshi">
-        { getThumbnailImg() }
+      <div className="rounded-md w-[200px] md:w-[300px] overflow-hidden bg-[#1c1a3e] shadow-xl shadow-black/60">
+        {getThumbnailImg()}
         <p className="px-2 md:px-3 py-2 md:p-3 text-[12px] md:text-[15px] whitespace-nowrap overflow-hidden text-ellipsis">
-          { title }
+          {title}
         </p>
       </div>
     </Link>

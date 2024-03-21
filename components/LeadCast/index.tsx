@@ -1,6 +1,7 @@
 import { CastData, LeadCastData } from '@/types'
 import CastImage from './CastImage'
 import { ReactNode } from 'react'
+import { peopleIcon } from '@/utils/svgIcons'
 
 const LeadCast = ({ castData }: CastData) => {
 
@@ -27,10 +28,14 @@ const LeadCast = ({ castData }: CastData) => {
   )) as ReactNode
 
   return (
-    <div className="border-b-2 border-[#121c31] font-satoshi">
-      <h2 className="mb-[20px] text-[20px] md:text-2xl font-bold">
-        Lead Casts
-      </h2>
+    <div className="border-b-2 border-[#121c31]">
+      <div className='flex gap-2 items-center mb-[20px]'>
+        {/* {peopleIcon()} */}
+        <h2 className="text-[20px] md:text-2xl font-bold">
+          Lead Casts
+        </h2>
+      </div>
+
       {
         castData.credits.cast.length ? (
           <ul className='grid grid-cols-07 gap-[1em] overflow-x-auto pb-[1.5em] scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900'>

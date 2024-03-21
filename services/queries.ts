@@ -1,13 +1,28 @@
 import { movieDbURL } from "@/constant"
 import { HomeCardData } from "@/types"
 import { useQuery } from "@tanstack/react-query"
-import { fetchHomePageMovies, getSearchGames } from "./api"
+import {
+  fetchHomePageMovies,
+  fetchRecommendMovies2,
+  getSearchGames,
+} from "./api"
 
-export function fetchSearchGames(searchVal: string) {
+export function fetchSearchGames(searchValue: string) {
   return useQuery({
-    queryKey: ["shows", { searchVal }],
-    queryFn: ({ signal }) => getSearchGames({ searchVal, signal }),
+    queryKey: ["shows", { searchValue }],
+    queryFn: ({ signal }) => getSearchGames({ searchValue, signal }),
     staleTime: 10000,
+  })
+}
+
+export function getRecommendations(pageId: string | number, mediaType: string) {
+  // console.log("recommended query id: ", pageId)
+  // console.log("mediaType: ", mediaType)
+
+  return useQuery({
+    queryKey: ["recommendations", { pageId, mediaType }],
+    queryFn: async () => await fetchRecommendMovies2({ pageId, mediaType }),
+    staleTime: 1000,
   })
 }
 

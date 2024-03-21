@@ -11,14 +11,14 @@ const SidebarCrews: FC<CrewsProps> = ({ crews }) => {
 
   const getCrew = slicedCrew?.map((crew) => (
     <div key={crew.credit_id}>
-      <p className="text-[14px] md:text-[16px] leading-5">{crew.name}</p>
+      <p className="sidebar_text leading-5">{crew.name}</p>
       <p className="text-[11px] md:text-[13px] italic">{crew.job}</p>
     </div>
   )) as ReactNode
 
   return (
     <div>
-      <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
+      <h4 className="sidebar_title">
         Crews
       </h4>
       <div className="grid gap-2">

@@ -16,7 +16,7 @@ const Poster = ({ poster, title, name, mediaType }: PosterProps) => {
   if (poster === null || poster === undefined || poster === "") {
     return (
       <NoImage
-        className='hidden md:grid md:content-center md:min-w-[280px] md:h-[420px] bg-gray-400 rounded-2xl place-content-center font-satoshi'
+        className='hidden md:grid md:content-center md:min-w-[280px] md:h-[420px] bg-gray-400 rounded-2xl place-content-center'
         width={40}
         height={40}
       />

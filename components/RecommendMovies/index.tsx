@@ -6,19 +6,23 @@ import RecommendCards from './RecommendCards'
 import clsx from 'clsx'
 import { normalizeImgixUrl } from '@/utils/imgixLoader'
 import { useFetchBG } from '@/utils/useFetchBG'
+import { getRecommendations } from '@/services/queries'
 
 export type Props = {
   contentData: {
     results: RecommendData[]
   }
   mediaType: string
+  pageId: string | number
 }
 
-const RecommendMovies = ({contentData, mediaType}: Props) => {
-  
+const RecommendMovies = ({ contentData, mediaType, pageId }: Props) => {
+
+  // const recommendationQueries = getRecommendations(pageId, mediaType) // check later
+
   const { background, pointerEvent } = useFetchBG(`${normalizeImgixUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
 
-  const slicedRecommendData =  contentData?.results?.slice(0,7);
+  const slicedRecommendData = contentData?.results?.slice(0, 7);
   const recommendMovieLists = slicedRecommendData?.map((movie) => (
     <RecommendCards
       key={movie.id}
@@ -35,10 +39,14 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
     backgroundImage: `linear-gradient(rgba(11,11,11,0.6),rgba(11,11,11,0.2)), url(${background})`,
   }
 
+  // if (recommendationQueries.isLoading) {
+  //   return <p>loading...</p>
+  // }
+
   return (
-    <div 
+    <div
       className={clsx(
-        `font-satoshi bg-cover bg-center bg-no-repeat !transition-all !duration-500`,
+        `bg-cover bg-center bg-no-repeat !transition-all !duration-500`,
         contentData.results.length === 0 && '!bg-slate-900 !bg-none',
       )}
       style={recommendationBg}
@@ -50,7 +58,7 @@ const RecommendMovies = ({contentData, mediaType}: Props) => {
         {
           contentData.hasOwnProperty("results") && contentData.results.length > 0 ? (
             <div className="grid grid-cols-07 gap-[1em] w-fit">
-              { recommendMovieLists }
+              {recommendMovieLists}
             </div>
           ) : (
             <div className='h-fit grid place-content-center py-20'>

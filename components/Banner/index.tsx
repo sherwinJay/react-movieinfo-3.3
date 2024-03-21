@@ -68,7 +68,7 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
             videos={videos}
             votes={vote_average}
           />
-          <div className='font-satoshi leading-5'>
+          <div className='leading-5'>
             <p className="font-semibold mb-1 text-[1rem] md:leading-{1.6rem} md:text-[1.2rem]">
               {tagline}
             </p>

@@ -4,13 +4,13 @@ interface TVSeriesInfoProps {
   title: string
 }
 
-const TVSeriesInfo: FC<TVSeriesInfoProps> = ({title}) => {
+const TVSeriesInfo: FC<TVSeriesInfoProps> = ({ title }) => {
   return (
     <div>
-      <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
+      <h4 className="sidebar_title">
         Original Name
       </h4>
-      <p className="text-[14px] md:text-[16px]">
+      <p className="sidebar_text">
         {title}
       </p>
     </div>

@@ -4,7 +4,7 @@ import ImgComponent from '../ImgComponent'
 
 const Loader = () => {
   return (
-    <div className='h-[100%] grid place-content-center font-satoshi'>
+    <div className='h-[100%] grid place-content-center'>
       <div className='w-[200px] mt-[-50px]'>
         <ImgComponent
           src={loadingImg}

@@ -17,7 +17,7 @@ const MainHeader = () => {
   }, [pathname])
 
   return (
-    <header className="bg-[#1b1f3a] relative font-satoshi">
+    <header className="bg-[#1b1f3a] relative">
       <div className="w-[100%] m-auto px-4 py-3 md:py-4 flex justify-between items-center xl:w-[1200px]">
         <h1>
           <Link

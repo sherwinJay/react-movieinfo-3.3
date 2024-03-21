@@ -16,7 +16,7 @@ export type HomeCardData = {
 export type HomeCardSection = {
   isMovie?: boolean
   template?: string
-  title: string
+  title: "Upcoming Movies" | "Now Playing" | "TV Shows"
   categoryData: HomeCardData[]
   imgCount?: number
   name?: string
@@ -58,7 +58,7 @@ export type CrewData = {
     crew: CrewProps
   }
   created_by: CreatorsProps
-  mediaType: string
+  mediaType: "movies" | "tv"
 }
 
 export type ResultsProps = {
@@ -195,7 +195,7 @@ export type BannerIconsProps = {
 
 export type BannerProps = {
   contentData: BannerContentData
-  mediaType: string
+  mediaType: "movies" | "tv"
 }
 
 export type ISearchVal = {

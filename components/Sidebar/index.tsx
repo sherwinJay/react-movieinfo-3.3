@@ -40,10 +40,10 @@ const Sidebar = ({ isMovie, contentData }: Props) => {
       }
       {/* Status Container */}
       <div>
-        <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
+        <h4 className="sidebar_title">
           Status
         </h4>
-        <p className="text-[14px] md:text-[16px]">
+        <p className="sidebar_text">
           {status}
         </p>
       </div>
@@ -58,10 +58,10 @@ const Sidebar = ({ isMovie, contentData }: Props) => {
         ) : (
           // Total Episodes Container
           <div>
-            <h4 className="text-[#e11d48] font-bold text-[16px] md:text-[18px]">
+            <h4 className="sidebar_title">
               Total Episodes
             </h4>
-            <p>
+            <p className='sidebar_text'>
               {`${number_of_episodes} episodes`}
             </p>
           </div>

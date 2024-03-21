@@ -27,6 +27,7 @@ const Movies = async ({ params }: { params: { id: string } }) => {
         <div className="lg:row-start-2 lg:row-end-3 lg:col-start-1 lg:col-end-4">
           <RecommendMovies
             contentData={recommendData}
+            pageId={params.id}
             mediaType="movie"
           />
         </div>

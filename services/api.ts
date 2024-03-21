@@ -3,15 +3,21 @@ import { SearchData } from "@/types"
 import axios, { GenericAbortSignal } from "axios"
 
 type FetchSearchType = {
-  searchVal: string
+  searchValue: string
+  signal?: AbortSignal | undefined
+}
+
+type RecommendedType = {
+  pageId: string | number
+  mediaType: string
   signal?: AbortSignal | undefined
 }
 
 export const getSearchGames = async ({
-  searchVal,
+  searchValue,
   signal,
 }: FetchSearchType) => {
-  const movieApi = `${movieDbURL}/3/search/multi?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&query=${searchVal}&page=1&include_adult=false`
+  const movieApi = `${movieDbURL}/3/search/multi?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&query=${searchValue}&page=1&include_adult=false`
 
   try {
     const response = await axios.get(movieApi, { signal })
@@ -62,6 +68,29 @@ export async function fetchRecommendMovies(
 
     return recommendMovieList
   } catch (error) {}
+}
+
+export const fetchRecommendMovies2 = async ({
+  pageId,
+  mediaType,
+  signal,
+}: RecommendedType) => {
+  // console.log("recommended id: ", pageId)
+
+  const movieApi = `${movieDbURL}/3/${mediaType}/${pageId}/recommendations?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+
+  // console.log("recommended url: ", movieApi)
+  try {
+    const res = await axios.get(movieApi, { signal })
+
+    const recommendMovieList = await res.data!
+
+    // console.log("recommendMovieList data: ", recommendMovieList)
+
+    return recommendMovieList
+  } catch (error) {
+    console.log("recommended error", error)
+  }
 }
 
 export async function getMovieData(pageId: string | number, mediaType: string) {

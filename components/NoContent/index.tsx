@@ -7,7 +7,7 @@ type Props = {
 const NoContent = ({ content }: Props) => {
   return (
     <div>
-      <p className='font-satoshi'>
+      <p>
         {content}
       </p>
     </div>

@@ -22,7 +22,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
     >
       <div className={
         clsx(
-          'text-[12px] font-satoshi absolute w-[85%] h-full top-0 bg-[#1b1f3a] p-5',
+          'text-[12px] absolute w-[85%] h-full top-0 bg-[#1b1f3a] p-5',
           isOpen && 'left-[15%]',
           !isOpen && 'left-[100%]'
         )}
