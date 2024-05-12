@@ -21,6 +21,30 @@ const Cards = ({ title, id, overview, vote_average, backdrop_path, poster_path, 
     );
   }
 
+  if (customImg === null) {
+    return (
+      <>
+        <NoImage
+          className="w-full h-full bg-gray-400 grid place-content-center absolute"
+          width={25}
+          height={25}
+        />
+        <div className="h-[100%] max-h-[100%] p-1 sm:p-3 overflow-hidden w-full bg-[rgba(0,0,0,0.5)] hidden text-center place-content-center gap-3 group-hover:grid group-hover:z-10">
+          <p className="text-[10px] sm:text-[12px] leading-[12px] md:leading-5 md:text-[16px]">
+            {title}
+          </p>
+          <Link
+            href={`/${isMovie ? 'movies' : 'tv'}/${id}`}
+            className="w-full px-2 py-[2px] bg-[#c9173d] md:p-1 md:w-[80px] m-auto m rounded-full hover:bg-[#a31231] text-[10px] sm:text-[12px] md:text-[13px]"
+          >
+            view info
+          </Link>
+        </div>
+      </>
+
+    );
+  }
+
   const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w${imgSize}/${customImg}`))
 
   return (
