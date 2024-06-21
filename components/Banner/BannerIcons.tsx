@@ -1,6 +1,5 @@
 import circleRating from '@/constant/circleRating'
 import { BannerIconsProps } from '@/types'
-import React from 'react'
 
 const BannerIcons = ({ mediaType, runtime, episodeTime, videos, votes }: BannerIconsProps) => {
 
@@ -32,7 +31,7 @@ const BannerIcons = ({ mediaType, runtime, episodeTime, videos, votes }: BannerI
         </a>
       )
     }
-    return ""
+    return <></>
   }
 
   return (

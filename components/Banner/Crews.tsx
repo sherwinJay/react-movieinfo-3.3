@@ -12,7 +12,7 @@ const Crews = ({ credits, created_by, mediaType }: CrewData) => {
         </li>
       )
     }
-    return ""
+    return <></>
   });
 
   const getCreator = created_by?.length > 0 ? created_by?.map((creator) => {

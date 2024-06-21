@@ -21,7 +21,7 @@ const Cards = ({ title, id, overview, vote_average, backdrop_path, poster_path, 
     );
   }
 
-  if (customImg === null) {
+  if (customImg === null) { // *if backdrop image is null
     return (
       <>
         <NoImage
