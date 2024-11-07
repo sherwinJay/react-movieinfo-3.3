@@ -17,7 +17,7 @@ const BannerIcons = ({ mediaType, runtime, episodeTime, videos, votes }: BannerI
       return (
         <a
           href={`https://www.youtube.com/watch?v=${videos?.results[0]?.key}`}
-          className="flex gap-[2px] md:gap-1 items-center"
+          className="flex gap-[2px] md:gap-1 items-center hover:text-flamingo-200"
           target="_blank"
           rel="noreferrer"
         >
