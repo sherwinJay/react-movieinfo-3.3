@@ -5,7 +5,7 @@ import { fetchRecommendMovies, getMovieData } from '@/services/api';
 const Movies = async ({ params }: { params: { id: string } }) => {
 
   const movieList = await getMovieData(params.id, 'movie')
-  const recommendData = await fetchRecommendMovies(params.id, 'movie')
+  // const recommendData = await fetchRecommendMovies(params.id, 'movie')
 
   return (
     <>
@@ -27,7 +27,6 @@ const Movies = async ({ params }: { params: { id: string } }) => {
         </div>
         <div className="lg:row-start-2 lg:row-end-3 lg:col-start-1 lg:col-end-4">
           <RecommendMovies
-            contentData={recommendData}
             pageId={params.id}
             mediaType="movie"
           />

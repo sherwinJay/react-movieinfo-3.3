@@ -5,7 +5,7 @@ import { fetchRecommendMovies, getMovieData } from '@/services/api';
 const TVShows = async ({ params }: { params: { id: string } }) => {
 
   const tvList = await getMovieData(params.id, 'tv')
-  const recommendData = await fetchRecommendMovies(params.id, 'tv')
+  // const recommendData = await fetchRecommendMovies(params.id, 'tv')
 
   return (
     <>
