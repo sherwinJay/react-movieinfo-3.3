@@ -1,6 +1,7 @@
 import { movieDbURL } from "@/constant"
 import { SearchData } from "@/types"
 import axios, { GenericAbortSignal } from "axios"
+import { HomeCardData } from "@/types"
 
 type FetchSearchType = {
   searchValue: string
@@ -13,7 +14,7 @@ type RecommendedType = {
   signal?: AbortSignal | undefined
 }
 
-export const getSearchGames = async ({
+export const fetchSearchMovies = async ({
   searchValue,
   signal,
 }: FetchSearchType) => {
@@ -110,5 +111,31 @@ export async function getMovieData(pageId: string | number, mediaType: string) {
     return movieList
   } catch (error) {
     // console.log(error)
+  }
+}
+
+// change name to getAllMovies, move it to api.ts file
+export async function getAllMoviesData() {
+  const [popularMovie, upcomingMovie, nowPlayingMovie, popularTV] =
+    await Promise.all<HomeCardData[]>([
+      fetchHomePageMovies(
+        `${movieDbURL}/3/movie/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+      ),
+      fetchHomePageMovies(
+        `${movieDbURL}/3/movie/upcoming?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+      ),
+      fetchHomePageMovies(
+        `${movieDbURL}/3/movie/now_playing?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+      ),
+      fetchHomePageMovies(
+        `${movieDbURL}/3/tv/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+      ),
+    ])
+
+  return {
+    popularMovie,
+    upcomingMovie,
+    nowPlayingMovie,
+    popularTV,
   }
 }

@@ -1,13 +1,14 @@
 import { Inter } from '@next/font/google'
 import { HomeSection, Slider } from '@/components';
-import { getMoviesData } from '@/services/queries';
+import { getAllMoviesData } from '@/services/api';
+// import { getAllMoviesData } from '@/services/queries';
 export const dynamic = 'force-dynamic'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default async function Home() {
 
-  const { popularMovie, upcomingMovie, nowPlayingMovie, popularTV } = await getMoviesData()
+  const { popularMovie, upcomingMovie, nowPlayingMovie, popularTV } = await getAllMoviesData()
 
   return (
     <>

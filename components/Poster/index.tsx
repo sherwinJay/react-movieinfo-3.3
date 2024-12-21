@@ -8,7 +8,7 @@ interface PosterProps {
   poster: string
   title: string
   name: string
-  mediaType: string
+  mediaType: "movies" | 'tv'
 }
 
 const Poster = ({ poster, title, name, mediaType }: PosterProps) => {

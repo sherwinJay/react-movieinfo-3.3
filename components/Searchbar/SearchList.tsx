@@ -1,12 +1,12 @@
 'use client'
 
-import { fetchSearchGames } from '@/services/queries';
+import { getSearchMovies } from '@/services/queries';
 import { ISearchVal } from '@/types';
 import Link from 'next/link';
 
 const SearchList = ({ searchVal, setSearchVal, setIsOpen }: ISearchVal) => {
 
-  const searchQuery = fetchSearchGames(searchVal)
+  const searchQuery = getSearchMovies(searchVal)
   const filteredData = searchQuery?.data?.filter((data) => data.media_type !== "person")
   const slicedData = filteredData?.slice(0, 9)
 

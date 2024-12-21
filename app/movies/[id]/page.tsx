@@ -1,5 +1,6 @@
 import { Banner, LeadCast, RecommendMovies, Sidebar } from '@/components';
 import { fetchRecommendMovies, getMovieData } from '@/services/api';
+// import { getMovieData } from '@/services/queries';
 
 const Movies = async ({ params }: { params: { id: string } }) => {
 

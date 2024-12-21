@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import React, { use, useRef } from 'react'
 import { imgixLoader, normalizeImgixUrl } from '@/utils/imgixLoader'
