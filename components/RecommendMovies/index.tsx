@@ -9,18 +9,21 @@ import { useFetchBG } from '@/utils/useFetchBG'
 import { getRecommendations } from '@/services/queries'
 
 export type Props = {
+  contentData: {
+    results: RecommendData[]
+  }
   mediaType: string
   pageId: string | number
 }
 
-const RecommendMovies = ({ mediaType, pageId }: Props) => {
+const RecommendMovies = ({ contentData, mediaType, pageId }: Props) => {
 
-  const recommendationQueries = getRecommendations(pageId, mediaType) //! check later
-  const contentData = recommendationQueries.data
+  // const recommendationQueries = getRecommendations(pageId, mediaType) //! check later
 
-  const slicedRecommendData = contentData?.results.slice(0, 7)
   const { background, pointerEvent } = useFetchBG(`${normalizeImgixUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
-  const recommendMovieLists = slicedRecommendData?.map((movie: RecommendData) => (
+
+  const slicedRecommendData = contentData?.results?.slice(0, 7);
+  const recommendMovieLists = slicedRecommendData?.map((movie) => (
     <RecommendCards
       key={movie.id}
       bgImage={movie.backdrop_path}
@@ -36,9 +39,9 @@ const RecommendMovies = ({ mediaType, pageId }: Props) => {
     backgroundImage: `linear-gradient(rgba(11,11,11,0.6),rgba(11,11,11,0.2)), url(${background})`,
   }
 
-  if (recommendationQueries.isLoading) {
-    return <p>loading...</p>
-  }
+  // if (recommendationQueries.isLoading) {
+  //   return <p>loading...</p>
+  // }
 
   return (
     <div
