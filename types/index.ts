@@ -9,7 +9,7 @@ export type HomeCardData = {
   vote_average: number
   backdrop_path: string
   poster_path: string
-  release_date?: string
+  release_date: string
   runtime?: string | number
 }
 

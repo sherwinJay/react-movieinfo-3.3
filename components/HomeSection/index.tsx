@@ -5,6 +5,9 @@ import { categoryIcon } from '@/utils/svgIcons'
 
 const HomeSection = ({ isMovie, categoryData, title, template, imgCount, name }: HomeCardSection): JSX.Element => {
 
+  const sortedByDateData = title === 'Upcoming Movies' ? categoryData.sort((a, b) => Date.parse(b.release_date) - Date.parse(a.release_date)) : categoryData
+  const movieData = sortedByDateData?.slice(0, imgCount)
+
   if (categoryData.length === 0) {
     return (
       <NoContent
@@ -12,8 +15,6 @@ const HomeSection = ({ isMovie, categoryData, title, template, imgCount, name }:
       />
     )
   }
-
-  const movieData = categoryData?.slice(0, imgCount)
 
   return (
     <div>
@@ -51,6 +52,7 @@ const HomeSection = ({ isMovie, categoryData, title, template, imgCount, name }:
               poster_path={thumbnail.poster_path}
               template={template}
               isMovie={isMovie}
+              release_date={''}
             />
           </li>
         ))
