@@ -17,7 +17,7 @@ export default async function Home() {
       />
       <main className="w-[100%] p-[1.5em] mx-auto flex flex-col gap-3 lg:p-[3em] xl:w-[1200px]">
         <HomeSection
-          title={'Upcoming Movies'}
+          title={'Trending Movies'}
           isMovie={true}
           template={'1'}
           imgCount={8}

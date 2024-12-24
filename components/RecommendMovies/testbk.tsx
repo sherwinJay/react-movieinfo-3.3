@@ -18,7 +18,7 @@ export type Props = {
 
 const RecommendMovies = ({ contentData, mediaType, pageId }: Props) => {
 
-  const recommendationQueries = getRecommendations(pageId, mediaType) //! check later
+  // const recommendationQueries = getRecommendations(pageId, mediaType) //! check later
 
   const { background, pointerEvent } = useFetchBG(`${normalizeImgixUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
 
@@ -39,11 +39,9 @@ const RecommendMovies = ({ contentData, mediaType, pageId }: Props) => {
     backgroundImage: `linear-gradient(rgba(11,11,11,0.6),rgba(11,11,11,0.2)), url(${background})`,
   }
 
-  if (recommendationQueries.isLoading) {
-    return <p>loading...</p>
-  }
-
-  console.log('recommendation: ', recommendationQueries.data.results)
+  // if (recommendationQueries.isLoading) {
+  //   return <p>loading...</p>
+  // }
 
   return (
     <div

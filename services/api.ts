@@ -122,13 +122,13 @@ export async function getAllMoviesData() {
         `${movieDbURL}/3/movie/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
       ),
       fetchHomePageMovies(
-        `${movieDbURL}/3/movie/upcoming?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+        `${movieDbURL}/3/trending/movie/week?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
       ),
       fetchHomePageMovies(
         `${movieDbURL}/3/movie/now_playing?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
       ),
       fetchHomePageMovies(
-        `${movieDbURL}/3/tv/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+        `${movieDbURL}/3/trending/tv/week?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
       ),
     ])
 
