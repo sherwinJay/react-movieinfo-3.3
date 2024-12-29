@@ -18,11 +18,9 @@ type Props = {
 
 const BannerContent = ({ title, name, genres, releaseDate, first_air_date, mediaType, imageUrl }: Props) => {
 
-
-  console.log(imageUrl)
   const testImage = "https://image.tmdb.org/t/p/w342/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg"
 
-  const { data, loading, error } = useColor(testImage, 'hex', { crossOrigin: 'anonymous' })
+  const { data, loading, error } = useColor(imageUrl, 'hex', { crossOrigin: 'anonymous' })
 
   console.log('dataColor: ', data)
 
