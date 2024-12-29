@@ -13,7 +13,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  
+
   return (
     <html lang="en">
       {/*
@@ -23,8 +23,8 @@ export default function RootLayout({
       {/* <head /> */}
       <body className="grid grid-rows-customRow1 h-[100vh]">
         <TanstackProvider>
-          <MainHeader/>
-            {children}
+          <MainHeader />
+          {children}
           <MainFooter />
         </TanstackProvider>
       </body>

@@ -33,7 +33,7 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
     backgroundImage: `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${contentData.backdrop_path})`,
   };
 
-  const showCategory = mediaType === 'movies' ? 'movies' : 'tv'; // !not needed
+  const showCategory = mediaType === 'movies' ? 'movies' : 'tv';
 
   return (
     <div
@@ -60,12 +60,11 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
             releaseDate={releaseDate}
             first_air_date={first_air_date}
             mediaType={mediaType}
-            imageUrl={`${movieDbImgURL}/t/p/original/${contentData.backdrop_path}`}
           />
           <BannerIcons
             runtime={runtime}
             episodeTime={episode_run_time}
-            mediaType={mediaType}
+            mediaType={showCategory}
             videos={videos}
             votes={vote_average}
           />

@@ -10,10 +10,9 @@ type Props = {
   releaseDate: string | undefined
   first_air_date: string | null
   mediaType: string
-  imageUrl: string
 }
 
-const BannerContent = ({ title, name, genres, releaseDate, first_air_date, mediaType, imageUrl }: Props) => {
+const BannerContent = ({ title, name, genres, releaseDate, first_air_date, mediaType }: Props) => {
 
   const getGenres = genres?.map((genre: { name: string }) => genre?.name)
   const sliceGenres = getGenres.slice(0, 3);
