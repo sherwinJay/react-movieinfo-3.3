@@ -41,7 +41,6 @@ export async function fetchHomePageMovies(url: string) {
     }
 
     const homePageMovieData = await res.json()
-
     const homePageMovieList = homePageMovieData?.results
 
     return homePageMovieList
@@ -76,17 +75,11 @@ export const fetchRecommendMovies2 = async ({
   mediaType,
   signal,
 }: RecommendedType) => {
-  // console.log("recommended id: ", pageId)
-
   const movieApi = `${movieDbURL}/3/${mediaType}/${pageId}/recommendations?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
 
-  // console.log("recommended url: ", movieApi)
   try {
     const res = await axios.get(movieApi, { signal })
-
     const recommendMovieList = await res.data!
-
-    // console.log("recommendMovieList data: ", recommendMovieList)
 
     return recommendMovieList
   } catch (error) {
@@ -114,7 +107,6 @@ export async function getMovieData(pageId: string | number, mediaType: string) {
   }
 }
 
-// change name to getAllMovies, move it to api.ts file
 export async function getAllMoviesData() {
   const [popularMovie, upcomingMovie, nowPlayingMovie, popularTV] =
     await Promise.all<HomeCardData[]>([

@@ -31,14 +31,14 @@ const BannerIcons = ({ mediaType, runtime, episodeTime, videos, votes }: BannerI
         </a>
       )
     }
-    return <></>
+    return null
   }
 
   return (
     <div className='flex gap-[15px] md:gap-6 items-center'>
       <div className="flex gap-[2px] md:gap-2 items-center">
         <span style={circleBorder}>
-          {votes.toFixed(1)}
+          {votes > 0 ? votes.toFixed(1) : 'NR'}
         </span>
         <p className="w-[45px] leading-4  md:leading-5 md:w-[88px] text-[14px] md:text-[16px]">User Rating</p>
       </div>
