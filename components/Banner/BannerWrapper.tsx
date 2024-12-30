@@ -43,7 +43,7 @@ const BannerWrapper: FC<Props> = ({ children, imageUrl, poster }) => {
   return (
     <div
       className={
-        cn(
+        clsx(
           `h-full bg-cover bg-center bg-no-repeat`,
           imageUrl === null && '!bg-slate-700 !bg-none',
         )
