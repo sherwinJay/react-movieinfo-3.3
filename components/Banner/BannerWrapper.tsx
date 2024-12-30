@@ -8,29 +8,21 @@ import React, { FC } from 'react'
 type Props = {
   children: React.ReactNode
   imageUrl: string
-  backdrop: string
 }
 
-const BannerWrapper: FC<Props> = ({ children, imageUrl, backdrop }) => {
-  // const testImage = `${movieDbImgURL}/t/p/original/${imageUrl}&api_key=${process.env.MOVIE_DATABASE_ID}`
-  // const { data, loading, error } = useColor(testImage, 'hex', { crossOrigin: 'anonymous' })
+const BannerWrapper: FC<Props> = ({ children, imageUrl }) => {
 
   const { data, loading } = useBgColor(imageUrl)
-
   const bannerBg = {
-    backgroundImage: `linear-gradient(${data},rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${imageUrl})`,
+    backgroundImage: loading ? 'bg-slate-700' : `linear-gradient(${data},rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${imageUrl})`,
   };
-
-  if (loading) {
-    <p>loading...</p>
-  }
 
   return (
     <div
       className={
         clsx(
           `h-full bg-cover bg-center bg-no-repeat`,
-          backdrop === null && '!bg-slate-700 !bg-none',
+          imageUrl === null && '!bg-slate-700 !bg-none',
         )
       }
       style={bannerBg}>

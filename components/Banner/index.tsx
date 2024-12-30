@@ -37,8 +37,7 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
   const showCategory = mediaType === 'movies' ? 'movies' : 'tv';
 
   return (
-    <BannerWrapper backdrop={backdrop} imageUrl={backdrop}>
-
+    <BannerWrapper imageUrl={backdrop}>
       <div className='w-[100%] m-auto px-[1em] py-[2em] md:p-[3em] md:grid md:grid-cols-bannerGrid_2Col md:gap-5 xl:w-[1200px]'>
         <Poster
           poster={poster}
