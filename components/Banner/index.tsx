@@ -6,6 +6,7 @@ import BannerIcons from './BannerIcons';
 import Crews from './Crews';
 import { movieDbImgURL } from '@/constant';
 import clsx from 'clsx';
+import BannerWrapper from './BannerWrapper';
 
 const Banner = ({ contentData, mediaType }: BannerProps) => {
 
@@ -36,15 +37,8 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
   const showCategory = mediaType === 'movies' ? 'movies' : 'tv';
 
   return (
-    <div
-      className={
-        clsx(
-          `h-full bg-cover bg-center bg-no-repeat`,
-          backdrop === null && '!bg-slate-700 !bg-none',
-        )
-      }
-      style={bannerBg}
-    >
+    <BannerWrapper backdrop={backdrop} imageUrl={backdrop}>
+
       <div className='w-[100%] m-auto px-[1em] py-[2em] md:p-[3em] md:grid md:grid-cols-bannerGrid_2Col md:gap-5 xl:w-[1200px]'>
         <Poster
           poster={poster}
@@ -60,7 +54,6 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
             releaseDate={releaseDate}
             first_air_date={first_air_date}
             mediaType={mediaType}
-            imageUrl={`${movieDbImgURL}/t/p/original/${contentData.backdrop_path}`}
           />
           <BannerIcons
             runtime={runtime}
@@ -86,7 +79,7 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
           </ul>
         </section>
       </div>
-    </div>
+    </BannerWrapper>
   )
 }
 
