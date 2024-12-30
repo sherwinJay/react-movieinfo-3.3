@@ -2,7 +2,7 @@ import { Inter } from '@next/font/google'
 import { HomeSection, Slider } from '@/components';
 import { getAllMoviesData } from '@/services/api';
 // import { getAllMoviesData } from '@/services/queries';
-// export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic'
 
 const inter = Inter({ subsets: ['latin'] })
 
