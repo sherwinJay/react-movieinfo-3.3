@@ -30,11 +30,11 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
     name
   } = contentData;
 
-  const bannerBg = {
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${contentData.backdrop_path})`,
-  };
+  // const bannerBg = {
+  //   backgroundImage: `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${contentData.backdrop_path})`,
+  // };
 
-  const showCategory = mediaType === 'movies' ? 'movies' : 'tv';
+  // const showCategory = mediaType === 'movies' ? 'movies' : 'tv';
 
   return (
     <BannerWrapper imageUrl={backdrop}>
