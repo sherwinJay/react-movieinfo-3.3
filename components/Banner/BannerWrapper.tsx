@@ -14,7 +14,7 @@ const BannerWrapper: FC<Props> = ({ children, imageUrl }) => {
 
   const { data, loading } = useBgColor(imageUrl)
   const bannerBg = {
-    backgroundImage: loading ? 'bg-slate-700' : `linear-gradient(${data},rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${imageUrl})`,
+    backgroundImage: loading ? 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${imageUrl})' : `linear-gradient(${data},rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${imageUrl})`,
   };
 
   return (
@@ -25,7 +25,8 @@ const BannerWrapper: FC<Props> = ({ children, imageUrl }) => {
           imageUrl === null && '!bg-slate-700 !bg-none',
         )
       }
-      style={bannerBg}>
+      style={bannerBg}
+    >
       {children}
     </div>
   )
