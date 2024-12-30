@@ -18,7 +18,7 @@ type Props = {
 
 const BannerContent = ({ title, name, genres, releaseDate, first_air_date, mediaType, imageUrl }: Props) => {
 
-  const { data, loading, error } = useColor(imageUrl, 'hex', { crossOrigin: 'anonymous' })
+  const { data, loading, error } = useColor(imageUrl, 'hex', { crossOrigin: 'Access-Control-Allow-Origin' })
 
   const getGenres = genres?.map((genre: { name: string }) => genre?.name)
   const sliceGenres = getGenres.slice(0, 3);
