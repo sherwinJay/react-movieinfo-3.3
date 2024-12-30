@@ -4,8 +4,6 @@ import Poster from '../Poster';
 import BannerContent from './BannerContent';
 import BannerIcons from './BannerIcons';
 import Crews from './Crews';
-import { movieDbImgURL } from '@/constant';
-import clsx from 'clsx';
 import BannerWrapper from './BannerWrapper';
 
 const Banner = ({ contentData, mediaType }: BannerProps) => {
@@ -30,14 +28,8 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
     name
   } = contentData;
 
-  // const bannerBg = {
-  //   backgroundImage: `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${contentData.backdrop_path})`,
-  // };
-
-  // const showCategory = mediaType === 'movies' ? 'movies' : 'tv';
-
   return (
-    <BannerWrapper imageUrl={backdrop}>
+    <BannerWrapper imageUrl={backdrop} poster={poster}>
       <div className='w-[100%] m-auto px-[1em] py-[2em] md:p-[3em] md:grid md:grid-cols-bannerGrid_2Col md:gap-5 xl:w-[1200px]'>
         <Poster
           poster={poster}
@@ -69,13 +61,12 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
               {overview}
             </p>
           </div>
-          <ul className="mt-[10px] grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-3">
-            <Crews
-              credits={credits}
-              created_by={created_by}
-              mediaType={mediaType}
-            />
-          </ul>
+
+          <Crews
+            credits={credits}
+            created_by={created_by}
+            mediaType={mediaType}
+          />
         </section>
       </div>
     </BannerWrapper>

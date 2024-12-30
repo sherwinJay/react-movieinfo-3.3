@@ -22,12 +22,12 @@ const Crews = ({ credits, created_by, mediaType }: CrewData) => {
         <p className='text-[10px] md:text-[13px]'>Creator</p>
       </li>
     )
-  }) : null;
+  }) : <></>;
 
   return (
-    <>
+    <ul className="mt-[10px] grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-3">
       {mediaType === "movies" ? getCrew : getCreator}
-    </>
+    </ul>
 
   )
 }

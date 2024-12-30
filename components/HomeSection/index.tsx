@@ -2,8 +2,9 @@ import { HomeCardData, HomeCardSection } from '@/types'
 import { Cards, NoContent } from '../index'
 import clsx from 'clsx'
 import { categoryIcon } from '@/utils/svgIcons'
+import { FC } from 'react'
 
-const HomeSection = ({ isMovie, categoryData, title, template, imgCount, name }: HomeCardSection): JSX.Element => {
+const HomeSection: FC<HomeCardSection> = ({ isMovie, categoryData, title, template, imgCount, name }) => {
 
   const sortedByDateData = title === 'Upcoming Movies' ? categoryData.sort((a, b) => Date.parse(b.release_date) - Date.parse(a.release_date)) : categoryData
   const movieData = sortedByDateData?.slice(0, imgCount)
