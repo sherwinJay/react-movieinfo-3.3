@@ -61,12 +61,13 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
               {overview}
             </p>
           </div>
-
-          <Crews
-            credits={credits}
-            created_by={created_by}
-            mediaType={mediaType}
-          />
+          <ul className="mt-[10px] grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-3">
+            <Crews
+              credits={credits}
+              created_by={created_by}
+              mediaType={mediaType}
+            />
+          </ul>
         </section>
       </div>
     </BannerWrapper>

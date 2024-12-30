@@ -25,9 +25,9 @@ const Crews = ({ credits, created_by, mediaType }: CrewData) => {
   }) : <></>;
 
   return (
-    <ul className="mt-[10px] grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-3">
-      {mediaType === "movies" ? getCrew : getCreator}
-    </ul>
+    <>
+      {mediaType === "movies" ? getCrew! : getCreator!}
+    </>
 
   )
 }
