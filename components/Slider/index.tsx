@@ -16,7 +16,8 @@ const Slider = ({ movieData }: SliderProps) => {
 
   const sliderMovies = slicedMovies.map((movie) => {
     return (
-      <div key={movie.id}
+      <div
+        key={movie.id}
         data-src={`${movieDbImgURL}/t/p/original/${movie.backdrop_path}`}
         className="my-auto w-[800px] px-4"
         data-alt={movie.title}

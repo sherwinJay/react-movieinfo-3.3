@@ -14,14 +14,10 @@ type Props = {
 }
 
 const BannerWrapper: FC<Props> = ({ children, imageUrl, poster }) => {
-  // const { data, loading } = useBgColor(poster)
-  // const bannerBg = {
-  //   backgroundImage: loading ? 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${imageUrl})' : `linear-gradient(${data},rgba(0,0,0,0.7)), url(${movieDbImgURL}/t/p/original/${imageUrl})`,
-  // };
+  const { data, loading } = useBgColor(poster)
   const bannerBg = {
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${imageUrl})`,
+    backgroundImage: loading ? 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${imageUrl})' : `linear-gradient(${data},rgba(0,0,0,0.7)), url(${movieDbImgURL}/t/p/original/${imageUrl})`,
   };
-
 
   // const getColor = !loading && wc_hex_is_light(data!)
 
@@ -36,13 +32,13 @@ const BannerWrapper: FC<Props> = ({ children, imageUrl, poster }) => {
   //   return brightness > 155;
   // }
 
-  // if (loading) {
-  //   return (
-  //     <>
-  //       <SkeletonBanner />
-  //     </>
-  //   )
-  // }
+  if (loading) {
+    return (
+      <>
+        <SkeletonBanner />
+      </>
+    )
+  }
 
   return (
     <div
