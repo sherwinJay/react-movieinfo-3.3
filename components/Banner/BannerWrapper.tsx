@@ -32,13 +32,13 @@ const BannerWrapper: FC<Props> = ({ children, imageUrl, poster }) => {
   //   return brightness > 155;
   // }
 
-  if (loading) {
-    return (
-      <>
-        <SkeletonBanner />
-      </>
-    )
-  }
+  // if (loading) {
+  //   return (
+  //     <>
+  //       <SkeletonBanner />
+  //     </>
+  //   )
+  // }
 
   return (
     <div
