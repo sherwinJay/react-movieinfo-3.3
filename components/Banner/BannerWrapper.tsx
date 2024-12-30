@@ -21,8 +21,6 @@ const BannerWrapper: FC<Props> = ({ children, imageUrl, poster }) => {
 
   // const getColor = !loading && wc_hex_is_light(data!)
 
-  // console.log(getColor)
-
   // function wc_hex_is_light(color: string) {
   //   const hex = color.replace('#', '');
   //   const c_r = parseInt(hex.substring(0, 0 + 2), 16);
