@@ -27,7 +27,7 @@ export const fetchSearchMovies = async ({
     return data as SearchData[]
   } catch (error) {
     // return []
-    // console.log(error)
+    console.log(error)
   }
 }
 
@@ -103,7 +103,7 @@ export async function getMovieData(pageId: string | number, mediaType: string) {
 
     return movieList
   } catch (error) {
-    // console.log(error)
+    console.log(error)
   }
 }
 
