@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react'
+import { useColor } from 'color-thief-react'
 
 type Props = {
   title: string
@@ -10,9 +13,12 @@ type Props = {
   releaseDate: string | undefined
   first_air_date: string | null
   mediaType: string
+  imageUrl: string
 }
 
-const BannerContent = ({ title, name, genres, releaseDate, first_air_date, mediaType }: Props) => {
+const BannerContent = ({ title, name, genres, releaseDate, first_air_date, mediaType, imageUrl }: Props) => {
+
+  const { data, loading, error } = useColor(imageUrl, 'hex', { crossOrigin: 'anonymous' })
 
   const getGenres = genres?.map((genre: { name: string }) => genre?.name)
   const sliceGenres = getGenres.slice(0, 3);
@@ -27,6 +33,9 @@ const BannerContent = ({ title, name, genres, releaseDate, first_air_date, media
       <h1 className="text-[1.6rem] leading-7 md:mt-[20px] font-bold md:text-[2.4rem] md:leading-10">
         {showTitle}
       </h1>
+      <div style={{ color: data }}>
+        Text with the predominant color
+      </div>
       <div className=" mt-0 md:mt-2 flex items-center gap-1">
         <span className="bg-[#c9173d] min-[320px]:text-[8px] md:text-[11px] lg:text-[12px] leading-3 rounded-xl px-[0.45em] py-[0.2em] md:leading-4">
           {`${showDate} (US)`}

@@ -60,11 +60,12 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
             releaseDate={releaseDate}
             first_air_date={first_air_date}
             mediaType={mediaType}
+            imageUrl={`${movieDbImgURL}/t/p/original/${contentData.backdrop_path}`}
           />
           <BannerIcons
             runtime={runtime}
             episodeTime={episode_run_time}
-            mediaType={showCategory}
+            mediaType={mediaType}
             videos={videos}
             votes={vote_average}
           />
