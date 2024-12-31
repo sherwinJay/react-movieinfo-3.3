@@ -14,6 +14,9 @@ type Props = {
 
 const BannerWrapper: FC<Props> = ({ children, imageUrl, poster }) => {
   const { data, loading } = useBgColor(poster)
+
+  console.log('data: ', data)
+
   const bannerBg = {
     backgroundImage: loading ? 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${imageUrl})' : `linear-gradient(${data},rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${imageUrl})`,
   };
