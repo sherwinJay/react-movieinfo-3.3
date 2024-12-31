@@ -2,7 +2,6 @@
 
 import { movieDbImgURL } from '@/constant'
 import { useBgColor } from '@/utils/useBgColor'
-import clsx from 'clsx'
 import React, { FC } from 'react'
 import SkeletonBanner from '../Skeleton/SkeletonBanner'
 import { cn } from '@/lib/utils'
@@ -41,7 +40,7 @@ const BannerWrapper: FC<Props> = ({ children, imageUrl, poster }) => {
   return (
     <div
       className={
-        clsx(
+        cn(
           `h-full bg-cover bg-center bg-no-repeat`,
           imageUrl === null && '!bg-slate-700 !bg-none',
         )
