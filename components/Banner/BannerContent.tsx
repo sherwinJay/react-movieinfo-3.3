@@ -28,7 +28,7 @@ const BannerContent = ({ title, name, genres, releaseDate, first_air_date, media
         {showTitle}
       </h1>
       <div className=" mt-0 md:mt-2 flex items-center gap-1">
-        <span className="bg-[#c9173d] min-[320px]:text-[8px] md:text-[11px] lg:text-[12px] leading-3 rounded-xl px-[0.45em] py-[0.2em] md:leading-4">
+        <span className="bg-[#c9173d] min-[320px]:text-[8px] text-white md:text-[11px] lg:text-[12px] leading-3 rounded-xl px-[0.45em] py-[0.2em] md:leading-4">
           {`${showDate} (US)`}
         </span>
         <span className='min-[320px]:text-[12px] text-[14px] md:text-[16px] !leading-1'>
