@@ -13,7 +13,6 @@ import { movieDbImgURL } from '@/constant'
 const Slider = ({ movieData }: SliderProps) => {
 
   const slicedMovies = movieData?.slice(0, 5)
-
   const sliderMovies = slicedMovies.map((movie) => {
     return (
       <div
