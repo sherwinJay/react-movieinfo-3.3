@@ -1,11 +1,5 @@
-import { movieDbURL } from "@/constant"
-import { HomeCardData } from "@/types"
 import { useQuery } from "@tanstack/react-query"
-import {
-  fetchHomePageMovies,
-  fetchRecommendMovies2,
-  fetchSearchMovies,
-} from "./api"
+import { fetchRecommendMovies2, fetchSearchMovies } from "./api"
 
 export function getSearchMovies(searchValue: string) {
   return useQuery({
