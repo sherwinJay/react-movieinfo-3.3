@@ -10,12 +10,17 @@ const SkeletonBanner = () => {
           </svg>
         </div>
         <div className="w-full">
-          <div className="h-2.5 bg-gray-400 rounded-full dark:bg-gray-600 w-48 mb-4"></div>
-          <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[480px] mb-2.5"></div>
-          <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 mb-2.5"></div>
-          <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[440px] mb-2.5"></div>
-          <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[460px] mb-2.5"></div>
-          <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[360px]"></div>
+          <div className="h-2.5 bg-gray-400 rounded-full dark:bg-gray-600 w-48 mb-3"></div>
+          <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[300px]"></div>
+          <div className='my-4 flex gap-4 items-center'>
+            <div className="bg-gray-400 rounded-full dark:bg-gray-600 w-12 h-12"></div>
+            <div className="bg-gray-400 rounded-full dark:bg-gray-600 w-8 h-8"></div>
+            <div className="bg-gray-400 rounded-full dark:bg-gray-600 w-8 h-8"></div>
+          </div>
+          <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[550px] mb-2.5"></div>
+          <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[520px] mb-2.5"></div>
+          <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[530px] mb-2.5"></div>
+          <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[500px]"></div>
           <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[300px] mt-4 mb-2.5"></div>
           <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[300px]"></div>
         </div>
