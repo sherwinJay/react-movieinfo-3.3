@@ -15,6 +15,15 @@ const nextConfig = {
     // loader: 'custom',
     // loaderFile: './app/utils/imgixLoader.ts',
   },
+  webpack: (config) => ({
+    ...config,
+    externals: [
+      ...config.externals,
+      {
+        sharp: "commonjs sharp",
+      },
+    ],
+  }),
 }
 
 module.exports = nextConfig
