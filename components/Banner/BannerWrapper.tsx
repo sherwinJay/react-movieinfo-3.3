@@ -33,7 +33,7 @@ const BannerWrapper: FC<Props> = ({ children, imageUrl, poster }) => {
       className={cn(
         `h-full bg-cover bg-center bg-no-repeat`,
         imageUrl === null && '!bg-slate-700 !bg-none',
-        getColor && 'text-gray-800'
+        getColor && 'text-black'
       )}
       style={bannerBg}
     >
