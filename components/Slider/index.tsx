@@ -5,15 +5,27 @@ import AwesomeSlider from 'react-awesome-slider'
 import 'react-awesome-slider/dist/styles.css'
 import 'react-awesome-slider/dist/custom-animations/fall-animation.css'
 import withAutoplay from 'react-awesome-slider/dist/autoplay'
-import { SliderProps } from '@/types'
+import { HomeCardData, SliderProps } from '@/types'
 import Link from 'next/link'
 import { bannerWrapper } from './styles'
-import { movieDbImgURL } from '@/constant'
+import { movieDbImgURL, movieDbURL } from '@/constant'
+import { getPopularMovies } from '@/services/queries'
+import SkeletonSlider from '../Skeleton/SkeletonSlider'
 
-const Slider = ({ movieData }: SliderProps) => {
+const Slider = () => {
 
-  const slicedMovies = movieData?.slice(0, 5)
-  const sliderMovies = slicedMovies.map((movie) => {
+  const popularMoviesQuery = getPopularMovies(`${movieDbURL}/3/movie/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`)
+
+  // console.log('popularMovies: ', popularMoviesQuery?.data)
+
+  if (popularMoviesQuery.isLoading) {
+    return (
+      <SkeletonSlider />
+    )
+  }
+
+  const slicedMovies = popularMoviesQuery.data?.slice(0, 5)
+  const sliderMovies = slicedMovies.map((movie: HomeCardData) => {
     return (
       <div
         key={movie.id}

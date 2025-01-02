@@ -23,7 +23,7 @@ const BannerWrapper: FC<Props> = ({ children, imageUrl, poster }) => {
     )
   }
 
-  const isColorLight = !loading && wc_hex_is_light(data!)
+  const isColorLight = wc_hex_is_light(data!)
   const bannerBg = {
     backgroundImage: `linear-gradient(${data},rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${imageUrl})`,
   };

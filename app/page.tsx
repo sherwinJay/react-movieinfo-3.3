@@ -8,12 +8,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default async function Home() {
 
-  const { popularMovie, upcomingMovie, nowPlayingMovie, popularTV } = await getAllMoviesData()
+  const { upcomingMovie, nowPlayingMovie, popularTV } = await getAllMoviesData()
 
   return (
     <>
-      <Slider
-        movieData={popularMovie}
+      <Slider // movieData={popularMovie}
       />
       <main className="w-[100%] p-[1.5em] mx-auto flex flex-col gap-3 lg:p-[3em] xl:w-[1200px]">
         <HomeSection

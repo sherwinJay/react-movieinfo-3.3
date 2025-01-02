@@ -1,5 +1,9 @@
 import { useQuery } from "@tanstack/react-query"
-import { fetchRecommendMovies2, fetchSearchMovies } from "./api"
+import {
+  fetchHomePageMovies,
+  fetchRecommendMovies2,
+  fetchSearchMovies,
+} from "./api"
 
 export function getSearchMovies(searchValue: string) {
   return useQuery({
@@ -13,6 +17,14 @@ export function getRecommendations(pageId: string | number, mediaType: string) {
   return useQuery({
     queryKey: ["recommendations", { pageId, mediaType }],
     queryFn: async () => await fetchRecommendMovies2({ pageId, mediaType }),
+    staleTime: 1000,
+  })
+}
+
+export function getPopularMovies(url: string) {
+  return useQuery({
+    queryKey: ["popularMovies", { url }],
+    queryFn: async () => await fetchHomePageMovies(url),
     staleTime: 1000,
   })
 }

@@ -4,7 +4,7 @@ import { useColor } from "color-thief-react"
 export const useBgColor = (imageUrl: string) => {
   const imageData =
     imageUrl !== null ? imageUrl : "/vKDUmKO6F9bSKKyHhg7YGbgcEeF.jpg"
-  const testImage = `${movieDbImgURL}/t/p/w300/${imageData}&api_key=${process.env.MOVIE_DATABASE_ID}`
+  const backdropImage = `${movieDbImgURL}/t/p/w300/${imageData}&api_key=${process.env.MOVIE_DATABASE_ID}`
   const posterImage = `${movieDbImgURL}/t/p/w92${imageData}&api_key=${process.env.MOVIE_DATABASE_ID}`
 
   const { data, loading, error } = useColor(posterImage, "hex", {
