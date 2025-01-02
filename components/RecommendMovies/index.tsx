@@ -18,9 +18,7 @@ export type Props = {
 
 const RecommendMovies = ({ contentData, mediaType, pageId }: Props) => {
 
-  // const recommendationQueries = getRecommendations(pageId, mediaType) //! check later
-
-  const { background, pointerEvent } = useFetchBG(`${normalizeImgixUrl(`/t/p/w1280${contentData?.results[0]?.backdrop_path}`)}`)
+  const { background, pointerEvent } = useFetchBG(`${normalizeImgixUrl(`/t/p/w780${contentData?.results[0]?.backdrop_path}`)}`)
 
   const slicedRecommendData = contentData?.results?.slice(0, 7);
   const recommendMovieLists = slicedRecommendData?.map((movie) => (
@@ -36,12 +34,8 @@ const RecommendMovies = ({ contentData, mediaType, pageId }: Props) => {
 
   // inline style for the recommendation container
   const recommendationBg = {
-    backgroundImage: `linear-gradient(rgba(11,11,11,0.6),rgba(11,11,11,0.2)), url(${background})`,
+    backgroundImage: `linear-gradient(rgba(11,11,11,0.6),rgba(20,20,20,0.2)), url(${background})`,
   }
-
-  // if (recommendationQueries.isLoading) {
-  //   return <p>loading...</p>
-  // }
 
   return (
     <div
@@ -51,10 +45,10 @@ const RecommendMovies = ({ contentData, mediaType, pageId }: Props) => {
       )}
       style={recommendationBg}
     >
-      <h2 className="mb-[20px] text-[20px] md:text-2xl font-bold pt-4 px-4 md:px-5">
+      <h2 className="mb-[20px] text-[20px] md:text-2xl font-bold pt-6 px-4 md:px-5">
         Recommendations
       </h2>
-      <div className='pb-5 px-4 md:px-5 transition-all delay-500 ease-in-out overflow-x-auto scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900'>
+      <div className='pb-8 px-4 md:px-5 transition-all delay-500 ease-in-out overflow-x-auto scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900'>
         {
           contentData.hasOwnProperty("results") && contentData.results.length > 0 ? (
             <div className="grid grid-cols-07 gap-[1em] w-fit">

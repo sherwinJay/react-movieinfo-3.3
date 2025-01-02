@@ -17,10 +17,10 @@ const LeadCast = ({ castData }: CastData) => {
         />
       </div>
       <div className="px-2 md:px-3 py-2">
-        <p className="font-bold text-[12px] md:text-[0.875rem] leading-4">
+        <p className="font-bold text-[12px] md:text-[0.875rem] leading-4 text-flamingo-200">
           {cast.name}
         </p>
-        <p className="text-[10px] md:text-[13px] mt-0 md:mt-[2px] md:leading-[18px]">
+        <p className="text-[10px] md:text-[12px] mt-[2px] md:mt-[5px] md:leading-[18px]">
           {cast.character}
         </p>
       </div>
