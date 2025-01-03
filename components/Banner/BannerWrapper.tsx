@@ -1,7 +1,7 @@
 'use client'
 
 import { movieDbImgURL } from '@/constant'
-import { useBgColor, wc_hex_is_light } from '@/utils/useBgColor'
+import { hexToRGB, useBgColor, wc_hex_is_light } from '@/utils/useBgColor'
 import React, { FC } from 'react'
 import SkeletonBanner from '../Skeleton/SkeletonBanner'
 import { cn } from '@/lib/utils'
@@ -24,8 +24,11 @@ const BannerWrapper: FC<Props> = ({ children, imageUrl, poster }) => {
   }
 
   const isColorLight = wc_hex_is_light(data!)
+  const bannerGradientTop = hexToRGB(data!, 1)
+  const bannerGradientBottom = hexToRGB(data!, 0.5)
+
   const bannerBg = {
-    backgroundImage: `linear-gradient(${data},rgba(0,0,0,0.6)), url(${movieDbImgURL}/t/p/original/${imageUrl})`,
+    backgroundImage: `linear-gradient(${bannerGradientTop},${bannerGradientBottom}), url(${movieDbImgURL}/t/p/original/${imageUrl})`,
   };
 
   return (
