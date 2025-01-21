@@ -21,7 +21,7 @@ const SkeletonBanner = () => {
           <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[520px] mb-2.5"></div>
           <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[530px] mb-2.5"></div>
           <div className="h-2 bg-gray-400 rounded-full dark:bg-gray-600 max-w-[500px]"></div>
-          <div className='flex gap-6 mt-4'>
+          <div className='flex gap-10 mt-4'>
             <div className='w-[60px] md:w-[80px]'>
               <div className="h-3 bg-gray-400 rounded-full dark:bg-gray-600"></div>
             </div>
@@ -31,6 +31,7 @@ const SkeletonBanner = () => {
             <div className='w-[60px] md:w-[80px]'>
               <div className="h-3 bg-gray-400 rounded-full dark:bg-gray-600"></div>
             </div>
+
           </div>
         </div>
         <span className="sr-only">Loading...</span>
