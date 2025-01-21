@@ -17,7 +17,7 @@ const Error = ({ error, reset }: ErrorProps) => {
           {/* {`Something went wrong`} */}
         </>
       </p>
-      <button className="bg-[#c9173d] mx-auto w-[100px] py-1.5 rounded-full" onClick={router.refresh}>
+      <button className="bg-[#c9173d] mx-auto w-[100px] py-1.5 rounded-full" onClick={() => reset()}>
         Try again
       </button>
     </div>
