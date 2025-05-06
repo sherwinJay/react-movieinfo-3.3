@@ -17,9 +17,7 @@ const BannerWrapper: FC<Props> = ({ children, imageUrl, poster }) => {
 
   if (loading) {
     return (
-      <>
-        <SkeletonBanner />
-      </>
+      <SkeletonBanner />
     )
   }
 

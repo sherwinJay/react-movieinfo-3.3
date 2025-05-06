@@ -12,28 +12,6 @@ const BannerIcons = ({ mediaType, runtime, episodeTime, videos, votes }: BannerI
     return computeHours >= 1 ? `${computeHours}h ${computeMinutes}m` : `${computeMinutes}m`;
   };
 
-  const getTrailer = () => {
-    if (videos?.results?.length > 0 && videos?.results[0]?.hasOwnProperty("key")) {
-      return (
-        <a
-          href={`https://www.youtube.com/watch?v=${videos?.results[0]?.key}`}
-          className="flex gap-[2px] md:gap-1 items-center hover:text-flamingo-200"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {/* <PlayCircleFilledWhiteIcon/> */}
-          <svg className='w-[31px] bg-[#0C0B1F] rounded-full' fill="#c9173d" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path clipRule="evenodd" fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
-          </svg>
-          <p className='text-[14px] md:text-[16px] leading-[19px] md:leading-[24px]'>
-            Play Trailer
-          </p>
-        </a>
-      )
-    }
-    return null
-  }
-
   return (
     <div className='flex gap-[15px] md:gap-6 items-center'>
       <div className="flex gap-[2px] md:gap-2 items-center">
@@ -51,7 +29,22 @@ const BannerIcons = ({ mediaType, runtime, episodeTime, videos, votes }: BannerI
         </p>
       </div>
       <div className="">
-        {getTrailer()}
+        {videos?.results?.length > 0 && videos?.results[0]?.hasOwnProperty("key") && (
+          <a
+            href={`https://www.youtube.com/watch?v=${videos?.results[0]?.key}`}
+            className="flex gap-[2px] md:gap-1 items-center hover:text-flamingo-200"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {/* <PlayCircleFilledWhiteIcon/> */}
+            <svg className='w-[31px] bg-[#0C0B1F] rounded-full' fill="#c9173d" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path clipRule="evenodd" fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
+            </svg>
+            <p className='text-[14px] md:text-[16px] leading-[19px] md:leading-[24px]'>
+              Play Trailer
+            </p>
+          </a>
+        )}
       </div>
     </div>
 

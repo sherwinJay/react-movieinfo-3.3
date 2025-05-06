@@ -6,13 +6,13 @@ import Link from 'next/link';
 
 const SearchList = ({ searchVal, setSearchVal, setIsOpen }: ISearchVal) => {
 
-  const searchQuery = getSearchMovies(searchVal)
-  const filteredData = searchQuery?.data?.filter((data) => data.media_type !== "person")
-  const slicedData = filteredData?.slice(0, 9)
-
   if (searchVal.length < 3) {
     return null
   }
+
+  const searchQuery = getSearchMovies(searchVal)
+  const filteredData = searchQuery?.data?.filter((data) => data.media_type !== "person")
+  const slicedData = filteredData?.slice(0, 9)
 
   if (searchQuery.isLoading) {
     return (

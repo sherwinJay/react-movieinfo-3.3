@@ -7,7 +7,8 @@ import { ActorInformationTypes } from '@/types'
 
 const ActorInformation = ({ actorData, actorCredits, actorSocialMediaAccounts }: ActorInformationTypes) => {
 
-  const { props: { image } } = use(getBlurImages(`${movieDbImgURL}/t/p/w342/${actorData.profile_path ? actorData.profile_path : '/dxSDWkiVaC6JYjrV3XRAZI7HOSS.jpg'}`))
+  const defaultImage = '/dxSDWkiVaC6JYjrV3XRAZI7HOSS.jpg'
+  const { props: { image } } = use(getBlurImages(`${movieDbImgURL}/t/p/w342/${actorData.profile_path ? actorData.profile_path : defaultImage}`))
   const biography = sliceByDot(actorData.biography!)
 
   return (

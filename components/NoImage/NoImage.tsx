@@ -2,12 +2,7 @@ import { FC } from 'react'
 
 import no_image from '@/public/images/image-off.svg'
 import ImgComponent from '../ImgComponent'
-
-interface NoImageProps {
-  className: string | undefined
-  width: number | undefined
-  height: number | undefined
-}
+import { NoImageProps } from '@/types'
 
 const NoImage: FC<NoImageProps> = ({ className, width, height }) => {
   return (

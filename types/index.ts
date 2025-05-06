@@ -36,16 +36,6 @@ export type CrewProps = {
   length: number
 }
 
-export type CastProps = {
-  slice(arg0: number, arg1: number): LeadCastData
-  profile_path: string | null
-  name: string
-  credit_id: string
-  character: string
-  length: number
-  id: string
-}
-
 export type CreatorsProps = {
   map(arg0: (creator: CreatorsProps) => JSX.Element): unknown
   length: number
@@ -111,14 +101,6 @@ export type RecommendData = {
   length: number
 }
 
-export type LeadCastData = HomeCardData & {
-  map(arg0: (cast: CastProps) => JSX.Element | undefined): unknown
-  credits: {
-    cast: CastProps
-    length: number
-  }
-}
-
 export type ProductionCompanyData = {
   // map(arg0: (company: ProductionCompanyData) => JSX.Element): unknown
   // slice(arg0: number, arg1: number): ProductionCompanyData
@@ -174,10 +156,6 @@ export type SearchbarProps = {
 export type CastImageProps = {
   profilePath: string | null
   name: string
-}
-
-export type CastData = {
-  castData: LeadCastData
 }
 
 export type SliderProps = {
@@ -255,4 +233,32 @@ export type PersonalInformationProps = {
   birthPlace: string
   otherNames: string[]
   dayOfDeath: string | null
+}
+
+export type CastProps = {
+  // slice(arg0: number, arg1: number): LeadCastData
+  profile_path: string | null
+  name: string
+  credit_id: string
+  character: string
+  length: number
+  id: string
+}
+
+export type LeadCastData = HomeCardData & {
+  // map(arg0: (cast: CastProps) => JSX.Element | undefined): unknown
+  credits: {
+    cast: CastProps[]
+    length: number
+  }
+}
+
+export type CastData = {
+  castData: LeadCastData
+}
+
+export type NoImageProps = {
+  className: string | undefined
+  width: number | undefined
+  height: number | undefined
 }

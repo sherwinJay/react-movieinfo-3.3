@@ -18,38 +18,30 @@ const RecommendCards = ({ id, bgImage, mediaType, title, pointerEvent }: Props) 
 
   const imageRef = useRef<HTMLImageElement>(null)
 
-  const getThumbnailImg = () => {
-    if (bgImage === '' || bgImage === null) {
-      return (
-        <NoImage
-          className="h-[112px] md:h-[10.5em] grid place-content-center bg-gray-400"
-          width={40}
-          height={40}
-        />
-      )
-    } else {
-      return (
-        <ImgComponent
-          // loader={imgixLoader}
-          src={`${normalizeImgixUrl(`/t/p/w300/${bgImage}`)}`}
-          alt={title}
-          onPointerEnter={() => pointerEvent(imageRef?.current?.id)}
-          id={bgImage}
-          width={300}
-          height={169}
-          className=""
-          imageRef={imageRef}
-          placeholder='blur'
-          blurDataURL={`${normalizeImgixUrl(`/t/p/w300/${bgImage}`)}`}
-        />
-      )
-    }
-  };
-
   return (
     <Link href={`/${mediaType === "movie" ? "movies" : "tv"}/${id}`}>
       <div className="rounded-md w-[200px] md:w-[300px] overflow-hidden bg-[#1c1a3e] shadow-xl shadow-black/60 hover:text-flamingo-200">
-        {getThumbnailImg()}
+        {bgImage === '' || bgImage === null ? (
+          <NoImage
+            className="h-[112px] md:h-[10.5em] grid place-content-center bg-gray-400"
+            width={40}
+            height={40}
+          />
+        ) : (
+          <ImgComponent
+            // loader={imgixLoader}
+            src={`${normalizeImgixUrl(`/t/p/w300/${bgImage}`)}`}
+            alt={title}
+            onPointerEnter={() => pointerEvent(imageRef?.current?.id)}
+            id={bgImage}
+            width={300}
+            height={169}
+            className=""
+            imageRef={imageRef}
+            placeholder='blur'
+            blurDataURL={`${normalizeImgixUrl(`/t/p/w300/${bgImage}`)}`}
+          />
+        )}
         <p className="px-2 md:px-3 py-2 md:p-3 text-[12px] md:text-[15px] whitespace-nowrap overflow-hidden text-ellipsis">
           {title}
         </p>
