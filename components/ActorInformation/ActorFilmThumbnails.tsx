@@ -13,6 +13,8 @@ const ActorFilmThumbnails: FC<{ actorCredits: ActorCombinedCreditsTypes }> = ({ 
       return otherName === itemName
     })).slice(0, 8)
 
+  console.log(slicedData)
+
   return (
     <div className='grid grid-cols-08 gap-[1em] overflow-x-auto pb-5 scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900 w-full'>
       {slicedData.map((item: ActorCombinedCreditsTypes) => (
