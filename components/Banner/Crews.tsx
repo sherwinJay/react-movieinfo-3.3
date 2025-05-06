@@ -26,7 +26,7 @@ const Crews = ({ credits, created_by, mediaType }: CrewData) => {
 
   return (
     <>
-      {mediaType === "movies" ? getCrew! : getCreator!}
+      {mediaType === "movie" ? getCrew! : getCreator!}
     </>
 
   )

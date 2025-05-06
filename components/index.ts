@@ -16,6 +16,10 @@ import TanstackProvider from "./TanstackProvider/TanstackProvider"
 import ErrorMessage from "./ErrorMessage/ErrorMessage"
 import SkeletonBanner from "./Skeleton/SkeletonBanner"
 import SkeletonSlider from "./Skeleton/SkeletonSlider"
+import ActorFilmThumbnails from "./ActorInformation/ActorFilmThumbnails"
+import Filmography from "./ActorInformation/Filmography"
+import PersonalInformation from "./ActorInformation/PersonalInformation"
+import SocialMediaAccounts from "./ActorInformation/SocialMediaAccounts"
 
 export {
   MainHeader,
@@ -36,4 +40,8 @@ export {
   ErrorMessage,
   SkeletonBanner,
   SkeletonSlider,
+  ActorFilmThumbnails,
+  Filmography,
+  PersonalInformation,
+  SocialMediaAccounts,
 }

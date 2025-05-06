@@ -28,3 +28,11 @@ export function getPopularMovies(url: string) {
     staleTime: 1000,
   })
 }
+
+export function getActorMovies(url: string) {
+  return useQuery({
+    queryKey: ["movie", { url }],
+    queryFn: ({ signal }) => ({ url }),
+    staleTime: 10000,
+  })
+}

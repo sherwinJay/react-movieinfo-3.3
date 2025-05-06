@@ -19,8 +19,8 @@ const BannerContent = ({ title, name, genres, releaseDate, first_air_date, media
   const showGenres = sliceGenres.toString().replace(/,/g, ', ')
   const modifiedReleaseDate = releaseDate !== null ? releaseDate?.replace(/-/g, '/') : ''
   const modifiedAirDate = first_air_date !== null ? first_air_date?.replace(/-/g, '/') : ''
-  const showDate = mediaType === 'movies' ? modifiedReleaseDate : modifiedAirDate
-  const showTitle = mediaType === 'movies' ? title : name
+  const showDate = mediaType === 'movie' ? modifiedReleaseDate : modifiedAirDate
+  const showTitle = mediaType === 'movie' ? title : name
 
   return (
     <div className=''>

@@ -1,0 +1,80 @@
+'use client'
+
+import { cn } from '@/lib/utils'
+import { ActorCombinedCreditsTypes } from '@/types'
+import Link from 'next/link'
+import { FC, useState } from 'react'
+
+
+const Filmography: FC<{ actorCredits: ActorCombinedCreditsTypes }> = ({ actorCredits }) => {
+
+  // TODO : if no movie/tv show create a content
+
+  const [mediaType, setMediaType] = useState('movie')
+  const dataSortedByYear = actorCredits.cast.filter((item: ActorCombinedCreditsTypes) => item.character.length > 0).filter((item: ActorCombinedCreditsTypes) => item.media_type === mediaType) as ActorCombinedCreditsTypes[]
+
+  const groupedDataByYear = dataSortedByYear.reduce((acc: any, data) => {
+    const dateStr = data.release_date ?? data.first_air_date;
+    if (!dateStr) return acc
+
+    const year = new Date(dateStr).getFullYear();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(data);
+    return acc;
+  }, {});
+
+  return (
+    <>
+      <div className='flex gap-3 text-sm mt-5 mb-7'>
+        <button className={cn('py-1.5 px-3 bg-slate-800 rounded-md',
+          mediaType === 'movie' && 'bg-flamingo-500'
+        )} onClick={() => setMediaType('movie')}>Movies</button>
+        <button className={cn('py-1.5 px-3 bg-slate-800 rounded-md',
+          mediaType === 'tv' && 'bg-flamingo-500'
+        )} onClick={() => setMediaType('tv')}>TV Shows</button>
+      </div>
+      <ul>
+        {dataSortedByYear.length > 0 ? (
+          Object.keys(groupedDataByYear || {}).sort((a, b) => Number(b) - Number(a)).map(year => {
+            return (
+              <li key={year} className="flex gap-5 border-slate-500 border-t-[1px] py-7 text-sm">
+                <p className='text-flamingo-300'>{year}</p>
+                <div className='flex flex-col gap-4'>
+                  {groupedDataByYear[year].map((data: ActorCombinedCreditsTypes) => (
+                    <Link key={data.credit_id} href={data.media_type === "movie" ? `/movies/${data.id}` : `/${data.media_type}/${data.id}`}>
+                      <div className='flex gap-2'>
+                        <p className='font-semibold'>{data.name ?? data.title}</p>
+                        {/* <span className='font-extralight italic text-gray-100'>{`(${data.media_type})`}</span> */}
+                      </div>
+
+                      {/* <div className='my-1 flex gap-1 items-center'>
+                          <Star className='w-4 h-4' />
+                          <p>{data.vote_average > 0 ? data.vote_average.toFixed(1) : 'NR'}</p>
+                          <p>{`${data.media_type === "tv" ? '(TV)' : ''}`}</p>
+                        </div> */}
+                      <div className='flex gap-2'>
+                        <p className='ml-3 mt-[2px] font-extralight'>{`as ${data.character}`}</p>
+                        <p className='mt-[2px] text-gray-300 font-extralight'>
+                          {data.media_type === 'tv' && (`(${data.episode_count} ${data.episode_count > 1 ? 'episodes' : 'episode'})`)}
+                        </p>
+                      </div>
+
+                    </Link>
+                  ))}
+                </div>
+              </li>
+            )
+          })
+        ) : (
+          <li className="flex gap-5 border-slate-500 border-t-[1px] text-white py-7 text-sm">
+            {mediaType === 'movie' ? 'No Movies' : 'No TV Shows'}
+          </li>
+        )}
+      </ul>
+    </>
+  )
+}
+
+export default Filmography

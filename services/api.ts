@@ -107,6 +107,106 @@ export async function getMovieData(pageId: string | number, mediaType: string) {
   }
 }
 
+export async function getActorData(pageId: string | number) {
+  try {
+    const res = await fetch(
+      `${movieDbURL}/3/person/${pageId}?api_key=${process.env.MOVIE_DATABASE_ID}`,
+      { cache: "no-store" }
+    )
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data")
+    }
+
+    const personData = await res.json()
+
+    return personData
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export async function getActorMovieData(pageId: string | number) {
+  try {
+    const res = await fetch(
+      `${movieDbURL}/3/person/${pageId}/movie_credits?api_key=${process.env.MOVIE_DATABASE_ID}`,
+      { cache: "no-store" }
+    )
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data")
+    }
+
+    const personData = await res.json()
+
+    return personData
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export async function getActorTVData(pageId: string | number) {
+  try {
+    const res = await fetch(
+      `${movieDbURL}/3/person/${pageId}/tv_credits?api_key=${process.env.MOVIE_DATABASE_ID}`,
+      { cache: "no-store" }
+    )
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data")
+    }
+
+    const personData = await res.json()
+
+    return personData
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export async function getActorCombinedCreditsData(pageId: string | number) {
+  try {
+    const res = await fetch(
+      `${movieDbURL}/3/person/${pageId}/combined_credits?api_key=${process.env.MOVIE_DATABASE_ID}`,
+      { cache: "no-store" }
+    )
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data")
+    }
+
+    const personData = await res.json()
+
+    return personData
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export async function getActorSocialMediaData(pageId: string | number) {
+  try {
+    const res = await fetch(
+      `${movieDbURL}/3/person/${pageId}/external_ids?api_key=${process.env.MOVIE_DATABASE_ID}`,
+      { cache: "no-store" }
+    )
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data")
+    }
+
+    const personData = await res.json()
+
+    return personData
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export async function getAllMoviesData() {
   const [
     // popularMovie,

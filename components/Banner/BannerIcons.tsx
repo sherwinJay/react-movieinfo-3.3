@@ -6,8 +6,8 @@ const BannerIcons = ({ mediaType, runtime, episodeTime, videos, votes }: BannerI
   const { circleBorder } = circleRating(votes)
 
   const computeRuntime = () => {
-    const computeHours = Math.floor((mediaType === 'movies' ? runtime : episodeTime?.length > 0 ? episodeTime[0] : 0) / 60);
-    const computeMinutes = (mediaType === 'movies' ? runtime : episodeTime?.length > 0 ? episodeTime[0] : 0) % 60;
+    const computeHours = Math.floor((mediaType === 'movie' ? runtime : episodeTime?.length > 0 ? episodeTime[0] : 0) / 60);
+    const computeMinutes = (mediaType === 'movie' ? runtime : episodeTime?.length > 0 ? episodeTime[0] : 0) % 60;
 
     return computeHours >= 1 ? `${computeHours}h ${computeMinutes}m` : `${computeMinutes}m`;
   };

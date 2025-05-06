@@ -2,28 +2,33 @@ import { CastData, LeadCastData } from '@/types'
 import CastImage from './CastImage'
 import { ReactNode } from 'react'
 import { peopleIcon } from '@/utils/svgIcons'
+import Link from 'next/link'
 
 const LeadCast = ({ castData }: CastData) => {
 
   const slicedCast = castData?.credits?.cast?.slice(0, 7)
 
+  // console.log(slicedCast)
   // template for cast container
   const getCast = slicedCast?.map((cast) => (
     <li key={cast.credit_id} className="min-w-[8em] md:min-w-[9.6em] overflow-hidden bg-[#1c1a3e] rounded-md">
-      <div className="relative overflow-hidden">
-        <CastImage
-          profilePath={cast.profile_path}
-          name={cast.name}
-        />
-      </div>
-      <div className="px-2 md:px-3 py-2">
-        <p className="font-bold text-[12px] md:text-[0.875rem] leading-4 text-flamingo-200">
-          {cast.name}
-        </p>
-        <p className="text-[10px] md:text-[12px] mt-[2px] md:mt-[5px] md:leading-[18px]">
-          {cast.character}
-        </p>
-      </div>
+      <Link href={`/person/${cast.id}`}>
+        <div className="relative overflow-hidden">
+          <CastImage
+            profilePath={cast.profile_path}
+            name={cast.name}
+          />
+        </div>
+        <div className="px-2 md:px-3 py-2">
+          <p className="font-bold text-[12px] md:text-[0.875rem] leading-4 text-flamingo-200">
+            {cast.name}
+          </p>
+          <p className="text-[10px] md:text-[12px] mt-[2px] md:mt-[5px] md:leading-[18px]">
+            {cast.character}
+          </p>
+        </div>
+      </Link>
+
     </li>
   )) as ReactNode
 

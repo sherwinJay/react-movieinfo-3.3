@@ -3,34 +3,42 @@ import React, { use } from 'react'
 import ImgComponent from '../ImgComponent';
 import { getBlurImages } from '@/utils/blurImage';
 import NoImage from '../NoImage/NoImage';
+import { cn } from '@/lib/utils';
 
 interface PosterProps {
-  poster: string
+  poster: string | null
   title: string
   name: string
-  mediaType: "movies" | 'tv'
+  mediaType: "movie" | 'tv'
+  imageSize: 'w92' | 'w154' | 'w185' | 'w342' | 'w500'
 }
 
-const Poster = ({ poster, title, name, mediaType }: PosterProps) => {
+const Poster = ({ poster, title, name, mediaType, imageSize }: PosterProps) => {
 
   if (poster === null || poster === undefined || poster === "") {
     return (
       <NoImage
-        className='hidden md:grid md:content-center md:min-w-[280px] md:h-[420px] bg-gray-400 rounded-2xl place-content-center'
+        className={cn('hidden md:grid md:content-center bg-gray-400 place-content-center',
+          imageSize === "w342" && 'md:min-w-[280px] md:h-[420px] rounded-2xl',
+          imageSize === "w154" && 'md:min-w-[150px] md:h-[231px] rounded-lg',
+        )}
         width={40}
         height={40}
       />
     );
   }
 
-  const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w342${poster}`))
+  const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/${imageSize}${poster}`))
 
   return (
-    <div className="hidden md:grid md:content-center md:min-w-[280px] text-4xl overflow-hidden rounded-2xl">
+    <div className={cn("md:grid md:content-center  overflow-hidden",
+      imageSize === "w342" && 'hidden md:min-w-[280px] text-4xl rounded-2xl',
+      imageSize === "w154" && 'md:min-w-[150px] md:h-[231px] rounded-xl',
+    )}>
       <ImgComponent
         className=""
         src={props.image.src}
-        alt={mediaType === 'movies' ? title : name}
+        alt={mediaType === 'movie' ? title : name}
         width={props.image.width}
         height={props.image.height}
         placeholder="blur"

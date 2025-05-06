@@ -13,6 +13,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         "07": "repeat(7, 1fr)",
+        "08": "repeat(8, 1fr)",
         bannerGrid_2Col: "auto 1fr",
       },
       gridTemplateRows: {

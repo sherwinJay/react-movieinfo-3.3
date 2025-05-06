@@ -43,6 +43,7 @@ export type CastProps = {
   credit_id: string
   character: string
   length: number
+  id: string
 }
 
 export type CreatorsProps = {
@@ -58,7 +59,7 @@ export type CrewData = {
     crew: CrewProps
   }
   created_by: CreatorsProps
-  mediaType: "movies" | "tv"
+  mediaType: "movie" | "tv"
 }
 
 export type ResultsProps = {
@@ -195,7 +196,7 @@ export type BannerIconsProps = {
 
 export type BannerProps = {
   contentData: BannerContentData
-  mediaType: "movies" | "tv"
+  mediaType: "movie" | "tv"
 }
 
 export type ISearchVal = {
@@ -206,4 +207,52 @@ export type ISearchVal = {
 
 export type ProductionCompanyProps = {
   productionCompanies: ProductionCompanyData[]
+}
+
+export interface ActorTypes {
+  biography?: string
+  birthday: string
+  gender: number
+  name: string
+  profile_path: string
+  id: number
+  place_of_birth?: string
+  also_known_as: string[]
+  deathday: string | null
+}
+
+export interface ActorCombinedCreditsTypes {
+  cast: any
+  title: string
+  name: string
+  popularity: number
+  character: string
+  media_type: "movie" | "tv"
+  poster_path: string | null
+  job: string
+  release_date: string
+  first_air_date: string
+  id: number
+  credit_id: string
+  episode_count: number
+}
+
+export interface ActorInformationTypes {
+  actorData: ActorTypes
+  actorCredits: ActorCombinedCreditsTypes
+  actorSocialMediaAccounts: SocialMediaAccountsTypes
+}
+
+export type SocialMediaAccountsTypes = {
+  facebook_id: string | null
+  twitter_id: string | null
+  instagram_id: string | null
+  youtube_id: string | null
+}
+
+export type PersonalInformationProps = {
+  birthday: string | null
+  birthPlace: string
+  otherNames: string[]
+  dayOfDeath: string | null
 }

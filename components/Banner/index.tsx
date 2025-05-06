@@ -36,6 +36,7 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
           title={title}
           name={name}
           mediaType={mediaType}
+          imageSize="w342"
         />
         <section className="flex flex-col gap-[15px]">
           <BannerContent
