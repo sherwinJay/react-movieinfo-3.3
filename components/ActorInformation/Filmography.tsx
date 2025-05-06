@@ -55,9 +55,11 @@ const Filmography: FC<{ actorCredits: ActorCombinedCreditsTypes }> = ({ actorCre
                           <p>{`${data.media_type === "tv" ? '(TV)' : ''}`}</p>
                         </div> */}
                       <div className='flex gap-2'>
-                        <p className='ml-3 mt-[2px] font-extralight'>{`as ${data.character}`}</p>
-                        <p className='mt-[2px] text-gray-300 font-extralight'>
-                          {data.media_type === 'tv' && (`(${data.episode_count} ${data.episode_count > 1 ? 'episodes' : 'episode'})`)}
+                        <p className='ml-3 mt-[2px] font-extralight'>
+                          {`as ${data.character}`}
+                          <span className='ml-2 text-gray-300 font-extralight'>
+                            {data.media_type === 'tv' && (`(${data.episode_count} ${data.episode_count > 1 ? 'episodes' : 'episode'})`)}
+                          </span>
                         </p>
                       </div>
 

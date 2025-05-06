@@ -9,9 +9,6 @@ const ActorInformation = ({ actorData, actorCredits, actorSocialMediaAccounts }:
 
   const { props: { image } } = use(getBlurImages(`${movieDbImgURL}/t/p/w342/${actorData.profile_path ? actorData.profile_path : '/dxSDWkiVaC6JYjrV3XRAZI7HOSS.jpg'}`))
   const biography = sliceByDot(actorData.biography!)
-  // console.log(actorData)
-  // console.log(actorCredits)
-
 
   return (
     <div className='w-[100%] m-auto p-[1.5em] grid grid-cols-1 grid-customRow3 gap-[1.5em] lg:grid-cols-4 lg:p-[3em] xl:w-[1200px]'>
