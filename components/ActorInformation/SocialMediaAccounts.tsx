@@ -2,7 +2,6 @@ import { SocialMediaAccountsTypes } from '@/types'
 import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from 'lucide-react'
 import { FC } from 'react'
 
-
 const SocialMediaAccounts: FC<{ actorSocialMediaAccounts: SocialMediaAccountsTypes }> = ({ actorSocialMediaAccounts }) => {
 
   return (
