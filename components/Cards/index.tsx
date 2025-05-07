@@ -1,8 +1,8 @@
-import { HomeCardData, HomeCardProps } from '@/types'
+import { HomeCardProps } from '@/types'
 import Link from 'next/link';
 import React, { use } from 'react'
 import ImgComponent from '../ImgComponent';
-import { customImgSource, movieDbImgURL } from '@/constant';
+import { movieDbImgURL } from '@/constant';
 import { getBlurImages } from '@/utils/blurImage';
 import NoImage from '../NoImage/NoImage';
 
@@ -20,7 +20,6 @@ const Cards = ({ title, id, overview, vote_average, backdrop_path, poster_path, 
 
   const customImg = template === "1" ? poster_path : backdrop_path;
   const imgSize = template === "1" ? "185" : "780"
-
   const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w${imgSize}/${customImg}`))
 
   return (
