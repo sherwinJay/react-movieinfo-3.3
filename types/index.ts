@@ -262,3 +262,26 @@ export type NoImageProps = {
   width: number | undefined
   height: number | undefined
 }
+
+export type TrailersProps = {
+  popularity: number
+  name: string
+  title: string
+  backdrop_path: string
+  media_type: "movie" | "tv"
+  id: string
+}
+
+export type TrailerThumbnailProps = {
+  name: string
+  title: string
+  backdrop_path: string
+  media_type: "movie" | "tv"
+  id: string
+  pointerEvent(data: string | null | undefined): void
+}
+
+export type TrailerType = {
+  key: string
+  type: string
+}

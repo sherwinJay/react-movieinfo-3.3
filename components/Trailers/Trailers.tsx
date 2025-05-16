@@ -3,15 +3,7 @@
 import { getTrending } from '@/services/queries'
 import TrailerThumbnailWrapper from './TrailerThumbnailWrapper'
 import SkeletonTrailers from '../Skeleton/SkeletonTrailers'
-
-export interface TrailersProps {
-  popularity: number
-  name: string
-  title: string
-  backdrop_path: string
-  media_type: 'movie' | 'tv'
-  id: string
-}
+import { TrailersProps } from '@/types'
 
 const Trailers = ({ }) => {
 

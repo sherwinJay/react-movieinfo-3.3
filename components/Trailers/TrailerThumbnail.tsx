@@ -6,20 +6,7 @@ import ImgComponent from '../ImgComponent'
 import { normalizeImgixUrl } from '@/utils/imgixLoader'
 import { Play } from 'lucide-react'
 import NoImage from '../NoImage/NoImage'
-
-interface TrailerThumbnailProps {
-  name: string
-  title: string
-  backdrop_path: string
-  media_type: 'movie' | 'tv'
-  id: string
-  pointerEvent(data: string | null | undefined): void
-}
-
-type TrailerType = {
-  key: string
-  type: string
-}
+import { TrailerThumbnailProps, TrailerType } from '@/types'
 
 const TrailerThumbnail: FC<TrailerThumbnailProps> = ({ name, title, backdrop_path, id, media_type, pointerEvent }) => {
 
@@ -68,7 +55,6 @@ const TrailerThumbnail: FC<TrailerThumbnailProps> = ({ name, title, backdrop_pat
 
       </div>
       <p className='text-center mt-1 lg:mt-2 text-sm lg:text-md'>{media_type === 'movie' ? title : name}</p>
-
     </div>
   )
 }

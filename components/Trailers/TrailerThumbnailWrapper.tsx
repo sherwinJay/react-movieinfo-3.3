@@ -1,16 +1,12 @@
 'use client'
 
 import { FC } from 'react'
-import { TrailersProps } from './Trailers'
 import { useFetchBG } from '@/utils/useFetchBG'
 import { normalizeImgixUrl } from '@/utils/imgixLoader'
 import TrailerThumbnail from './TrailerThumbnail'
+import { TrailersProps } from '@/types'
 
-interface TrailerThumbnailWrapperProps {
-  trendingTrailerData: TrailersProps[]
-}
-
-const TrailerThumbnailWrapper: FC<TrailerThumbnailWrapperProps> = ({ trendingTrailerData }) => {
+const TrailerThumbnailWrapper: FC<{ trendingTrailerData: TrailersProps[] }> = ({ trendingTrailerData }) => {
 
   const { background, pointerEvent } = useFetchBG(`${normalizeImgixUrl(`/t/p/w1280${trendingTrailerData[0]?.backdrop_path}`)}`)
 
@@ -34,8 +30,6 @@ const TrailerThumbnailWrapper: FC<TrailerThumbnailWrapperProps> = ({ trendingTra
           </div>
         </div>
       </div>
-
-
     </section>
   )
 }

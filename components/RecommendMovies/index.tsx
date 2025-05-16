@@ -14,7 +14,6 @@ export type Props = {
 const RecommendMovies = ({ mediaType, pageId }: Props) => {
 
   const recommendationQueries = getRecommendations(pageId, mediaType) //! check later
-  // const isLoading = true
 
   if (recommendationQueries.isLoading) {
     return (
