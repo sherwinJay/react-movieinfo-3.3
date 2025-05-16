@@ -30,7 +30,7 @@ const Banner = ({ contentData, mediaType }: BannerProps) => {
 
   return (
     <BannerWrapper imageUrl={backdrop} poster={poster}>
-      <div className='w-[100%] m-auto px-[1em] py-[2em] md:p-[3em] md:grid md:grid-cols-bannerGrid_2Col md:gap-5 xl:w-[1200px]'>
+      <div className='w-[100%] m-auto px-[1em] py-[2em] md:p-[3em] md:grid md:grid-cols-bannerGrid_2Col md:gap-5 lg:px-2 xl:w-[1200px]'>
         <Poster
           poster={poster}
           title={title}

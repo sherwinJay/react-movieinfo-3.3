@@ -36,7 +36,7 @@ const Cards = ({ title, id, overview, vote_average, backdrop_path, poster_path, 
           className="translate-x-[-50%] translate-y-[-50%] !top-[50%] !left-[50%] object-cover"
           fill
           alt={isMovie ? title : name}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 33vw"
           placeholder="blur"
           blurDataURL={props.image.blurDataURL}
         />

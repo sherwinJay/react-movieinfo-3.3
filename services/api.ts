@@ -87,6 +87,36 @@ export const fetchRecommendMovies2 = async ({
   }
 }
 
+export const fetchTrending = async () => {
+  const movieApi = `${movieDbURL}/3/trending/all/day?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US`
+
+  try {
+    const res = await axios.get(movieApi)
+    const trendingLists = await res.data!
+
+    return trendingLists
+  } catch (error) {
+    console.log("trendings error", error)
+  }
+}
+
+export const fetchTrendingTrailers = async ({
+  pageId,
+  mediaType,
+  signal,
+}: RecommendedType) => {
+  const movieApi = `${movieDbURL}/3/${mediaType}/${pageId}/videos?api_key=${process.env.MOVIE_DATABASE_ID}`
+
+  try {
+    const res = await axios.get(movieApi)
+    const trendingLists = await res.data!
+
+    return trendingLists
+  } catch (error) {
+    console.log("trendings error", error)
+  }
+}
+
 export async function getMovieData(pageId: string | number, mediaType: string) {
   try {
     const res = await fetch(
@@ -213,6 +243,7 @@ export async function getAllMoviesData() {
     upcomingMovie,
     nowPlayingMovie,
     popularTV,
+    // trending,
   ] = await Promise.all<HomeCardData[]>([
     // fetchHomePageMovies(
     //   `${movieDbURL}/3/movie/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
@@ -226,6 +257,9 @@ export async function getAllMoviesData() {
     fetchHomePageMovies(
       `${movieDbURL}/3/trending/tv/week?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
     ),
+    // fetchHomePageMovies(
+    //   `${movieDbURL}/3/trending/all/week?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+    // ),
   ])
 
   return {
@@ -233,5 +267,6 @@ export async function getAllMoviesData() {
     upcomingMovie,
     nowPlayingMovie,
     popularTV,
+    // trending,
   }
 }

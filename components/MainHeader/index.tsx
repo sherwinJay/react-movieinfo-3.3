@@ -18,7 +18,7 @@ const MainHeader = () => {
 
   return (
     <header className="bg-[#1b1f3a] relative">
-      <div className="w-[100%] m-auto px-4 py-3 md:py-4 flex justify-between items-center xl:w-[1200px]">
+      <div className="w-full m-auto px-4 lg:px-2 py-3 md:py-4 flex justify-between items-center xl:w-[1200px]">
         <h1>
           <Link
             href="/"

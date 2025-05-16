@@ -33,7 +33,7 @@ const Poster = ({ poster, title, name, mediaType, imageSize }: PosterProps) => {
   return (
     <div className={cn("md:grid md:content-center  overflow-hidden",
       imageSize === "w342" && 'hidden md:min-w-[280px] text-4xl rounded-2xl',
-      imageSize === "w154" && 'md:min-w-[150px] md:h-[231px] rounded-xl',
+      imageSize === "w154" && 'md:min-w-[150px] md:h-[231px] rounded-lg',
     )}>
       <ImgComponent
         className=""

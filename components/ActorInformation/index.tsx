@@ -12,7 +12,7 @@ const ActorInformation = ({ actorData, actorCredits, actorSocialMediaAccounts }:
   const biography = sliceByDot(actorData.biography!)
 
   return (
-    <div className='w-[100%] m-auto p-[1.5em] grid grid-cols-1 grid-customRow3 gap-[1.5em] lg:grid-cols-4 lg:p-[3em] xl:w-[1200px]'>
+    <div className='w-full m-auto p-[1.5em] grid grid-cols-1 grid-customRow3 gap-[1.5em] lg:grid-cols-4 lg:py-[3em] lg:px-2 xl:w-[1200px]'>
       <div className='lg:col-start-1 lg:col-end-2'>
         {actorData.profile_path ? (
           <ImgComponent

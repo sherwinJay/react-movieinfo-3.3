@@ -3,6 +3,8 @@ import {
   fetchHomePageMovies,
   fetchRecommendMovies2,
   fetchSearchMovies,
+  fetchTrending,
+  fetchTrendingTrailers,
 } from "./api"
 
 export function getSearchMovies(searchValue: string) {
@@ -34,5 +36,24 @@ export function getActorMovies(url: string) {
     queryKey: ["movie", { url }],
     queryFn: ({ signal }) => ({ url }),
     staleTime: 10000,
+  })
+}
+
+export function getTrending() {
+  return useQuery({
+    queryKey: ["trendings"],
+    queryFn: async () => await fetchTrending(),
+    staleTime: 1000,
+  })
+}
+
+export function getTrendingTrailers(
+  pageId: string | number,
+  mediaType: string
+) {
+  return useQuery({
+    queryKey: ["trendings", { pageId, mediaType }],
+    queryFn: async () => await fetchTrendingTrailers({ pageId, mediaType }),
+    staleTime: 1000,
   })
 }

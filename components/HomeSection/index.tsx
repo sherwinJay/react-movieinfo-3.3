@@ -14,13 +14,13 @@ const HomeSection: FC<HomeCardSection> = ({ isMovie, categoryData, title, templa
     )
   }
 
-  const sortedByDateData = title === 'Upcoming Movies' ? categoryData.sort((a, b) => Date.parse(b.release_date) - Date.parse(a.release_date)) : categoryData
-  const movieData = sortedByDateData?.slice(0, imgCount)
+  const sortedByDateData = title === 'Now Playing' ? categoryData.sort((a, b) => Date.parse(b.release_date) - Date.parse(a.release_date)) : categoryData
+  const movieData = sortedByDateData?.slice(0, 8)
 
   return (
     <div>
       <div className='flex gap-1 items-center mb-2'>
-        {categoryIcon(title)}
+        {/* {categoryIcon(title)} */}
         <h2 className="font-bold text-[1rem] text-[#e11d48] md:text-[1.25rem] inline-block">
           {title}
         </h2>

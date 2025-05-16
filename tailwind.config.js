@@ -14,12 +14,16 @@ module.exports = {
       gridTemplateColumns: {
         "07": "repeat(7, 1fr)",
         "08": "repeat(8, 1fr)",
+        "09": "repeat(9, 1fr)",
+        "010": "repeat(10, 1fr)",
         bannerGrid_2Col: "auto 1fr",
       },
       gridTemplateRows: {
         customRow1: "auto 1fr auto",
         customRow3a: "repeat(3, 117px);",
         customRow3b: "repeat(3, 1fr);",
+        customRow4a: "repeat(4, 117px);",
+        customRow5a: "repeat(5, 117px);",
       },
       zIndex: {
         999: "999",

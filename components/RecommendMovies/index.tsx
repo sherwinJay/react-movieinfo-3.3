@@ -31,7 +31,7 @@ const RecommendMovies = ({ mediaType, pageId }: Props) => {
     )
   }
 
-  const slicedRecommendData = recommendationQueries?.data?.results?.slice(0, 7);
+  const slicedRecommendData = recommendationQueries?.data?.results?.slice(0, 7) as RecommendData[]
 
 
   return (

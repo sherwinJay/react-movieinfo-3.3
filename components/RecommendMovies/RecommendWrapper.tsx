@@ -1,3 +1,5 @@
+'use client'
+
 import { cn } from '@/lib/utils'
 import { RecommendData } from '@/types'
 import { normalizeImgixUrl } from '@/utils/imgixLoader'
@@ -12,6 +14,8 @@ interface RecommendWrapperProps {
 
 const RecommendWrapper: FC<RecommendWrapperProps> = ({ recommendationData, mediaType }) => {
   const { background, pointerEvent } = useFetchBG(`${normalizeImgixUrl(`/t/p/w1280${recommendationData[0]?.backdrop_path}`)}`)
+
+  console.log('recommend bg: ', background)
 
   return (
     <div

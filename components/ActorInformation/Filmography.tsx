@@ -31,11 +31,11 @@ const Filmography: FC<{ actorCredits: ActorCombinedCreditsTypes }> = ({ actorCre
 
   return (
     <>
-      <div className='flex gap-3 text-sm mt-5 mb-7'>
-        <button className={cn('py-1.5 px-3 bg-slate-800 rounded-md',
+      <div className='flex text-sm mt-5 mb-7 overflow-hidden rounded-full border-[1px] boder-white w-fit'>
+        <button className={cn('py-1.5 px-4 rounded-full',
           mediaType === 'movie' && 'bg-flamingo-500'
         )} onClick={() => setMediaType('movie')}>Movies</button>
-        <button className={cn('py-1.5 px-3 bg-slate-800 rounded-md',
+        <button className={cn('py-1.5 px-4 rounded-full',
           mediaType === 'tv' && 'bg-flamingo-500'
         )} onClick={() => setMediaType('tv')}>TV Shows</button>
       </div>

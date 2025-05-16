@@ -13,7 +13,7 @@ const TVShows = async ({ params }: { params: { id: string } }) => {
         contentData={tvList}
         mediaType="tv"
       />
-      <div className="w-[100%] m-auto p-[1.5em] grid grid-cols-1 grid-customRow3 md:gap-[1.5em] md:grid-cols-4 md:grid-rows-2 md:p-[3em] xl:w-[1200px]">
+      <div className="w-[100%] m-auto p-[1.5em] grid grid-cols-1 grid-customRow3 md:gap-[1.5em] md:grid-cols-4 md:grid-rows-2 md:p-[3em] lg:px-2 xl:w-[1200px]">
         <div className="md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-2">
           <LeadCast
             castData={tvList}
