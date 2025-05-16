@@ -7,6 +7,7 @@ import { normalizeImgixUrl } from '@/utils/imgixLoader'
 import { Play } from 'lucide-react'
 import NoImage from '../NoImage/NoImage'
 import { TrailerThumbnailProps, TrailerType } from '@/types'
+import { SkeletonTrailer } from '../Skeleton/SkeletonTrailers'
 
 const TrailerThumbnail: FC<TrailerThumbnailProps> = ({ name, title, backdrop_path, id, media_type, pointerEvent }) => {
 
@@ -15,7 +16,7 @@ const TrailerThumbnail: FC<TrailerThumbnailProps> = ({ name, title, backdrop_pat
 
   if (trendingTrailerQuery.isLoading) {
     return (
-      <p>loading...</p> // TODO change later
+      <SkeletonTrailer /> // TODO change later
     )
   }
 

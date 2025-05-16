@@ -1,10 +1,4 @@
-import { FC } from 'react'
-
-interface SkeletonTrailersProps {
-
-}
-
-const SkeletonTrailers: FC<SkeletonTrailersProps> = ({ }) => {
+const SkeletonTrailers = ({ }) => {
   return (
     <div className='bg-slate-800'>
       <div role="status" className="w-full lg:w-[1200px] m-auto pt-4 px-4 md:px-2 py-[1.7em] lg:py-9 flex flex-col animate-pulse h-[180px] md:h-[230px] lg:h-[315px]">
@@ -19,4 +13,13 @@ const SkeletonTrailers: FC<SkeletonTrailersProps> = ({ }) => {
   )
 }
 
-export default SkeletonTrailers
+const SkeletonTrailer = ({ }) => {
+  return (
+    <div className="bg-gray-400 rounded-lg dark:bg-gray-600 w-full max-w-[550px] h-[200px] scale-95"></div>
+  )
+}
+
+export {
+  SkeletonTrailers,
+  SkeletonTrailer
+}

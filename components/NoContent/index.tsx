@@ -1,10 +1,6 @@
 import React from 'react'
 
-type Props = {
-  content: string
-}
-
-const NoContent = ({ content }: Props) => {
+const NoContent = ({ content }: { content: string }) => {
   return (
     <div>
       <p>

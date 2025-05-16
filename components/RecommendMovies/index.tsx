@@ -21,7 +21,6 @@ const RecommendMovies = ({ mediaType, pageId }: Props) => {
     )
   }
 
-
   if (!recommendationQueries.data.hasOwnProperty("results")) {
     return (
       <div className='h-fit grid place-content-center py-20'>

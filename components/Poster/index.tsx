@@ -4,14 +4,7 @@ import ImgComponent from '../ImgComponent';
 import { getBlurImages } from '@/utils/blurImage';
 import NoImage from '../NoImage/NoImage';
 import { cn } from '@/lib/utils';
-
-interface PosterProps {
-  poster: string | null
-  title: string
-  name: string
-  mediaType: "movie" | 'tv'
-  imageSize: 'w92' | 'w154' | 'w185' | 'w342' | 'w500'
-}
+import { PosterProps } from '@/types';
 
 const Poster = ({ poster, title, name, mediaType, imageSize }: PosterProps) => {
 

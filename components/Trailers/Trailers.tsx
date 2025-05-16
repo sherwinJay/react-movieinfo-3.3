@@ -2,7 +2,7 @@
 
 import { getTrending } from '@/services/queries'
 import TrailerThumbnailWrapper from './TrailerThumbnailWrapper'
-import SkeletonTrailers from '../Skeleton/SkeletonTrailers'
+import { SkeletonTrailers } from '../Skeleton/SkeletonTrailers'
 import { TrailersProps } from '@/types'
 
 const Trailers = ({ }) => {

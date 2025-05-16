@@ -1,18 +1,7 @@
+import { BannerContentProps } from '@/types';
 import React, { use } from 'react'
 
-type Props = {
-  title: string
-  name: string
-  genres: {
-    map(arg0: (genre: { name: string; }) => string): string
-    name: string
-  }
-  releaseDate: string | undefined
-  first_air_date: string | null
-  mediaType: string
-}
-
-const BannerContent = ({ title, name, genres, releaseDate, first_air_date, mediaType }: Props) => {
+const BannerContent = ({ title, name, genres, releaseDate, first_air_date, mediaType }: BannerContentProps) => {
 
   const getGenres = genres?.map((genre: { name: string }) => genre?.name)
   const sliceGenres = getGenres.slice(0, 3);

@@ -285,3 +285,29 @@ export type TrailerType = {
   key: string
   type: string
 }
+
+export type BannerWrapperProps = {
+  children: React.ReactNode
+  imageUrl: string
+  poster: string
+}
+
+export type BannerContentProps = {
+  title: string
+  name: string
+  genres: {
+    map(arg0: (genre: { name: string }) => string): string
+    name: string
+  }
+  releaseDate: string | undefined
+  first_air_date: string | null
+  mediaType: string
+}
+
+export type PosterProps = {
+  poster: string | null
+  title: string
+  name: string
+  mediaType: "movie" | "tv"
+  imageSize: "w92" | "w154" | "w185" | "w342" | "w500"
+}

@@ -5,14 +5,9 @@ import { hexToRGB, useBgColor, wc_hex_is_light } from '@/utils/useBgColor'
 import React, { FC } from 'react'
 import SkeletonBanner from '../Skeleton/SkeletonBanner'
 import { cn } from '@/lib/utils'
+import { BannerWrapperProps } from '@/types'
 
-type Props = {
-  children: React.ReactNode
-  imageUrl: string
-  poster: string
-}
-
-const BannerWrapper: FC<Props> = ({ children, imageUrl, poster }) => {
+const BannerWrapper: FC<BannerWrapperProps> = ({ children, imageUrl, poster }) => {
   const { data, loading } = useBgColor(poster)
 
   if (loading) {
