@@ -14,7 +14,7 @@ import SkeletonSlider from '../Skeleton/SkeletonSlider'
 
 const Slider = () => {
 
-  const popularMoviesQuery = getPopularMovies(`${movieDbURL}/3/movie/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`)
+  const popularMoviesQuery = getPopularMovies(`${movieDbURL}/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&language=en-US&page=1`)
   const slicedMovies = popularMoviesQuery.data?.slice(0, 5)
   const AutoplaySlider = withAutoplay(AwesomeSlider)
 

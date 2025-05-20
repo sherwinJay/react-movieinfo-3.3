@@ -29,7 +29,7 @@ export const fetchSearchMovies = async ({
   searchValue,
   signal,
 }: FetchSearchType) => {
-  const movieApi = `${movieDbURL}/3/search/multi?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&query=${searchValue}&page=1&include_adult=false`
+  const movieApi = `${movieDbURL}/3/search/multi?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&language=en-US&query=${searchValue}&page=1&include_adult=false`
 
   try {
     const response = await axios.get(movieApi, { signal })
@@ -71,7 +71,7 @@ export async function fetchRecommendMovies(
 ) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/${mediaType}/${pageId}/recommendations?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`,
+      `${movieDbURL}/3/${mediaType}/${pageId}/recommendations?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&language=en-US&page=1`,
       { cache: "no-store" }
     )
 
@@ -97,7 +97,7 @@ export const fetchRecommendMovies2 = async ({
   mediaType,
   signal,
 }: RecommendedType) => {
-  const movieApi = `${movieDbURL}/3/${mediaType}/${pageId}/recommendations?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+  const movieApi = `${movieDbURL}/3/${mediaType}/${pageId}/recommendations?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&language=en-US&page=1`
 
   try {
     // const res = await axios.get(movieApi, { signal })
@@ -123,7 +123,7 @@ export const fetchRecommendMovies2 = async ({
 }
 
 export const fetchTrending = async () => {
-  const movieApi = `${movieDbURL}/3/trending/all/day?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US`
+  const movieApi = `${movieDbURL}/3/trending/all/day?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&language=en-US`
 
   try {
     // const res = await axios.get(movieApi)
@@ -152,7 +152,7 @@ export const fetchTrendingTrailers = async ({
   mediaType,
   signal,
 }: RecommendedType) => {
-  const movieApi = `${movieDbURL}/3/${mediaType}/${pageId}/videos?api_key=${process.env.MOVIE_DATABASE_ID}`
+  const movieApi = `${movieDbURL}/3/${mediaType}/${pageId}/videos?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`
 
   try {
     // const res = await axios.get(movieApi)
@@ -177,7 +177,7 @@ export const fetchTrendingTrailers = async ({
 export async function getMovieData(pageId: string | number, mediaType: string) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/${mediaType}/${pageId}?api_key=${process.env.MOVIE_DATABASE_ID}&append_to_response=credits,videos`,
+      `${movieDbURL}/3/${mediaType}/${pageId}?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&append_to_response=credits,videos`,
       { cache: "no-store" }
     )
 
@@ -198,7 +198,7 @@ export async function getMovieData(pageId: string | number, mediaType: string) {
 export async function getActorData(pageId: string | number) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/person/${pageId}?api_key=${process.env.MOVIE_DATABASE_ID}`,
+      `${movieDbURL}/3/person/${pageId}?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`,
       { cache: "no-store" }
     )
 
@@ -222,7 +222,7 @@ export async function getActorData(pageId: string | number) {
 export async function getActorMovieData(pageId: string | number) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/person/${pageId}/movie_credits?api_key=${process.env.MOVIE_DATABASE_ID}`,
+      `${movieDbURL}/3/person/${pageId}/movie_credits?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`,
       { cache: "no-store" }
     )
 
@@ -246,7 +246,7 @@ export async function getActorMovieData(pageId: string | number) {
 export async function getActorTVData(pageId: string | number) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/person/${pageId}/tv_credits?api_key=${process.env.MOVIE_DATABASE_ID}`,
+      `${movieDbURL}/3/person/${pageId}/tv_credits?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`,
       { cache: "no-store" }
     )
 
@@ -270,7 +270,7 @@ export async function getActorTVData(pageId: string | number) {
 export async function getActorCombinedCreditsData(pageId: string | number) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/person/${pageId}/combined_credits?api_key=${process.env.MOVIE_DATABASE_ID}`,
+      `${movieDbURL}/3/person/${pageId}/combined_credits?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`,
       { cache: "no-store" }
     )
 
@@ -294,7 +294,7 @@ export async function getActorCombinedCreditsData(pageId: string | number) {
 export async function getActorSocialMediaData(pageId: string | number) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/person/${pageId}/external_ids?api_key=${process.env.MOVIE_DATABASE_ID}`,
+      `${movieDbURL}/3/person/${pageId}/external_ids?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`,
       { cache: "no-store" }
     )
 
@@ -324,19 +324,19 @@ export async function getAllMoviesData() {
     // trending,
   ] = await Promise.all<HomeCardData[]>([
     // fetchHomePageMovies(
-    //   `${movieDbURL}/3/movie/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+    //   `${movieDbURL}/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&language=en-US&page=1`
     // ),
     fetchHomePageMovies(
-      `${movieDbURL}/3/trending/movie/day?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+      `${movieDbURL}/3/trending/movie/day?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&language=en-US&page=1`
     ),
     fetchHomePageMovies(
-      `${movieDbURL}/3/movie/popular?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+      `${movieDbURL}/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&language=en-US&page=1`
     ),
     fetchHomePageMovies(
-      `${movieDbURL}/3/trending/tv/week?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+      `${movieDbURL}/3/trending/tv/week?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&language=en-US&page=1`
     ),
     // fetchHomePageMovies(
-    //   `${movieDbURL}/3/trending/all/week?api_key=${process.env.MOVIE_DATABASE_ID}&language=en-US&page=1`
+    //   `${movieDbURL}/3/trending/all/week?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&language=en-US&page=1`
     // ),
   ])
 
