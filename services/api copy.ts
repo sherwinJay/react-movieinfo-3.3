@@ -128,21 +128,12 @@ export const fetchTrendingTrailers = async ({
   const movieApi = `${movieDbURL}/3/${mediaType}/${pageId}/videos?api_key=${process.env.MOVIE_DATABASE_ID}`
 
   try {
-    // const res = await axios.get(movieApi)
-    // const trendingLists = await res.data!
+    const res = await axios.get(movieApi)
+    const trendingLists = await res.data!
 
-    const response = await fetch(movieApi, { cache: "no-store" })
-
-    if (!response.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error("Failed to fetch recommend data")
-    }
-
-    const trendingTrailers = await response.json()
-
-    return trendingTrailers
+    return trendingLists
   } catch (error) {
-    console.log("trending trailers error", error)
+    console.log("trendings error", error)
   }
 }
 

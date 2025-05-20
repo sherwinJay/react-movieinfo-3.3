@@ -19,7 +19,7 @@ const LeadCast: FC<{ castData: LeadCastData }> = ({ castData }) => {
       {castData.credits.cast.length ? (
         <ul className='grid grid-cols-010 gap-[1em] overflow-x-auto pb-[1.5em] scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-slate-900'>
           {slicedCast.map((cast) => (
-            <li key={cast.credit_id} className="min-w-[8em] md:min-w-[9.6em] overflow-hidden bg-[#1c1a3e] rounded-md">
+            <li key={cast.credit_id} className="min-w-[8em] md:min-w-[9.6em] overflow-hidden bg-slate-900 rounded-md">
               <Link href={`/person/${cast.id}`}>
                 <div className="relative overflow-hidden">
                   <CastImage

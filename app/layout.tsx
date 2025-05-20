@@ -21,7 +21,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       {/* <head /> */}
-      <body className="grid grid-rows-customRow1 h-[100vh]">
+      <body className="grid grid-rows-customRow1 h-[100vh] bg-neutral-900">
         <TanstackProvider>
           <MainHeader />
           {children}

@@ -16,8 +16,10 @@ const MainHeader = () => {
     setIsOpen(false)
   }, [pathname])
 
+  // bg-[#0c1929]
+
   return (
-    <header className="bg-[#1b1f3a] relative">
+    <header className="bg-[#0c1929] relative">
       <div className="w-full m-auto px-4 lg:px-2 py-3 md:py-4 flex justify-between items-center xl:w-[1200px]">
         <h1>
           <Link

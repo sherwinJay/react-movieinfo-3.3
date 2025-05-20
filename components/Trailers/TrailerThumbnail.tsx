@@ -16,7 +16,7 @@ const TrailerThumbnail: FC<TrailerThumbnailProps> = ({ name, title, backdrop_pat
 
   if (trendingTrailerQuery.isLoading) {
     return (
-      <SkeletonTrailer /> // TODO change later
+      <SkeletonTrailer />
     )
   }
 
@@ -55,7 +55,7 @@ const TrailerThumbnail: FC<TrailerThumbnailProps> = ({ name, title, backdrop_pat
         </a>
 
       </div>
-      <p className='text-center mt-1 lg:mt-2 text-sm lg:text-md'>{media_type === 'movie' ? title : name}</p>
+      <p className='text-center mt-1 lg:mt-2 text-xs lg:text-sm font-normal'>{media_type === 'movie' ? title : name}</p>
     </div>
   )
 }

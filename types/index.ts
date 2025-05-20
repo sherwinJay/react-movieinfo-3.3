@@ -16,7 +16,12 @@ export type HomeCardData = {
 export type HomeCardSection = {
   isMovie?: boolean
   template?: "1" | "2"
-  title: "Upcoming Movies" | "Now Playing" | "TV Shows" | "Trending Movies"
+  title:
+    | "Upcoming Movies"
+    | "Now Playing"
+    | "TV Shows"
+    | "Trending Movies"
+    | "In Theatres"
   categoryData: HomeCardData[]
   imgCount?: number
   name?: string

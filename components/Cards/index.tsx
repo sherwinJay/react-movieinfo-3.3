@@ -19,7 +19,7 @@ const Cards = ({ title, id, overview, vote_average, backdrop_path, poster_path, 
   }
 
   const customImg = template === "1" ? poster_path : backdrop_path;
-  const imgSize = template === "1" ? "185" : "780"
+  const imgSize = template === "1" ? "342" : "780"
   const { props } = use(getBlurImages(`${movieDbImgURL}/t/p/w${imgSize}/${customImg}`))
 
   return (

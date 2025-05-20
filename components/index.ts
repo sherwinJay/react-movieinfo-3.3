@@ -20,6 +20,7 @@ import ActorFilmThumbnails from "./ActorInformation/ActorFilmThumbnails"
 import Filmography from "./ActorInformation/Filmography"
 import PersonalInformation from "./ActorInformation/PersonalInformation"
 import SocialMediaAccounts from "./ActorInformation/SocialMediaAccounts"
+import Trailers from "./Trailers/Trailers"
 
 export {
   MainHeader,
@@ -44,4 +45,5 @@ export {
   Filmography,
   PersonalInformation,
   SocialMediaAccounts,
+  Trailers,
 }
