@@ -47,7 +47,7 @@ export async function fetchHomePageMovies(url: string) {
     return homePageMovieList
   } catch (error) {
     console.log(error)
-    return null
+    throw new Error("Fetch Home Movie Error")
   }
 }
 
@@ -171,7 +171,7 @@ export async function getMovieData(pageId: string | number, mediaType: string) {
     return movieList
   } catch (error) {
     console.log(error)
-    return null
+    throw new Error("Fetch Home Movie Error")
   }
 }
 
@@ -192,7 +192,7 @@ export async function getActorData(pageId: string | number) {
     return personData
   } catch (error) {
     console.log(error)
-    return null
+    throw new Error("Fetch Actor Data Error")
   }
 }
 
@@ -213,7 +213,7 @@ export async function getActorMovieData(pageId: string | number) {
     return personData
   } catch (error) {
     console.log(error)
-    return null
+    throw new Error("Fetch Actor Movies Error")
   }
 }
 
@@ -234,7 +234,7 @@ export async function getActorTVData(pageId: string | number) {
     return personData
   } catch (error) {
     console.log(error)
-    return null
+    throw new Error("Fetch Actor Data Error")
   }
 }
 
@@ -255,7 +255,7 @@ export async function getActorCombinedCreditsData(pageId: string | number) {
     return personData
   } catch (error) {
     console.log(error)
-    return null
+    throw new Error("Fetch Actor Credits Error")
   }
 }
 
@@ -276,7 +276,7 @@ export async function getActorSocialMediaData(pageId: string | number) {
     return personData
   } catch (error) {
     console.log(error)
-    return null
+    throw new Error("Fetch Actor Social media Error")
   }
 }
 
