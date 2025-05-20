@@ -28,6 +28,7 @@ export const fetchSearchMovies = async ({
   } catch (error) {
     // return []
     console.log(error)
+    return null
   }
 }
 
@@ -46,6 +47,7 @@ export async function fetchHomePageMovies(url: string) {
     return homePageMovieList
   } catch (error) {
     console.log(error)
+    return null
   }
 }
 
@@ -67,7 +69,10 @@ export async function fetchRecommendMovies(
     const recommendMovieList = await res.json()
 
     return recommendMovieList
-  } catch (error) {}
+  } catch (error) {
+    console.log("error occured on fetching recommended movies", error)
+    return null
+  }
 }
 
 export const fetchRecommendMovies2 = async ({
@@ -93,6 +98,7 @@ export const fetchRecommendMovies2 = async ({
     return recommendMovieList2
   } catch (error) {
     console.log("recommended error", error)
+    return null
   }
 }
 
@@ -117,6 +123,7 @@ export const fetchTrending = async () => {
     return trendingList2
   } catch (error) {
     console.log("trendings error", error)
+    return null
   }
 }
 
@@ -143,6 +150,7 @@ export const fetchTrendingTrailers = async ({
     return trendingTrailers
   } catch (error) {
     console.log("trending trailers error", error)
+    return null
   }
 }
 
@@ -163,6 +171,7 @@ export async function getMovieData(pageId: string | number, mediaType: string) {
     return movieList
   } catch (error) {
     console.log(error)
+    return null
   }
 }
 
@@ -183,6 +192,7 @@ export async function getActorData(pageId: string | number) {
     return personData
   } catch (error) {
     console.log(error)
+    return null
   }
 }
 
@@ -203,6 +213,7 @@ export async function getActorMovieData(pageId: string | number) {
     return personData
   } catch (error) {
     console.log(error)
+    return null
   }
 }
 
@@ -223,6 +234,7 @@ export async function getActorTVData(pageId: string | number) {
     return personData
   } catch (error) {
     console.log(error)
+    return null
   }
 }
 
@@ -243,6 +255,7 @@ export async function getActorCombinedCreditsData(pageId: string | number) {
     return personData
   } catch (error) {
     console.log(error)
+    return null
   }
 }
 
@@ -263,6 +276,7 @@ export async function getActorSocialMediaData(pageId: string | number) {
     return personData
   } catch (error) {
     console.log(error)
+    return null
   }
 }
 
