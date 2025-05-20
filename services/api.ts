@@ -14,6 +14,17 @@ type RecommendedType = {
   signal?: AbortSignal | undefined
 }
 
+export type ServerActionResult<T> =
+  | { success: true; value: T }
+  | { success: false; value: T }
+
+export class ServerActionError extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = "ServerActionError"
+  }
+}
+
 export const fetchSearchMovies = async ({
   searchValue,
   signal,
@@ -46,8 +57,11 @@ export async function fetchHomePageMovies(url: string) {
 
     return homePageMovieList
   } catch (error) {
-    console.log(error)
-    throw new Error("Fetch Home Movie Error")
+    // console.log(error)
+    // throw new Error("Fetch Home Movie Error")
+    if (error instanceof ServerActionError)
+      return { success: false, error: error.message }
+    throw error
   }
 }
 
@@ -70,8 +84,11 @@ export async function fetchRecommendMovies(
 
     return recommendMovieList
   } catch (error) {
-    console.log("error occured on fetching recommended movies", error)
-    return null
+    // console.log("error occured on fetching recommended movies", error)
+    // return null
+    if (error instanceof ServerActionError)
+      return { success: false, error: error.message }
+    throw error
   }
 }
 
@@ -97,8 +114,11 @@ export const fetchRecommendMovies2 = async ({
 
     return recommendMovieList2
   } catch (error) {
-    console.log("recommended error", error)
-    return null
+    // console.log("recommended error", error)
+    // return null
+    if (error instanceof ServerActionError)
+      return { success: false, error: error.message }
+    throw error
   }
 }
 
@@ -191,8 +211,11 @@ export async function getActorData(pageId: string | number) {
 
     return personData
   } catch (error) {
-    console.log(error)
-    throw new Error("Fetch Actor Data Error")
+    // console.log(error)
+    // throw new Error("Fetch Actor Data Error")
+    if (error instanceof ServerActionError)
+      return { success: false, error: error.message }
+    throw error
   }
 }
 
@@ -212,8 +235,11 @@ export async function getActorMovieData(pageId: string | number) {
 
     return personData
   } catch (error) {
-    console.log(error)
-    throw new Error("Fetch Actor Movies Error")
+    // console.log(error)
+    // throw new Error("Fetch Actor Movies Error")
+    if (error instanceof ServerActionError)
+      return { success: false, error: error.message }
+    throw error
   }
 }
 
@@ -233,8 +259,11 @@ export async function getActorTVData(pageId: string | number) {
 
     return personData
   } catch (error) {
-    console.log(error)
-    throw new Error("Fetch Actor Data Error")
+    // console.log(error)
+    // throw new Error("Fetch Actor Data Error")
+    if (error instanceof ServerActionError)
+      return { success: false, error: error.message }
+    throw error
   }
 }
 
@@ -254,8 +283,11 @@ export async function getActorCombinedCreditsData(pageId: string | number) {
 
     return personData
   } catch (error) {
-    console.log(error)
-    throw new Error("Fetch Actor Credits Error")
+    // console.log(error)
+    // throw new Error("Fetch Actor Credits Error")
+    if (error instanceof ServerActionError)
+      return { success: false, error: error.message }
+    throw error
   }
 }
 
@@ -275,8 +307,11 @@ export async function getActorSocialMediaData(pageId: string | number) {
 
     return personData
   } catch (error) {
-    console.log(error)
-    throw new Error("Fetch Actor Social media Error")
+    // console.log(error)
+    // throw new Error("Fetch Actor Social media Error")
+    if (error instanceof ServerActionError)
+      return { success: false, error: error.message }
+    throw error
   }
 }
 
