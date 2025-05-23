@@ -34,7 +34,7 @@ export default async function Home() {
 
       <Trailers />
 
-      <div className="w-[100vw] px-[1.5em] mx-auto flex flex-col lg:pb-0 gap-3 lg:py-[3em] lg:px-2 xl:w-[1200px]">
+      <div className="w-[100vw] pt-4 px-[1.5em] mx-auto flex flex-col lg:pb-0 gap-3 lg:py-[3em] lg:px-2 xl:w-[1200px]">
         <HomeSection
           title={'TV Shows'}
           isMovie={false}
