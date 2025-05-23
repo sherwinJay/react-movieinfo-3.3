@@ -12,7 +12,7 @@ const Poster = ({ poster, title, name, mediaType, imageSize }: PosterProps) => {
     return (
       <NoImage
         className={cn('grid content-center bg-gray-400 place-content-center',
-          imageSize === "w342" && 'hidden! md:min-w-[280px] md:h-[420px] rounded-2xl',
+          imageSize === "w342" && 'hidden md:min-w-[280px] md:h-[420px] md:grid rounded-2xl',
           imageSize === "w154" && 'w-full h-full md:min-w-[150px] md:h-[231px] rounded-lg',
         )}
         width={40}

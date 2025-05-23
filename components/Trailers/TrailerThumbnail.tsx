@@ -43,7 +43,7 @@ const TrailerThumbnail: FC<TrailerThumbnailProps> = ({ name, title, backdrop_pat
               width={380}
               height={169}
               id={backdrop_path}
-              className='rounded-md shadow-lg shadow-black/20 scale-95 group-hover:scale-100 transition delay-50 duration-150 ease-in-out'
+              className='rounded-md shadow-lg shadow-black/20 scale-100 group-hover:scale-105 transition delay-50 duration-150 ease-in-out'
               placeholder='blur'
               blurDataURL={`${normalizeImgixUrl(`/t/p/w300/${backdrop_path}`)}`}
               onPointerEnter={() => pointerEvent(imageRef?.current?.id)}

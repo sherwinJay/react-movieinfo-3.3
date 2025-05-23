@@ -45,7 +45,13 @@ const Filmography: FC<{ actorCredits: ActorCombinedCreditsTypes }> = ({ actorCre
             <li key={year} className="flex gap-5 border-slate-500 border-t-[1px] py-7 text-sm">
               <p className='text-flamingo-300'>{year}</p>
               <div className='flex flex-col gap-4'>
-                {groupedDataByYear[year].map((data: ActorCombinedCreditsTypes) => (
+                {groupedDataByYear[year].sort((a: ActorCombinedCreditsTypes, b: ActorCombinedCreditsTypes) => {
+
+                  const releaseDateA = mediaType === 'movie' ? new Date(a.release_date) : new Date(a.first_air_date)
+                  const releaseDateB = mediaType === 'movie' ? new Date(b.release_date) : new Date(b.first_air_date)
+
+                  return Number(releaseDateB) - Number(releaseDateA)
+                }).map((data: ActorCombinedCreditsTypes) => (
                   <Link key={data.credit_id} href={data.media_type === "movie" ? `/movies/${data.id}` : `/${data.media_type}/${data.id}`}>
                     <div className='flex gap-2'>
                       <p className='font-semibold'>{data.name ?? data.title}</p>

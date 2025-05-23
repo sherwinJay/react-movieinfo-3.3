@@ -18,7 +18,7 @@ const HomeSection: FC<HomeCardSection> = ({ isMovie, categoryData, title, templa
   const movieData = sortedByDateData?.slice(0, imgCount)
 
   return (
-    <div>
+    <div className='px-[5px]'>
       <div className='flex gap-1 items-center mb-2'>
         {/* {categoryIcon(title)} */}
         <h2 className="font-bold text-[1rem] text-[#e11d48] md:text-[1.25rem] inline-block">
