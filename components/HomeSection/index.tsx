@@ -17,6 +17,17 @@ const HomeSection: FC<HomeCardSection> = ({ isMovie, categoryData, title, templa
   const sortedByDateData = title === 'In Theatres' ? categoryData.sort((a, b) => Date.parse(b.release_date) - Date.parse(a.release_date)) : categoryData
   const movieData = sortedByDateData?.slice(0, imgCount)
 
+  const templateVariant = {
+    trending:
+      "grid-cols-12 min-h-[140px] grid-rows-1 w-[1000px] pb-7 lg:pb-10 lg:w-[2200px] lg:grid-cols-12 lg:min-h-[280px]",
+    featured:
+      "grid-rows-customRow3a leading-2 grid-cols-4 min-h-[250px] md:grid-cols-5 md:grid-rows-2 md:min-h-[360px]",
+  };
+
+  const featuredCard = {
+    trending: null,
+    featured: `first:col-start-1 first:col-end-4 first:row-start-1 first:row-end-3 md:first:col-end-3`
+  }
   return (
     <div className='px-[5px]'>
       <div className='flex gap-1 items-center mb-2'>
@@ -28,16 +39,16 @@ const HomeSection: FC<HomeCardSection> = ({ isMovie, categoryData, title, templa
       <div className='scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-transparent'>
         <div className='overflow-x-auto scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-transparent'>
           <ul className={clsx(
-            `font-satoshi grid gap-[0.4rem] md:gap-4`,
-            template === "1" && `grid-cols-12 min-h-[140px] grid-rows-1 w-[1000px] pb-7 lg:pb-10 lg:w-[2200px] lg:grid-cols-12 lg:min-h-[280px]`,
-            template === "2" && `grid-rows-customRow3a leading-2 grid-cols-4 min-h-[250px] md:grid-cols-5 md:grid-rows-2 md:min-h-[360px]`
+            `font-satoshi grid gap-[0.4rem] md:gap-4 ${templateVariant[template]}`,
+            // template === "1" && `grid-cols-12 min-h-[140px] grid-rows-1 w-[1000px] pb-7 lg:pb-10 lg:w-[2200px] lg:grid-cols-12 lg:min-h-[280px]`,
+            // template === "2" && `grid-rows-customRow3a leading-2 grid-cols-4 min-h-[250px] md:grid-cols-5 md:grid-rows-2 md:min-h-[360px]`
           )}>
             {movieData.map(thumbnail => (
               <li
                 key={thumbnail.id}
                 className={clsx(
-                  `rounded-md overflow-hidden group md:h-[100%] !relative grid items-center`,
-                  template === "2" && `first:col-start-1 first:col-end-4 first:row-start-1 first:row-end-3 md:first:col-end-3`
+                  `rounded-md overflow-hidden group md:h-[100%] !relative grid items-center ${featuredCard[template]}`,
+
                 )}
               >
                 <Cards

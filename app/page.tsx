@@ -9,8 +9,6 @@ export default async function Home() {
 
   const { upcomingMovie, nowPlayingMovie, popularTV } = await getAllMoviesData()
 
-  // console.log(trending)
-
   return (
     <main>
       <Slider // movieData={popularMovie}
@@ -19,14 +17,14 @@ export default async function Home() {
         <HomeSection
           title={'In Theatres'}
           isMovie={true}
-          template={'2'}
+          template={'featured'}
           imgCount={7}
           categoryData={nowPlayingMovie}
         />
         <HomeSection
           title={'Trending Movies'}
           isMovie={true}
-          template={'1'}
+          template={'trending'}
           imgCount={12}
           categoryData={upcomingMovie} // trending movies
         />
@@ -38,16 +36,11 @@ export default async function Home() {
         <HomeSection
           title={'TV Shows'}
           isMovie={false}
-          template={'1'}
+          template={'trending'}
           imgCount={12}
           categoryData={popularTV} // trending tv shows
         />
-
-
       </div>
-      {/* <TestSection
-        data={popularTV}
-      /> */}
     </main>
   )
 }

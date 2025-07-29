@@ -1,7 +1,6 @@
 import { MainFooter, MainHeader, TanstackProvider } from '@/components'
 import '@/styles/globals.css'
 import '@/styles/reset.css'
-// import '../styles/globals.css'
 
 export const metadata = {
   title: 'Movie Information',
@@ -16,10 +15,6 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       {/* <head /> */}
       <body className="grid grid-rows-customRow1 h-[100vh] bg-neutral-900">
         <TanstackProvider>
