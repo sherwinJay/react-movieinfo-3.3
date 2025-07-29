@@ -25,7 +25,7 @@ const HomeSection: FC<HomeCardSection> = ({ isMovie, categoryData, title, templa
           {title}
         </h2>
       </div>
-      <ul className={clsx(
+      {/* <ul className={clsx(
         `font-satoshi grid gap-[0.4rem] md:gap-3`,
         template === "1" && `grid-cols-4 min-h-[250px] grid-rows-2  lg:grid-cols-07 lg:min-h-[230px] lg:grid-rows-1`,
         template === "2" && `grid-rows-customRow3a leading-2 grid-cols-4 min-h-[250px]  md:grid-cols-5 md:grid-rows-2 md:min-h-[360px]`
@@ -53,7 +53,7 @@ const HomeSection: FC<HomeCardSection> = ({ isMovie, categoryData, title, templa
           </li>
         ))
         }
-      </ul>
+      </ul> */}
     </div>
   )
 }
