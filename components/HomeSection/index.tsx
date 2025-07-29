@@ -40,8 +40,6 @@ const HomeSection: FC<HomeCardSection> = ({ isMovie, categoryData, title, templa
         <div className='overflow-x-auto scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-transparent'>
           <ul className={clsx(
             `font-satoshi grid gap-[0.4rem] md:gap-4 ${templateVariant[template]}`,
-            // template === "1" && `grid-cols-12 min-h-[140px] grid-rows-1 w-[1000px] pb-7 lg:pb-10 lg:w-[2200px] lg:grid-cols-12 lg:min-h-[280px]`,
-            // template === "2" && `grid-rows-customRow3a leading-2 grid-cols-4 min-h-[250px] md:grid-cols-5 md:grid-rows-2 md:min-h-[360px]`
           )}>
             {movieData.map(thumbnail => (
               <li
