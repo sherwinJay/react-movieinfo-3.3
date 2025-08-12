@@ -57,8 +57,6 @@ export async function fetchHomePageMovies(url: string) {
 
     return homePageMovieList
   } catch (error) {
-    // console.log(error)
-    // throw new Error("Fetch Home Movie Error")
     if (error instanceof ServerActionError)
       return { success: false, error: error.message }
     throw error
@@ -177,8 +175,8 @@ export const fetchTrendingTrailers = async ({
 export async function getMovieData(pageId: string | number, mediaType: string) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/${mediaType}/${pageId}?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&append_to_response=credits,videos`,
-      { cache: "no-store" }
+      `${movieDbURL}/3/${mediaType}/${pageId}?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}&append_to_response=credits,videos`
+      // { cache: "no-store" }
     )
 
     if (!res.ok) {
@@ -198,8 +196,8 @@ export async function getMovieData(pageId: string | number, mediaType: string) {
 export async function getActorData(pageId: string | number) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/person/${pageId}?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`,
-      { cache: "no-store" }
+      `${movieDbURL}/3/person/${pageId}?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`
+      // { cache: "no-store" }
     )
 
     if (!res.ok) {
@@ -222,8 +220,8 @@ export async function getActorData(pageId: string | number) {
 export async function getActorMovieData(pageId: string | number) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/person/${pageId}/movie_credits?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`,
-      { cache: "no-store" }
+      `${movieDbURL}/3/person/${pageId}/movie_credits?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`
+      // { cache: "no-store" }
     )
 
     if (!res.ok) {
@@ -246,8 +244,8 @@ export async function getActorMovieData(pageId: string | number) {
 export async function getActorTVData(pageId: string | number) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/person/${pageId}/tv_credits?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`,
-      { cache: "no-store" }
+      `${movieDbURL}/3/person/${pageId}/tv_credits?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`
+      // { cache: "no-store" }
     )
 
     if (!res.ok) {
@@ -270,8 +268,8 @@ export async function getActorTVData(pageId: string | number) {
 export async function getActorCombinedCreditsData(pageId: string | number) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/person/${pageId}/combined_credits?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`,
-      { cache: "no-store" }
+      `${movieDbURL}/3/person/${pageId}/combined_credits?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`
+      // { cache: "no-store" }
     )
 
     if (!res.ok) {
@@ -294,8 +292,8 @@ export async function getActorCombinedCreditsData(pageId: string | number) {
 export async function getActorSocialMediaData(pageId: string | number) {
   try {
     const res = await fetch(
-      `${movieDbURL}/3/person/${pageId}/external_ids?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`,
-      { cache: "no-store" }
+      `${movieDbURL}/3/person/${pageId}/external_ids?api_key=${process.env.NEXT_PUBLIC_MOVIE_DATABASE_ID}`
+      // { cache: "no-store" }
     )
 
     if (!res.ok) {
