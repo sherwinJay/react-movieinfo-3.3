@@ -28,11 +28,6 @@ export default async function Home() {
           imgCount={12}
           categoryData={upcomingMovie} // trending movies
         />
-      </div>
-
-      <Trailers />
-
-      <div className="w-[100vw] pt-4 px-[1em] mx-auto flex flex-col lg:pb-0 gap-3 lg:py-[3em] lg:px-2 xl:w-[1200px]">
         <HomeSection
           title={'TV Shows'}
           isMovie={false}
@@ -41,6 +36,18 @@ export default async function Home() {
           categoryData={popularTV} // trending tv shows
         />
       </div>
+
+      {/* <Trailers /> */}
+
+      {/* <div className="w-[100vw] pt-4 px-[1em] mx-auto flex flex-col lg:pb-0 gap-3 lg:py-[3em] lg:px-2 xl:w-[1200px]">
+        <HomeSection
+          title={'TV Shows'}
+          isMovie={false}
+          template={'trending'}
+          imgCount={12}
+          categoryData={popularTV} // trending tv shows
+        />
+      </div> */}
     </main>
   )
 }
